@@ -4142,3 +4142,61 @@ select *
 [0m17:01:46.133834 [debug] [MainThread]: Command `dbt run` succeeded at 17:01:46.133834 after 12.38 seconds
 [0m17:01:46.133834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000125726C2460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012575DFBB20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012575C84820>]}
 [0m17:01:46.134833 [debug] [MainThread]: Flushing usage events
+[0m17:12:35.095199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000296D59623D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000296D82D1BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000296D48FBD30>]}
+
+
+============================== 17:12:35.095199 | 524b1577-3b9d-40b1-8ded-6b1eea483a41 ==============================
+[0m17:12:35.095199 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:12:35.095199 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Git\\sb_loja_virtual\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Git\\sb_loja_virtual', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:12:35.095199 [info ] [MainThread]: dbt version: 1.7.4
+[0m17:12:35.095199 [info ] [MainThread]: python version: 3.8.10
+[0m17:12:35.095199 [info ] [MainThread]: python path: c:\users\htk1511\appdata\local\programs\python\python38\python.exe
+[0m17:12:35.109405 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m17:12:35.479163 [info ] [MainThread]: Using profiles dir at C:\Git\sb_loja_virtual
+[0m17:12:35.479163 [info ] [MainThread]: Using profiles.yml file at C:\Git\sb_loja_virtual\profiles.yml
+[0m17:12:35.479163 [info ] [MainThread]: Using dbt_project.yml file at C:\Git\sb_loja_virtual\dbt_project.yml
+[0m17:12:35.479163 [info ] [MainThread]: adapter type: bigquery
+[0m17:12:35.479163 [info ] [MainThread]: adapter version: 1.7.2
+[0m17:12:35.575963 [info ] [MainThread]: Configuration:
+[0m17:12:35.575963 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:12:35.575963 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m17:12:35.575963 [info ] [MainThread]: Required dependencies:
+[0m17:12:35.575963 [debug] [MainThread]: Executing "git --help"
+[0m17:12:35.615736 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:12:35.616747 [debug] [MainThread]: STDERR: "b''"
+[0m17:12:35.616747 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:12:35.617749 [info ] [MainThread]: Connection:
+[0m17:12:35.618753 [info ] [MainThread]:   method: service-account
+[0m17:12:35.618753 [info ] [MainThread]:   database: igneous-sandbox-381622
+[0m17:12:35.618753 [info ] [MainThread]:   execution_project: igneous-sandbox-381622
+[0m17:12:35.619747 [info ] [MainThread]:   schema: dbt_dw
+[0m17:12:35.619747 [info ] [MainThread]:   location: us-east4
+[0m17:12:35.619747 [info ] [MainThread]:   priority: None
+[0m17:12:35.619747 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m17:12:35.619747 [info ] [MainThread]:   impersonate_service_account: None
+[0m17:12:35.619747 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m17:12:35.619747 [info ] [MainThread]:   job_retries: 1
+[0m17:12:35.619747 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m17:12:35.619747 [info ] [MainThread]:   job_execution_timeout_seconds: None
+[0m17:12:35.619747 [info ] [MainThread]:   keyfile: C:\Git\key_project_sb.json
+[0m17:12:35.619747 [info ] [MainThread]:   timeout_seconds: None
+[0m17:12:35.625785 [info ] [MainThread]:   refresh_token: None
+[0m17:12:35.625785 [info ] [MainThread]:   client_id: None
+[0m17:12:35.626799 [info ] [MainThread]:   token_uri: None
+[0m17:12:35.627797 [info ] [MainThread]:   dataproc_region: None
+[0m17:12:35.627797 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m17:12:35.628797 [info ] [MainThread]:   gcs_bucket: None
+[0m17:12:35.628797 [info ] [MainThread]:   dataproc_batch: None
+[0m17:12:35.629795 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m17:12:35.629795 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m17:12:35.629795 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:12:35.631816 [debug] [MainThread]: On debug: select 1 as id
+[0m17:12:36.496491 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:13dd5e7a-722f-4ed2-8bae-a2e84d0d6789&page=queryresults
+[0m17:12:36.998680 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:12:36.998680 [info ] [MainThread]: [32mAll checks passed![0m
+[0m17:12:36.998680 [debug] [MainThread]: Command `dbt debug` succeeded at 17:12:36.998680 after 1.96 seconds
+[0m17:12:36.998680 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:12:36.998680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000296D59623D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000296D8EF0A60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000296D8F81F10>]}
+[0m17:12:36.998680 [debug] [MainThread]: Flushing usage events
