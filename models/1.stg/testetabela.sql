@@ -4,9 +4,5 @@
 )}}
 
 SELECT
-  id,
-  cliente,
-  data,
-  total,
-  status
+  id
 FROM {{ source('erathos', 'pedidos_vendas') }}

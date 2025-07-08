@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "igneous-sandbox-381622",
+  "private_key_id": "090972b00907775c2463b915ef86b2216b651fd2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC7YBXoc9jahU5W\nsQMiYVDfEL4tYRMyung5LG8Qf8sD+g2FI3PaMeo84dwpucQHcfmowKFK/hi8bRwh\n6JS21+ubbX3q6GcuumKj75LX2+7K7rl/Upj+hCnZ+L5X3iTIdsXICI7eTxiJehJI\nSnXqeZEBZ40QAfnQv/a6Mte44i6SZMC7WIkB+f+/Yc0i4Fyk3OK6uIcgim1B2vmt\nYI9kFl+xc9zTWZWQ2EuX+yTvgMP5Tg/RxP1jOlFv+5owhZ8nkEAVtm1yRPm18DeM\nRr+0cvRvz//ZlinULGRelYWM40I2cQmW0jj45HCThcG/ZtOpNZ+rLOu0gCr0y3fF\nY1sBkFWBAgMBAAECggEAGNY4sTJB6V1IMAeQocsCfD7s5nj6oXvEGdgA9M/rqiBI\nEIDNh3ucT+ukUkeUa2Q5MpwuBRG/V6Ki2v/ITqA6U8TkrvGVU8VS8+X6sfAuK+oO\n3oilTP9ZyNHG8UC54XSU7Nntjhwv5XEv4TM1hBoPFX+TXC7W3UvEuZOpspEQmUjV\nhmBzhBopQyxt7/4UVgrPqSXSn//MfLfN9lTuJVXi6TQq1MJL+g0HvXZUoJ0xEfxi\nk78J0uRHl6uYzOfsgacERAX8cvv/28g8raaUtqTDedED4oS5rq/rl/4BLXPhZX20\nA4df28yCD2krLU8gLoceJvmi6dUsO7gwIRUpSyYVbQKBgQDitct8ZIstTKoqlIbs\nlavRvgXN31BDN0cwjKe7ghEs5hY7j9bxP2YluNfocbFmre9k+DTtVGgT/X/EAEPW\nPqMp1FtATgmGJGoXYoNMr3GfTbeNHbpN51+C447wvr3vHwnEpIkCNd0qofxEw+n8\nSn0Ak9yltHGT3vYPqadZz4OHowKBgQDTlVUeokZ/TieskC0MGIdzHwQBuaBZeMEl\n+0ySoUZ3ODGSgHL4029TNd0gSnrThSVNsYZ36Ouv797AVkBFDBFOoQGTXxlFizb1\nHJzN5XV/QdlVbPOTcqHY6FbZx4r/iPIdJ/As+RB4x81AFa1NybcoTCiFyZhbeNaP\neKwM+V6QiwKBgQCHebGWrRKKSGTruwQBvtMFLHOVedwhvpe5CGR3ZZtT5E7m2ubM\nFWG6KwJCsiYbwNbs1HH0XNsxDuxZuPrQvW+NYIwDGl8QnRQU01a47aKNWsjT+C7L\nvPbTZZ6WeLVRfo+8xcHl40A96LyybwyVKgIW5UUWdITmo3cRFwWdYqcr1wKBgQCU\nOzjJH3M4WS7ebJvCr6SleIM8GipGxJy82VQKHkbZ21qPgsIJpUeHCmOC7esjKVK7\nHbZRZ7NHLUvngAXC2fN+HLqX3rY7zI6SJpuMfEdXAnEashvrnxHYft3p8SxmXjER\nUBupxkxN8dzQGt+xcbKJ3uE86cF9xCi9lxMie8pOhQKBgFBqImiNEInnJox4PFqt\ncl7BUkq88z8KXXOw4oT3zzgkGfJ1hRBEo/Gzz6L1o/vqwcCuksI0Y91ezz4XHx3F\nTqYCw82L1UQ8YESL28TVTNjQa8xw28J0Uo6lWSRpO18y3V0VhzBWiqexLHela5Vx\nuCt3gzs4RvqA//QKr5C09yGB\n-----END PRIVATE KEY-----\n",
+  "client_email": "dbt-shibaribrasil@igneous-sandbox-381622.iam.gserviceaccount.com",
+  "client_id": "110219556725178333530",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dbt-shibaribrasil%40igneous-sandbox-381622.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

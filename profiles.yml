@@ -8,4 +8,4 @@ shibaribrasil:
       dataset: dbt_dw                       # <- substitua pelo seu dataset no BigQuery
       threads: 2
       keyfile: C:\Git\sb_loja_virtual\key_project_sb.json
-      location: US
+      location: us-east4

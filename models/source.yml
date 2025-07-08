@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: erathos
+    database: igneous-sandbox-381622
+    schema: datalake_bling
+    tables:
+      - name: "categoria_produtos"
+      - name: "contato_detalhes"
+      - name: "contatos"
+      - name: "pedidos_vendas"
+      - name: "pedidos_vendas_detalhes"
+      - name: "produtos"
+      - name: "produtos_detalhes"

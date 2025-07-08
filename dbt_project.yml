@@ -25,3 +25,22 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+
+models:
+  shibaribrasil:
+#    00_audit:
+#      +enabled: false
+#      +materialized: incremental
+#      +schema: audit
+    1.stg:
+      +materialized: view
+      +schema: stg
+      +tags: stg
+    2.dw:
+      +materialized: table
+      +schema: dw
+      +tags: dw
+    3.az:
+      +materialized: table
+      +schema: az
+      +tags: az
