@@ -5,7 +5,7 @@ sources:
     database: igneous-sandbox-381622
     schema: datalake_bling
     tables:
-      - name: "categoria_produtos"
+      - name: "categorias_produtos"
       - name: "contato_detalhes"
       - name: "contatos"
       - name: "pedidos_vendas"
