@@ -5,7 +5,7 @@ shibaribrasil:
       type: bigquery
       method: service-account
       project: igneous-sandbox-381622       # <- substitua pelo nome real do seu projeto GCP
-      dataset: dbt-dw                       # <- substitua pelo seu dataset no BigQuery
+      dataset: dbt_dw                       # <- substitua pelo seu dataset no BigQuery
       threads: 2
       keyfile: C:\Git\sb_loja_virtual\key_project_sb.json
       location: US
