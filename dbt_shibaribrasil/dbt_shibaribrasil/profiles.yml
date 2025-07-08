@@ -1,0 +1,11 @@
+dbt_shibaribrasil:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: igneous-sandbox-381622         # ID do projeto no GCP
+      dataset: dw                             # Dataset onde ficarão os modelos
+      threads: 2
+      keyfile: C:\Git\sb_loja_virtual\key_project_sb.json
+      location: US
