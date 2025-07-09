@@ -114,7 +114,7 @@ with cte_produto as (
           ,a.cd_codigo_barras
           ,a.nm_produto
           ,a.nm_produto_completo
-          ,nullif(trim(replace(a.nm_produto_completo, a.nm_produto, '')), '') ds_variacao
+          ,coalesce(nullif(trim(replace(a.nm_produto_completo, a.nm_produto, '')), ''), 'Sem Variacao') ds_variacao
           ,a.ds_tipo_produto
           ,a.cd_produto_bling_pai
           ,a.fg_produto_composicao

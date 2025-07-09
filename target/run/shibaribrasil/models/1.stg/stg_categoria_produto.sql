@@ -1,7 +1,9 @@
 
 
   create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_categoria_produto`
-  OPTIONS()
+  OPTIONS(
+      description=""""""
+    )
   as 
 
 with cte_categoria as (

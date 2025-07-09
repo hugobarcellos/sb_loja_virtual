@@ -1,3 +1,5 @@
 *.json
 key_project_sb.json
 logs/dbt.log
+target/graph.gpickle
+target/partial_parse.msgpack
