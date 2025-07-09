@@ -44,9 +44,9 @@ with cte_produto as (
           ,dm_peso_bruto
           ,dm_peso_liquido
           ,cd_categoria
+          ,ds_descricao_produto
       from cte_produto
 )
-
 
 --normalizando os produtos pai com o mesmo tipo de estoque dos filhos
 , cte_base as (
@@ -71,6 +71,7 @@ with cte_produto as (
           ,a.dm_peso_bruto
           ,a.dm_peso_liquido
           ,a.cd_categoria
+          ,a.ds_descricao_produto
       from cte_tratamentos  as a
  left join cte_tratamentos  as b
         on a.cd_produto_bling = b.cd_produto_bling_pai
@@ -111,6 +112,7 @@ with cte_produto as (
           ,a.dm_peso_bruto
           ,a.dm_peso_liquido
           ,a.cd_categoria
+          ,a.ds_descricao_produto
       from cte_base                as a
  left join cte_nome_simples_base   as b
         on a.cd_produto_bling_pai = b.cd_produto_bling_pai
@@ -141,6 +143,7 @@ with cte_produto as (
           ,a.dm_peso_bruto
           ,a.dm_peso_liquido
           ,a.cd_categoria
+          ,a.ds_descricao_produto
       from cte_nome_simples   as a
 )
 

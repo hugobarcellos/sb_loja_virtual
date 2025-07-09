@@ -20,6 +20,7 @@ with cte_produto as (
          ,nullif(a.tipo,'')                                                        as ds_tipo
          ,nullif(a.formato,'')                                                     as ds_formato
          ,nullif(a.categoria__id,'')                                               as cd_categoria
+         ,nullif(a.descricao_curta,'')                                             as ds_descricao_produto
          ,nullif(trim(left(b.id_produto_pai,11)), '')                              as cd_produto_bling_pai
      from `igneous-sandbox-381622`.`datalake_bling`.`produtos_detalhes`  as a
 left join `igneous-sandbox-381622`.`datalake_bling`.`produtos`           as b 
