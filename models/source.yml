@@ -12,3 +12,9 @@ sources:
       - name: "pedidos_vendas_detalhes"
       - name: "produtos"
       - name: "produtos_detalhes"
+
+  - name: drive
+    database: igneous-sandbox-381622
+    schema: datalake_drive
+    tables:
+      - name: "drive_meta_margem_preco"

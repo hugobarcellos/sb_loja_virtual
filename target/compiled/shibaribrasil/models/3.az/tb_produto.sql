@@ -51,12 +51,23 @@ with cte_produto as (
     select cd_produto_bling
           ,cd_produto
           ,ds_classificacao_produto
-          ,fg_ajuste_preco
-          ,dt_ajuste_preco
+          ,ds_origem_produto
+          ,fg_alteracao_preco
+          ,ds_tipo_alteracao_preco
+          ,dt_alteracao_preco
+          ,vl_alteracao_preco
       from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_campo_customizado_produto`
 )
 
-, cte_join_campos_customizados as (
+, cte_imagem_produto as (
+    select cd_produto_bling
+          ,cd_produto
+          ,lk_imagem_produto
+      from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_imagem_produto`
+     where seq_imagem = 1
+)
+
+, cte_join_campos_imagens as (
     select distinct
            a.cd_produto_bling
           ,a.cd_produto
@@ -76,8 +87,11 @@ with cte_produto as (
           ,a.ds_subcategoria
           ,a.ds_categoria
           ,b.ds_classificacao_produto
-          ,b.fg_ajuste_preco
-          ,b.dt_ajuste_preco
+          ,b.ds_origem_produto
+          ,b.fg_alteracao_preco
+          ,b.ds_tipo_alteracao_preco
+          ,b.dt_alteracao_preco
+          ,b.vl_alteracao_preco
           ,a.ds_situacao
           ,a.dm_altura
           ,a.dm_largura
@@ -85,11 +99,14 @@ with cte_produto as (
           ,a.dm_peso_bruto
           ,a.dm_peso_liquido
           ,a.ds_descricao_produto
+          ,c.lk_imagem_produto
       from cte_tratamentos            as a
  left join cte_campos_customizados    as b
-        on a.cd_produto_bling = b.cd_produto_bling     
+        on a.cd_produto_bling = b.cd_produto_bling 
+ left join cte_imagem_produto         as c
+        on a.cd_produto_bling = c.cd_produto_bling     
 )
 
   select *
-    from cte_join_campos_customizados
+    from cte_join_campos_imagens
 order by nm_produto_completo
