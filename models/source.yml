@@ -12,6 +12,8 @@ sources:
       - name: "pedidos_vendas_detalhes"
       - name: "produtos"
       - name: "produtos_detalhes"
+      - name: "formas_pagamentos_detalhes"
+      - name: "formas_pagamentos"
 
   - name: drive
     database: igneous-sandbox-381622
