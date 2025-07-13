@@ -25,6 +25,7 @@ with cte_produto as (
          ,nullif(a.categoria__id,'')                                               as cd_categoria
          ,nullif(a.descricao_curta,'')                                             as ds_descricao_produto
          ,nullif(trim(left(b.id_produto_pai,11)), '')                              as cd_produto_bling_pai
+         ,datetime(timestamp(a._erathos_synced_at), "America/Sao_Paulo")           as dt_ultima_ingestao
      from {{ source('erathos', 'produtos_detalhes') }}  as a
 left join {{ source('erathos', 'produtos') }}           as b 
        on trim(a.id) = trim(b.id) 

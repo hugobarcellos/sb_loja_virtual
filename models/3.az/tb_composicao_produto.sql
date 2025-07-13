@@ -1,5 +1,5 @@
 {{ config(
-    tags = ['dw', 'produto'],
+    tags = ['az', 'produto'],
     enabled = true
 )}}
 

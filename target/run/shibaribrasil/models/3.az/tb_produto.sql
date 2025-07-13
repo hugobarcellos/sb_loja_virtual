@@ -53,6 +53,7 @@ with cte_produto as (
           ,a.dm_peso_bruto
           ,a.dm_peso_liquido
           ,a.ds_descricao_produto
+          ,a.dt_ultima_ingestao
       from cte_produto   as a
  left join cte_categoria    as b
         on a.cd_categoria = b.cd_categoria
@@ -113,6 +114,8 @@ with cte_produto as (
           ,a.dm_peso_liquido
           ,a.ds_descricao_produto
           ,c.lk_imagem_produto
+          ,a.dt_ultima_ingestao
+          ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
       from cte_tratamentos            as a
  left join cte_campos_customizados    as b
         on a.cd_produto_bling = b.cd_produto_bling 

@@ -47,3 +47,6 @@ models:
   +persist_docs:
     relation: true
     columns: true
+
+snapshots:
+  +target_schema: snapshots

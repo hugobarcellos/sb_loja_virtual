@@ -35,6 +35,7 @@ with cte_produto as (
           ,dm_peso_liquido
           ,cd_categoria
           ,ds_descricao_produto
+          ,dt_ultima_ingestao
       from cte_produto
 )
 
@@ -62,6 +63,7 @@ with cte_produto as (
           ,a.dm_peso_liquido
           ,a.cd_categoria
           ,a.ds_descricao_produto
+          ,a.dt_ultima_ingestao
       from cte_tratamentos  as a
  left join cte_tratamentos  as b
         on a.cd_produto_bling = b.cd_produto_bling_pai
@@ -103,6 +105,7 @@ with cte_produto as (
           ,a.dm_peso_liquido
           ,a.cd_categoria
           ,a.ds_descricao_produto
+          ,a.dt_ultima_ingestao
       from cte_base                as a
  left join cte_nome_simples_base   as b
         on a.cd_produto_bling_pai = b.cd_produto_bling_pai
@@ -134,6 +137,7 @@ with cte_produto as (
           ,a.dm_peso_liquido
           ,a.cd_categoria
           ,a.ds_descricao_produto
+          ,a.dt_ultima_ingestao
       from cte_nome_simples   as a
 )
 

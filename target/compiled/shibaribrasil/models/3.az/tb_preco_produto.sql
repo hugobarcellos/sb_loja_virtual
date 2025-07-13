@@ -22,6 +22,7 @@ with cte_produto as (
           ,a.ds_tipo_alteracao_preco
           ,a.dt_alteracao_preco
           ,a.vl_alteracao_preco
+          ,a.dt_ultima_ingestao
       from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`  as a   
      where a.ds_categoria not in ('Suprimentos', 'Inativos')
 )
@@ -74,6 +75,8 @@ with cte_produto as (
           ,0.03                                                                                                              as vl_desconto_fixo_pix
           --valor aproximado de materiais de envio por pedido
           ,2.50                                                                                                              as vl_materiais_envio
+          ,a.dt_ultima_ingestao
+          ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
      from cte_produto     as a
 left join cte_meta_margem as b
        on a.ds_classificacao_produto = b.ds_classificacao_produto
