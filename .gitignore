@@ -5,3 +5,5 @@ target/graph.gpickle
 target/partial_parse.msgpack
 logs/dbt.log
 target/graph.gpickle
+logs/dbt.log
+logs/dbt.log.1

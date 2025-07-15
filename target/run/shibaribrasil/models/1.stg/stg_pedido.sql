@@ -11,8 +11,8 @@ with cte_pedido as (
         ,nullif(trim(numero), '')                    as cd_pedido
         ,nullif(trim(data), '')                      as dt_pedido
         ,nullif(trim(situacao__id), '')              as cd_status
-        ,nullif(trim(total_produtos), '')            as vl_total_pedido
-        ,nullif(trim(total), '')                     as vl_total_item
+        ,nullif(trim(total_produtos), '')            as vl_total_item
+        ,nullif(trim(total), '')                     as vl_total_pedido
         ,nullif(trim(contato__id), '')               as cd_contato
         ,nullif(trim(contato__nome), '')             as nm_contato
         ,nullif(trim(contato__numero_documento), '') as nr_doc_contato
@@ -30,8 +30,8 @@ with cte_pedido as (
           when cd_status = '12' then 'CANCELADO'
           when cd_status = '9'  then 'ATENDIDO'
           else null                            end ds_status_pedido
-        ,cast(vl_total_pedido as float64)       as vl_total_pedido
         ,cast(vl_total_item as float64)         as vl_total_item
+        ,cast(vl_total_pedido as float64)       as vl_total_pedido
         ,cd_contato                             as cd_contato
         ,nm_contato                             as nm_contato
         ,nr_doc_contato                         as nr_doc_contato

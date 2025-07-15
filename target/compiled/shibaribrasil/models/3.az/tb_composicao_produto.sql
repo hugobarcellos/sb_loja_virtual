@@ -51,9 +51,7 @@ with cte_produto as (
           ,a.ds_variacao
           ,a.ds_tipo_produto
           ,a.cd_produto_bling_pai
-
           ,b.cd_produto_bling_componente
-
           ,c.cd_produto as cd_produto_componente
           ,c.cd_codigo_barras as cd_codigo_barras_componente
           ,c.nm_produto as nm_produto_componente
