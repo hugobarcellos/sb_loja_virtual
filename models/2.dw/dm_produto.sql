@@ -48,7 +48,7 @@ with cte_produto as (
           ,a.nm_produto_completo
           ,a.ds_tipo_produto
           ,a.cd_produto_bling_pai
-          ,a.fg_produto_composicao
+          ,coalesce(b.fg_produto_composicao, a.fg_produto_composicao) fg_produto_composicao
           ,coalesce(b.ds_tipo_estoque, a.ds_tipo_estoque) ds_tipo_estoque
           ,a.qt_estoque_minimo
           ,a.qt_estoque_atual

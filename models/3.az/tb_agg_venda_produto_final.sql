@@ -84,6 +84,21 @@ group by cd_produto_bling
         ,nm_produto_completo
 )
 
+, cte_pedido_60_dias as (
+   select cd_produto_bling
+         ,cd_produto
+         ,nm_produto_completo
+         ,sum(qt_pedidos)     as qt_pedidos
+         ,sum(qt_item)        as qt_item
+         ,sum(vl_total_item)  as vl_total_item
+    from cte_venda_produto
+   where cast(dt_pedido as date) >= date_trunc(date_sub(current_date(), interval 59 day), day)
+     and cast(dt_pedido as date) <= current_date
+group by cd_produto_bling
+        ,cd_produto
+        ,nm_produto_completo
+)
+
 , cte_final as (
     select distinct
            a.cd_produto_bling
@@ -112,6 +127,9 @@ group by cd_produto_bling
           ,coalesce(e.qt_pedidos,0)    as qt_pedidos_seis_meses
           ,coalesce(e.qt_item,0)       as qt_pecas_seis_meses
           ,coalesce(e.vl_total_item,0) as vl_total_seis_meses
+          ,coalesce(f.qt_pedidos,0)    as qt_pedidos_sessenta_dias
+          ,coalesce(f.qt_item,0)       as qt_pecas_sessenta_dias
+          ,coalesce(f.vl_total_item,0) as vl_total_sessenta_dias
      from cte_venda_produto               as a
 left join cte_pedido_mes_atual            as b
        on a.cd_produto_bling = b.cd_produto_bling
@@ -121,6 +139,8 @@ left join cte_pedido_tres_meses           as d
        on a.cd_produto_bling = d.cd_produto_bling
 left join cte_pedido_seis_meses           as e
        on a.cd_produto_bling = e.cd_produto_bling
+left join cte_pedido_60_dias              as f
+       on a.cd_produto_bling = f.cd_produto_bling
 )
 
    select *
