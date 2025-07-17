@@ -56,9 +56,6 @@ with cte_produto as (
           ,cd_produto
           ,ds_classificacao_produto
           ,ds_origem_produto
-          ,fg_alteracao_preco
-          ,ds_tipo_alteracao_preco
-          ,dt_alteracao_preco
           ,vl_alteracao_preco
       from {{ ref('stg_campo_customizado_produto') }}
 )
@@ -88,13 +85,11 @@ with cte_produto as (
           ,a.vl_custo_compra
           ,a.vl_custo_total
           ,a.vl_preco_venda
+          ,b.vl_alteracao_preco as vl_preco_venda_por
           ,a.ds_subcategoria
           ,a.ds_categoria
           ,b.ds_classificacao_produto
           ,b.ds_origem_produto
-          ,b.fg_alteracao_preco
-          ,b.ds_tipo_alteracao_preco
-          ,b.dt_alteracao_preco
           ,b.vl_alteracao_preco
           ,a.ds_situacao
           ,a.dm_altura

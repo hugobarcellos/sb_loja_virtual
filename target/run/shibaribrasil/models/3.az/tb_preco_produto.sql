@@ -26,15 +26,12 @@ with cte_produto as (
           ,a.vl_custo_compra
           ,a.vl_custo_total
           ,a.vl_preco_venda
+          ,a.vl_preco_venda_por
           ,a.ds_subcategoria
           ,a.ds_categoria
           ,a.ds_classificacao_produto
           ,a.ds_origem_produto
           ,a.ds_tipo_produto
-          ,a.fg_alteracao_preco
-          ,a.ds_tipo_alteracao_preco
-          ,a.dt_alteracao_preco
-          ,a.vl_alteracao_preco
           ,a.dt_ultima_ingestao
       from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`  as a   
      where a.ds_categoria not in ('Suprimentos', 'Inativos')
@@ -67,18 +64,15 @@ with cte_produto as (
           ,a.nm_produto
           ,a.ds_variacao
           ,a.qt_estoque_atual
-          ,coalesce(a.vl_custo_compra, 0) as vl_custo_compra
-          ,coalesce(a.vl_custo_total, 0)  as vl_custo_total
-          ,coalesce(a.vl_preco_venda, 0)  as vl_preco_venda
+          ,coalesce(a.vl_custo_compra, 0)     as vl_custo_compra
+          ,coalesce(a.vl_custo_total, 0)      as vl_custo_total
+          ,coalesce(a.vl_preco_venda, 0)      as vl_preco_venda
+          ,coalesce(a.vl_preco_venda_por, 0)  as vl_preco_venda_por
           ,a.ds_subcategoria
           ,a.ds_categoria
           ,a.ds_classificacao_produto
           ,a.ds_origem_produto
           ,a.ds_tipo_produto
-          ,a.fg_alteracao_preco
-          ,a.ds_tipo_alteracao_preco
-          ,a.dt_alteracao_preco
-          ,coalesce(a.vl_alteracao_preco, 0)                                                                                 as vl_alteracao_preco
           ,coalesce(b.pr_desconto_padrao, 0)                                                                                 as pr_desconto_padrao 
           ,coalesce(b.pr_meta_margem, 0)                                                                                     as pr_meta_margem 
           ,(select (vl_taxa_aliquota / 100) from cte_forma_pagamento where nm_forma_pagamento = '[Nuvem] Cartão de Crédito') as tx_aliquota_cartao
