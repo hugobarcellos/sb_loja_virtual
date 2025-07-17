@@ -19,9 +19,10 @@ with cte_produto as (
           ,a.ds_classificacao_produto
           ,a.ds_origem_produto
           ,a.ds_tipo_produto
+          ,a.fg_produto_composicao
           ,a.dt_ultima_ingestao
       from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`  as a   
-     where a.ds_categoria not in ('Suprimentos', 'Inativos')
+    --  where a.ds_categoria not in ('Suprimentos', 'Inativos')
 )
 
 , cte_meta_margem as (
@@ -68,6 +69,7 @@ with cte_produto as (
           ,a.ds_classificacao_produto
           ,a.ds_origem_produto
           ,a.ds_tipo_produto
+          ,a.fg_produto_composicao
           ,coalesce(b.pr_desconto_padrao, 0)                                                                                 as pr_desconto_padrao 
           ,coalesce(b.pr_meta_margem, 0)                                                                                     as pr_meta_margem 
           ,(select (vl_taxa_aliquota / 100) from cte_forma_pagamento where nm_forma_pagamento = '[Nuvem] Cartão de Crédito') as tx_aliquota_cartao

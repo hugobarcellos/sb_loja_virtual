@@ -19,14 +19,15 @@ with cte_base as (
           ,cd_codigo_barras
           ,nm_produto
           ,ds_variacao
-          ,vl_custo_compra
-          ,vl_custo_total
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
           ,vl_preco_venda
           ,vl_preco_venda_por
           ,ds_subcategoria
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,fg_produto_composicao
           ,date(dbt_valid_from, "America/Sao_Paulo")                                                        as dt_ini_vigencia
           ,time(dbt_valid_from, "America/Sao_Paulo")                                                        as hr_ini_vigencia
           ,coalesce(date(dbt_valid_to, "America/Sao_Paulo"), date(dbt_updated_at, "America/Sao_Paulo"))     as dt_fim_vigencia
@@ -42,14 +43,15 @@ with cte_base as (
           ,cd_codigo_barras
           ,nm_produto
           ,ds_variacao
-          ,vl_custo_compra
-          ,vl_custo_total
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
           ,vl_preco_venda
           ,vl_preco_venda_por
           ,ds_subcategoria
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,fg_produto_composicao
           ,dt_ini_vigencia
           ,hr_ini_vigencia
           ,dt_fim_vigencia
@@ -70,14 +72,15 @@ with cte_base as (
           ,a.cd_codigo_barras
           ,a.nm_produto
           ,a.ds_variacao
-          ,coalesce(a.vl_custo_compra, 0)     as vl_custo_compra
-          ,coalesce(a.vl_custo_total, 0)      as vl_custo_total
-          ,coalesce(a.vl_preco_venda, 0)      as vl_preco_venda
-          ,coalesce(a.vl_preco_venda_por, 0)  as vl_preco_venda_por
+          ,coalesce(a.vl_custo_cadastro, 0)      as vl_custo_cadastro
+          ,coalesce(a.vl_custo_ultima_compra, 0) as vl_custo_ultima_compra
+          ,coalesce(a.vl_preco_venda, 0)         as vl_preco_venda
+          ,coalesce(a.vl_preco_venda_por, 0)     as vl_preco_venda_por
           ,a.ds_subcategoria
           ,a.ds_categoria
           ,a.ds_classificacao_produto
           ,a.ds_origem_produto
+          ,a.fg_produto_composicao
           ,a.dt_ini_vigencia
           ,a.hr_ini_vigencia
           ,a.dt_fim_vigencia
@@ -85,9 +88,12 @@ with cte_base as (
           ,a.dt_ultima_atualizacao
           ,a.nr_linha
           ,if(b.cd_produto_bling is not null, true, false)                                                                          as fg_alteracao
-          ,lag(a.vl_preco_venda)     over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_preco_anterior
-          ,lag(a.vl_preco_venda_por) over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_preco_por_anterior
-          ,lag(a.vl_custo_total)     over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_custo_anterior
+
+          ,lag(a.vl_preco_venda)         over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_preco_anterior
+          ,lag(a.vl_preco_venda_por)     over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_preco_por_anterior
+          ,lag(a.vl_custo_cadastro)      over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_custo_cadastro_anterior
+          ,lag(a.vl_custo_ultima_compra) over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_custo_ultima_compra_anterior
+
      from cte_snapshot         as a
 left join cte_produtos_mudanca as b
        on a.cd_produto_bling = b.cd_produto_bling

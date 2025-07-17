@@ -64,6 +64,7 @@ left join cte_item_compra   as b
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,fg_produto_composicao
       from {{ ref('tb_produto') }}
 )
 
@@ -91,6 +92,7 @@ left join cte_item_compra   as b
           ,b.ds_categoria
           ,b.ds_classificacao_produto
           ,b.ds_origem_produto
+          ,b.fg_produto_composicao
      from cte_compra_base        as a
 left join cte_produto            as b
        on a.cd_produto_bling = b.cd_produto_bling
@@ -146,6 +148,7 @@ left join cte_produto            as b
           ,a.ds_categoria
           ,a.ds_classificacao_produto
           ,a.ds_origem_produto
+          ,a.fg_produto_composicao
           ,b.lk_produto_compra
      from cte_base         as a
 left join cte_link_produto as b

@@ -27,6 +27,7 @@ with cte_compra as (
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,fg_produto_composicao
           ,lk_produto_compra
      from {{ ref('tb_compra') }}
 )
@@ -48,6 +49,7 @@ with cte_compra as (
           ,cd_compra
           ,dt_compra
           ,ds_status_compra
+          ,fg_produto_composicao
           ,lk_produto_compra
           ,row_number() over (partition by cd_produto_bling order by dt_compra desc) as nr_seq
       from cte_compra
