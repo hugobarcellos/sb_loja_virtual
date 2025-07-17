@@ -100,7 +100,6 @@ with cte_produto as (
           ,a.ds_categoria
           ,b.ds_classificacao_produto
           ,b.ds_origem_produto
-          ,b.vl_alteracao_preco
           ,a.ds_situacao
           ,a.dm_altura
           ,a.dm_largura

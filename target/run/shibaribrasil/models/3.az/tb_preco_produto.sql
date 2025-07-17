@@ -56,6 +56,14 @@ with cte_produto as (
     where nm_forma_pagamento in ('[Nuvem] Cartão de Crédito', '[Nuvem] PIX')
 )
 
+, cte_compra_produto as (
+    select cd_produto_bling
+          ,cd_produto
+          ,vl_item
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_compra_produto`
+     where nr_seq = 1
+)
+
 , cte_joins as (
     select distinct
            a.cd_produto_bling
@@ -64,8 +72,8 @@ with cte_produto as (
           ,a.nm_produto
           ,a.ds_variacao
           ,a.qt_estoque_atual
-          ,coalesce(a.vl_custo_compra, 0)     as vl_custo_compra
-          ,coalesce(a.vl_custo_total, 0)      as vl_custo_total
+          ,coalesce(a.vl_custo_total, 0)      as vl_custo_cadastro
+          ,coalesce(c.vl_item, 0)             as vl_custo_ultima_compra
           ,coalesce(a.vl_preco_venda, 0)      as vl_preco_venda
           ,coalesce(a.vl_preco_venda_por, 0)  as vl_preco_venda_por
           ,a.ds_subcategoria
@@ -84,10 +92,12 @@ with cte_produto as (
           ,2.50                                                                                                              as vl_materiais_envio
           ,a.dt_ultima_ingestao
           ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
-     from cte_produto     as a
-left join cte_meta_margem as b
+     from cte_produto        as a
+left join cte_meta_margem    as b
        on a.ds_classificacao_produto = b.ds_classificacao_produto
       and a.ds_origem_produto = b.ds_origem_produto
+left join cte_compra_produto as c
+       on a.cd_produto_bling = c.cd_produto_bling
 )
 
   select *

@@ -33,7 +33,7 @@ with cte_base as (
           ,coalesce(time(dbt_valid_to, "America/Sao_Paulo"), time(dbt_updated_at, "America/Sao_Paulo"))     as hr_fim_vigencia
           ,datetime(dbt_updated_at, "America/Sao_Paulo")                                                    as dt_ultima_atualizacao
      from `igneous-sandbox-381622`.`snapshots`.`snapshot_preco_custo_produto`
-    where concat(date(dbt_valid_from, "America/Sao_Paulo"), ' ', time(dbt_valid_from, "America/Sao_Paulo")) not in ('2025-07-16 16:57:12.010830') --reprocessamento para incremento de coluna
+    -- where concat(date(dbt_valid_from, "America/Sao_Paulo"), ' ', time(dbt_valid_from, "America/Sao_Paulo")) not in ('2025-07-16 16:57:12.010830') --reprocessamento para incremento de coluna
 )
 
 , cte_snapshot as (
