@@ -14,7 +14,9 @@ with cte_base as (
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,fg_produto_base_composicao
           ,fg_produto_composicao
+          ,dt_ultima_compra
           ,date(dbt_valid_from, "America/Sao_Paulo")                                                        as dt_ini_vigencia
           ,time(dbt_valid_from, "America/Sao_Paulo")                                                        as hr_ini_vigencia
           ,coalesce(date(dbt_valid_to, "America/Sao_Paulo"), date(dbt_updated_at, "America/Sao_Paulo"))     as dt_fim_vigencia
@@ -38,7 +40,9 @@ with cte_base as (
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,fg_produto_base_composicao
           ,fg_produto_composicao
+          ,dt_ultima_compra
           ,dt_ini_vigencia
           ,hr_ini_vigencia
           ,dt_fim_vigencia
@@ -67,14 +71,16 @@ with cte_base as (
           ,a.ds_categoria
           ,a.ds_classificacao_produto
           ,a.ds_origem_produto
+          ,a.fg_produto_base_composicao
           ,a.fg_produto_composicao
+          ,a.dt_ultima_compra
           ,a.dt_ini_vigencia
           ,a.hr_ini_vigencia
           ,a.dt_fim_vigencia
           ,a.hr_fim_vigencia
           ,a.dt_ultima_atualizacao
           ,a.nr_linha
-          ,if(b.cd_produto_bling is not null, true, false)                                                                          as fg_alteracao
+          ,if(b.cd_produto_bling is not null, true, false)                                                                              as fg_alteracao
 
           ,lag(a.vl_preco_venda)         over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_preco_anterior
           ,lag(a.vl_preco_venda_por)     over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_preco_por_anterior

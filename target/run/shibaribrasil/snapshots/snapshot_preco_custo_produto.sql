@@ -45,7 +45,9 @@
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,fg_produto_base_composicao
           ,fg_produto_composicao
+          ,dt_ultima_compra 
      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_preco_produto`
 
     ) sbq

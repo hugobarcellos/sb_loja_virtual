@@ -17,7 +17,9 @@ with cte_base as (
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,fg_produto_base_composicao
           ,fg_produto_composicao
+          ,dt_ultima_compra
           ,date(dbt_valid_from, "America/Sao_Paulo")                                                        as dt_ini_vigencia
           ,time(dbt_valid_from, "America/Sao_Paulo")                                                        as hr_ini_vigencia
           ,coalesce(date(dbt_valid_to, "America/Sao_Paulo"), date(dbt_updated_at, "America/Sao_Paulo"))     as dt_fim_vigencia
@@ -41,7 +43,9 @@ with cte_base as (
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,fg_produto_base_composicao
           ,fg_produto_composicao
+          ,dt_ultima_compra
           ,dt_ini_vigencia
           ,hr_ini_vigencia
           ,dt_fim_vigencia
@@ -70,7 +74,9 @@ with cte_base as (
           ,a.ds_categoria
           ,a.ds_classificacao_produto
           ,a.ds_origem_produto
+          ,a.fg_produto_base_composicao
           ,a.fg_produto_composicao
+          ,a.dt_ultima_compra
           ,a.dt_ini_vigencia
           ,a.hr_ini_vigencia
           ,a.dt_fim_vigencia

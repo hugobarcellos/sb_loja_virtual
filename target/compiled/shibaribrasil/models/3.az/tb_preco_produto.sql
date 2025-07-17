@@ -48,8 +48,14 @@ with cte_produto as (
     select cd_produto_bling
           ,cd_produto
           ,vl_item
+          ,dt_compra
       from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_compra_produto`
      where nr_seq = 1
+)
+
+, cte_produto_base_kit as (
+    select distinct cd_produto_bling_componente
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_composicao_produto`
 )
 
 , cte_joins as (
@@ -70,6 +76,7 @@ with cte_produto as (
           ,a.ds_origem_produto
           ,a.ds_tipo_produto
           ,a.fg_produto_composicao
+          ,if(d.cd_produto_bling_componente is null, false, true)                                                            as fg_produto_base_composicao
           ,coalesce(b.pr_desconto_padrao, 0)                                                                                 as pr_desconto_padrao 
           ,coalesce(b.pr_meta_margem, 0)                                                                                     as pr_meta_margem 
           ,(select (vl_taxa_aliquota / 100) from cte_forma_pagamento where nm_forma_pagamento = '[Nuvem] Cartão de Crédito') as tx_aliquota_cartao
@@ -79,6 +86,7 @@ with cte_produto as (
           ,0.03                                                                                                              as vl_desconto_fixo_pix
           --valor aproximado de materiais de envio por pedido
           ,2.50                                                                                                              as vl_materiais_envio
+          ,c.dt_compra                                                                                                       as dt_ultima_compra
           ,a.dt_ultima_ingestao
           ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
      from cte_produto        as a
@@ -87,6 +95,8 @@ left join cte_meta_margem    as b
       and a.ds_origem_produto = b.ds_origem_produto
 left join cte_compra_produto as c
        on a.cd_produto_bling = c.cd_produto_bling
+left join cte_produto_base_kit as d
+       on a.cd_produto_bling = d.cd_produto_bling_componente
 )
 
   select *

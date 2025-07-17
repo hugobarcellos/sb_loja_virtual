@@ -68,7 +68,7 @@ with cte_produto as (
      where seq_imagem = 1
 )
 
-, cte_join_campos_imagens as (
+, cte_joins as (
     select distinct
            a.cd_produto_bling
           ,a.cd_produto
@@ -104,9 +104,9 @@ with cte_produto as (
  left join cte_campos_customizados    as b
         on a.cd_produto_bling = b.cd_produto_bling 
  left join cte_imagem_produto         as c
-        on a.cd_produto_bling = c.cd_produto_bling     
+        on a.cd_produto_bling = c.cd_produto_bling      
 )
 
   select *
-    from cte_join_campos_imagens
+    from cte_joins
 order by nm_produto_completo
