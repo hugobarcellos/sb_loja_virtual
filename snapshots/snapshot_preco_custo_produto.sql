@@ -26,6 +26,6 @@
           ,fg_produto_base_composicao
           ,fg_produto_composicao
           ,dt_ultima_compra 
-     from {{ ref('tb_preco_produto') }}
+     from {{ ref('tb_preco_produto_base') }}
 
 {% endsnapshot %}
