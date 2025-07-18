@@ -120,7 +120,7 @@ with cte_preco as (
 )
 
   select *
-    from cte_preco
+    from cte_base
 order by nm_produto
         ,ds_variacao
     );

@@ -147,3 +147,3411 @@ order by nm_produto
 [0m16:23:30.816277 [debug] [MainThread]: Command `dbt run` succeeded at 16:23:30.816277 after 16.19 seconds
 [0m16:23:30.817282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B07D85430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B0B36D2B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B0B630F70>]}
 [0m16:23:30.817282 [debug] [MainThread]: Flushing usage events
+[0m16:27:50.497744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D2B62430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D1AEC2E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D1AEC760>]}
+
+
+============================== 16:27:50.500748 | dc8a73e5-5ec2-4754-b615-b5acc3d9c67b ==============================
+[0m16:27:50.500748 [info ] [MainThread]: Running with dbt=1.7.4
+[0m16:27:50.501710 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Git\\sb_loja_virtual', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'C:\\Git\\sb_loja_virtual\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --models tb_preco_produto', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:27:51.053051 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'dc8a73e5-5ec2-4754-b615-b5acc3d9c67b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D1ADCAF0>]}
+[0m16:27:51.112568 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'dc8a73e5-5ec2-4754-b615-b5acc3d9c67b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D60EA880>]}
+[0m16:27:51.113566 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m16:27:51.119570 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m16:27:51.196691 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:27:51.196691 [debug] [MainThread]: Partial parsing: updated file: shibaribrasil://models\3.az\tb_preco_produto.sql
+[0m16:27:51.297544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'dc8a73e5-5ec2-4754-b615-b5acc3d9c67b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D66622E0>]}
+[0m16:27:51.309431 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dc8a73e5-5ec2-4754-b615-b5acc3d9c67b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D63DF1F0>]}
+[0m16:27:51.309431 [info ] [MainThread]: Found 28 models, 1 snapshot, 14 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m16:27:51.310432 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dc8a73e5-5ec2-4754-b615-b5acc3d9c67b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D63DF190>]}
+[0m16:27:51.311477 [info ] [MainThread]: 
+[0m16:27:51.312432 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m16:27:51.313579 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622'
+[0m16:27:51.314586 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:27:52.158871 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622_dbt_dw_az'
+[0m16:27:52.161357 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:27:52.163459 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622_snapshots'
+[0m16:27:52.164455 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:27:52.803210 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_igneous-sandbox-381622_snapshots, now list_igneous-sandbox-381622_dbt_dw_stg)
+[0m16:27:52.806198 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_igneous-sandbox-381622_dbt_dw_az, now list_igneous-sandbox-381622_dbt_dw_dw)
+[0m16:27:52.807193 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:27:52.814145 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:27:53.492078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dc8a73e5-5ec2-4754-b615-b5acc3d9c67b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D64FB7F0>]}
+[0m16:27:53.494033 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m16:27:53.495133 [info ] [MainThread]: 
+[0m16:27:53.502905 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_preco_produto
+[0m16:27:53.504931 [info ] [Thread-1  ]: 1 of 1 START sql table model dbt_dw_az.tb_preco_produto ........................ [RUN]
+[0m16:27:53.506935 [debug] [Thread-1  ]: Acquiring new bigquery connection 'model.shibaribrasil.tb_preco_produto'
+[0m16:27:53.507930 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_preco_produto
+[0m16:27:53.525922 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_preco_produto"
+[0m16:27:53.526922 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_preco_produto (compile): 16:27:53.507930 => 16:27:53.526922
+[0m16:27:53.527937 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_preco_produto
+[0m16:27:53.547918 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m16:27:54.178968 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_preco_produto"
+[0m16:27:54.180888 [debug] [Thread-1  ]: On model.shibaribrasil.tb_preco_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_preco_produto"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_preco_produto`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_preco as (
+    select distinct
+           cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,ds_variacao
+          ,qt_estoque_atual
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
+          ,vl_preco_venda
+          ,vl_preco_venda_por
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,ds_tipo_produto
+          ,fg_produto_composicao
+          ,fg_produto_base_composicao
+          ,fg_produto_fabricado
+          ,pr_desconto_padrao 
+          ,pr_meta_margem 
+          ,tx_aliquota_cartao
+          ,tx_fixa_cartao
+          ,tx_aliquota_pix
+          ,vl_desconto_fixo_pix
+          ,vl_materiais_envio
+          ,dt_ultima_compra
+          ,dt_ultima_ingestao
+          ,dt_ultima_atualizacao
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_preco_produto_base` 
+)
+
+, cte_hist as (
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,ds_variacao
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
+          ,vl_preco_venda
+          ,vl_preco_venda_por
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,fg_produto_base_composicao
+          ,fg_produto_composicao
+          ,dt_ultima_compra
+          ,dt_ini_vigencia
+          ,hr_ini_vigencia
+          ,dt_fim_vigencia
+          ,hr_fim_vigencia
+          ,dt_ultima_atualizacao
+          ,nr_linha
+          ,fg_alteracao
+          ,vl_custo_cadastro_anterior
+          ,vl_custo_ultima_compra_anterior
+          ,vl_preco_anterior
+          ,vl_preco_por_anterior
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_hist_preco_custo_produto` 
+    where nr_linha = 1
+)
+
+, cte_base as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.ds_variacao
+          ,a.qt_estoque_atual
+          ,a.vl_custo_cadastro
+          ,a.vl_custo_ultima_compra
+          ,a.vl_preco_venda
+          ,a.vl_preco_venda_por
+          ,b.vl_custo_cadastro_anterior
+          ,b.vl_custo_ultima_compra_anterior
+          ,b.vl_preco_anterior
+          ,b.vl_preco_por_anterior
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,a.ds_classificacao_produto
+          ,a.ds_origem_produto
+          ,a.ds_tipo_produto
+          ,a.fg_produto_composicao
+          ,a.fg_produto_base_composicao
+          ,a.fg_produto_fabricado
+          ,b.fg_alteracao
+          ,a.pr_desconto_padrao 
+          ,a.pr_meta_margem 
+          ,a.tx_aliquota_cartao
+          ,a.tx_fixa_cartao
+          ,a.tx_aliquota_pix
+          ,a.vl_desconto_fixo_pix
+          ,a.vl_materiais_envio
+          ,b.dt_ini_vigencia
+          ,a.dt_ultima_compra
+          ,a.dt_ultima_ingestao
+          ,a.dt_ultima_atualizacao
+      from cte_preco as a
+ left join cte_hist  as b 
+        on a.cd_produto_bling = b.cd_produto_bling
+)
+
+  select *
+    from cte_base
+order by nm_produto
+        ,ds_variacao
+    );
+  
+[0m16:27:54.616420 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:3845b2ed-2099-47cb-b669-2a987866755b&page=queryresults
+[0m16:27:57.370212 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_preco_produto (execute): 16:27:53.528928 => 16:27:57.370212
+[0m16:27:57.371289 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dc8a73e5-5ec2-4754-b615-b5acc3d9c67b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D66C3AF0>]}
+[0m16:27:57.371289 [info ] [Thread-1  ]: 1 of 1 OK created sql table model dbt_dw_az.tb_preco_produto ................... [[32mCREATE TABLE (353.0 rows, 104.3 KiB processed)[0m in 3.87s]
+[0m16:27:57.372389 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_preco_produto
+[0m16:27:57.374509 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:27:57.374509 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622' was properly closed.
+[0m16:27:57.374509 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622_dbt_dw_dw' was properly closed.
+[0m16:27:57.374509 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622_dbt_dw_stg' was properly closed.
+[0m16:27:57.375531 [debug] [MainThread]: Connection 'model.shibaribrasil.tb_preco_produto' was properly closed.
+[0m16:27:57.375531 [info ] [MainThread]: 
+[0m16:27:57.375531 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 6.06 seconds (6.06s).
+[0m16:27:57.376543 [debug] [MainThread]: Command end result
+[0m16:27:57.384547 [info ] [MainThread]: 
+[0m16:27:57.384547 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:27:57.385595 [info ] [MainThread]: 
+[0m16:27:57.386538 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m16:27:57.387540 [debug] [MainThread]: Command `dbt run` succeeded at 16:27:57.387540 after 6.94 seconds
+[0m16:27:57.387540 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D2B62430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D66CCF40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D64F0100>]}
+[0m16:27:57.387540 [debug] [MainThread]: Flushing usage events
+[0m17:00:04.032828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023330A33430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002332F9A59D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002332F9A5B80>]}
+
+
+============================== 17:00:04.036947 | 9c9222bc-92c0-471d-bd50-46a2621f7028 ==============================
+[0m17:00:04.036947 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:00:04.037499 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Git\\sb_loja_virtual\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Git\\sb_loja_virtual', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --exclude tag:snaps', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:00:04.644088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333401AA30>]}
+[0m17:00:04.713088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333409E850>]}
+[0m17:00:04.714088 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m17:00:04.723119 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:00:04.806762 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:00:04.807761 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:00:04.811757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023334396490>]}
+[0m17:00:04.822768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023334379F10>]}
+[0m17:00:04.822768 [info ] [MainThread]: Found 28 models, 1 snapshot, 14 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m17:00:04.824119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023334379E80>]}
+[0m17:00:04.826125 [info ] [MainThread]: 
+[0m17:00:04.826491 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m17:00:04.828130 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622'
+[0m17:00:04.829146 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:00:04.829146 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622'
+[0m17:00:04.830144 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:00:05.626971 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:00:06.337352 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622_dbt_dw_dw'
+[0m17:00:06.338327 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:00:06.366336 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622_snapshots'
+[0m17:00:06.366336 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:00:07.009574 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_igneous-sandbox-381622_snapshots, now list_igneous-sandbox-381622_dbt_dw_az)
+[0m17:00:07.009574 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:00:07.042338 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_igneous-sandbox-381622_dbt_dw_dw, now list_igneous-sandbox-381622_dbt_dw_stg)
+[0m17:00:07.042338 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:00:07.859340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023334147730>]}
+[0m17:00:07.861335 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m17:00:07.862348 [info ] [MainThread]: 
+[0m17:00:07.873344 [debug] [Thread-1  ]: Began running node model.shibaribrasil.stg_campo_customizado_produto
+[0m17:00:07.876333 [debug] [Thread-2  ]: Began running node model.shibaribrasil.stg_categoria_produto
+[0m17:00:07.875341 [info ] [Thread-1  ]: 1 of 27 START sql view model dbt_dw_stg.stg_campo_customizado_produto .......... [RUN]
+[0m17:00:07.892297 [debug] [Thread-1  ]: Acquiring new bigquery connection 'model.shibaribrasil.stg_campo_customizado_produto'
+[0m17:00:07.893334 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.stg_campo_customizado_produto
+[0m17:00:07.904340 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.stg_campo_customizado_produto"
+[0m17:00:07.890330 [info ] [Thread-2  ]: 2 of 27 START sql view model dbt_dw_stg.stg_categoria_produto .................. [RUN]
+[0m17:00:07.905352 [debug] [Thread-2  ]: Acquiring new bigquery connection 'model.shibaribrasil.stg_categoria_produto'
+[0m17:00:07.905352 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.stg_categoria_produto
+[0m17:00:07.909328 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.stg_categoria_produto"
+[0m17:00:07.911286 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_campo_customizado_produto (compile): 17:00:07.894335 => 17:00:07.910339
+[0m17:00:07.912308 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.stg_campo_customizado_produto
+[0m17:00:07.927334 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_categoria_produto (compile): 17:00:07.906346 => 17:00:07.927334
+[0m17:00:07.928414 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.stg_categoria_produto
+[0m17:00:07.947880 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.stg_campo_customizado_produto"
+[0m17:00:07.948883 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.stg_categoria_produto"
+[0m17:00:07.950887 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m17:00:07.952883 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m17:00:07.954882 [debug] [Thread-2  ]: On model.shibaribrasil.stg_categoria_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_categoria_produto"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_categoria_produto`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_categoria as (
+   select nullif(trim(id), '')                                                                     as cd_categoria
+         ,nullif(trim(descricao), '')                                                              as nm_categoria
+         ,nullif(nullif(trim(categoria_pai__id), ''),'0')                                          as cd_categoria_pai
+         ,if(nullif(nullif(trim(categoria_pai__id), ''),'0') is null, 'CATEGORIA', 'SUBCATEGORIA') as ds_tipo_categoria
+     from `igneous-sandbox-381622`.`datalake_bling`.`categorias_produtos`
+)
+
+select *
+  from cte_categoria;
+
+
+[0m17:00:07.976931 [debug] [Thread-1  ]: On model.shibaribrasil.stg_campo_customizado_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_campo_customizado_produto"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_campo_customizado_produto`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_campo as (
+    select trim(a.id)                                         as cd_produto_bling
+          ,nullif(trim(replace(a.codigo, '.', '')), '')       as cd_produto
+          ,a.campos_customizados                              as js_campos
+      from `igneous-sandbox-381622`.`datalake_bling`.`produtos_detalhes`  as a
+)
+
+, cte_campo_expandido as (
+  select cd_produto_bling
+        ,cd_produto
+        ,json_element
+    from cte_campo,
+  unnest(json_extract_array(js_campos)) as json_element
+)
+
+, cte_campo_expandido_base as (
+    select a.cd_produto_bling
+          ,a.cd_produto
+          ,cast(json_value(a.json_element, '$.idCampoCustomizado') as string)  as cd_campo_customizado
+          ,cast(json_value(a.json_element, '$.idVinculo') as string)           as cd_vinculo
+          ,cast(json_value(a.json_element, '$.valor') as string)               as cd_valor
+          ,cast(json_value(a.json_element, '$.item') as string)                as ds_valor_campo
+      from cte_campo_expandido as a
+)
+
+, cte_campo_base as (
+  select cd_produto_bling
+        ,cd_produto
+        -- Pivoteia os campos
+        ,max(if(cd_campo_customizado = '3435243', ds_valor_campo, null)) as ds_classificacao_produto
+        ,max(if(cd_campo_customizado = '3437664', ds_valor_campo, null)) as ds_origem_produto
+        ,max(if(cd_campo_customizado = '3437920', cd_valor, null))       as vl_alteracao_preco
+
+        
+    from cte_campo_expandido_base
+group by cd_produto_bling, cd_produto
+)
+
+  select cd_produto_bling
+        ,cd_produto
+        ,ds_classificacao_produto
+        ,ds_origem_produto
+        ,cast(replace(vl_alteracao_preco, ',', '.') as float64) vl_alteracao_preco
+   from cte_campo_base;
+
+
+[0m17:00:08.703995 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:b92d77df-fbc5-49f6-be7e-f578a4474f2d&page=queryresults
+[0m17:00:08.715864 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:094c3ce9-9145-4048-9e05-ece2938bc5a7&page=queryresults
+[0m17:00:09.151771 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_categoria_produto (execute): 17:00:07.928414 => 17:00:09.151771
+[0m17:00:09.152753 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023334379E80>]}
+[0m17:00:09.155774 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_campo_customizado_produto (execute): 17:00:07.912308 => 17:00:09.155774
+[0m17:00:09.155774 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333549D940>]}
+[0m17:00:09.153753 [info ] [Thread-2  ]: 2 of 27 OK created sql view model dbt_dw_stg.stg_categoria_produto ............. [[32mCREATE VIEW (0 processed)[0m in 1.25s]
+[0m17:00:09.156775 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.stg_categoria_produto
+[0m17:00:09.157778 [debug] [Thread-2  ]: Began running node model.shibaribrasil.stg_composicao_produto
+[0m17:00:09.156775 [info ] [Thread-1  ]: 1 of 27 OK created sql view model dbt_dw_stg.stg_campo_customizado_produto ..... [[32mCREATE VIEW (0 processed)[0m in 1.26s]
+[0m17:00:09.158753 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.stg_campo_customizado_produto
+[0m17:00:09.159756 [debug] [Thread-1  ]: Began running node model.shibaribrasil.stg_compra
+[0m17:00:09.157778 [info ] [Thread-2  ]: 3 of 27 START sql view model dbt_dw_stg.stg_composicao_produto ................. [RUN]
+[0m17:00:09.161755 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_categoria_produto, now model.shibaribrasil.stg_composicao_produto)
+[0m17:00:09.161755 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.stg_composicao_produto
+[0m17:00:09.160761 [info ] [Thread-1  ]: 4 of 27 START sql view model dbt_dw_stg.stg_compra ............................. [RUN]
+[0m17:00:09.164756 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_campo_customizado_produto, now model.shibaribrasil.stg_compra)
+[0m17:00:09.164756 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.stg_compra
+[0m17:00:09.168761 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.stg_compra"
+[0m17:00:09.172773 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.stg_composicao_produto"
+[0m17:00:09.173760 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_compra (compile): 17:00:09.165756 => 17:00:09.172773
+[0m17:00:09.173760 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.stg_compra
+[0m17:00:09.175782 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.stg_compra"
+[0m17:00:09.176758 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_composicao_produto (compile): 17:00:09.162753 => 17:00:09.176758
+[0m17:00:09.176758 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.stg_composicao_produto
+[0m17:00:09.178753 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.stg_composicao_produto"
+[0m17:00:09.179753 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:09.181763 [debug] [Thread-1  ]: On model.shibaribrasil.stg_compra: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_compra"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_compra`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_compra as (
+  select nullif(trim(id), '')                                   as cd_codigo_interno
+        ,nullif(trim(numero), '')                               as cd_compra
+        ,nullif(trim(data), '')                                 as dt_compra
+        ,nullif(nullif(trim(data_prevista), ''), '0000-00-00')  as dt_prevista_compra
+        ,nullif(trim(fornecedor__id), '')                       as cd_fornecedor
+        ,nullif(trim(total_produtos), '')                       as vl_total_item
+        ,nullif(trim(total), '')                                as vl_total_compra
+        ,nullif(trim(situacao__valor), '')                      as cd_situacao_valor
+    from `igneous-sandbox-381622`.`datalake_bling`.`pedidos_compras`
+)
+
+, cte_tratamentos_compra as (
+  select cd_codigo_interno                                as cd_codigo_interno
+        ,cd_compra                                        as cd_compra
+        ,cast(dt_compra as date)                          as dt_compra
+        ,cast(dt_prevista_compra as date)                 as dt_prevista_compra
+        ,cd_fornecedor                                    as cd_fornecedor
+        ,vl_total_item                                    as vl_total_item
+        ,vl_total_compra                                  as vl_total_compra
+        ,case
+          when cd_situacao_valor = '2' then 'CANCELADO'
+          when cd_situacao_valor = '1' then 'ATENDIDO' 
+          when cd_situacao_valor = '0' then 'EM ABERTO'
+          else null                                      end ds_status_compra
+    from cte_compra 
+)
+
+select *
+  from cte_tratamentos_compra;
+
+
+[0m17:00:09.203753 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:09.205852 [debug] [Thread-2  ]: On model.shibaribrasil.stg_composicao_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_composicao_produto"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_composicao_produto`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_composicao as (
+    select trim(a.id)                                         as cd_produto_bling
+          ,nullif(trim(replace(a.codigo, '.', '')), '')       as cd_produto
+          ,a.estrutura__componentes                           as js_componentes
+      from `igneous-sandbox-381622`.`datalake_bling`.`produtos_detalhes`  as a
+)
+
+, cte_componentes_expandido as (
+  select cd_produto_bling
+        ,cd_produto
+        ,json_element
+    from cte_composicao,
+  unnest(json_extract_array(js_componentes)) as json_element
+)
+
+, cte_componentes_expandido_base as (
+    select a.cd_produto_bling
+          ,a.cd_produto
+          ,cast(json_value(a.json_element, '$.produto.id') as string)      as cd_produto_bling_componente
+          ,cast(json_value(a.json_element, '$.quantidade') as int64)       as qt_componente
+      from cte_componentes_expandido as a
+)
+
+select *
+  from cte_componentes_expandido_base;
+
+
+[0m17:00:09.938132 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:ade96062-db74-4552-a036-7c861febb873&page=queryresults
+[0m17:00:10.031404 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:e80fdd7c-256e-48f9-8113-f787acfaf4ee&page=queryresults
+[0m17:00:10.338292 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_composicao_produto (execute): 17:00:09.176758 => 17:00:10.338292
+[0m17:00:10.340187 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023333FF0C10>]}
+[0m17:00:10.341186 [info ] [Thread-2  ]: 3 of 27 OK created sql view model dbt_dw_stg.stg_composicao_produto ............ [[32mCREATE VIEW (0 processed)[0m in 1.18s]
+[0m17:00:10.343550 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.stg_composicao_produto
+[0m17:00:10.344550 [debug] [Thread-2  ]: Began running node model.shibaribrasil.stg_forma_pagamento
+[0m17:00:10.345547 [info ] [Thread-2  ]: 5 of 27 START sql view model dbt_dw_stg.stg_forma_pagamento .................... [RUN]
+[0m17:00:10.346548 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_composicao_produto, now model.shibaribrasil.stg_forma_pagamento)
+[0m17:00:10.347548 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.stg_forma_pagamento
+[0m17:00:10.357182 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.stg_forma_pagamento"
+[0m17:00:10.359177 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_forma_pagamento (compile): 17:00:10.347548 => 17:00:10.358123
+[0m17:00:10.360126 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.stg_forma_pagamento
+[0m17:00:10.364170 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.stg_forma_pagamento"
+[0m17:00:10.365180 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:10.367169 [debug] [Thread-2  ]: On model.shibaribrasil.stg_forma_pagamento: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_forma_pagamento"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_forma_pagamento`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_forma_pagamento as (
+   select nullif(trim(id), '')                                                          as cd_forma_pagamento
+         ,nullif(trim(descricao), '')                                                   as nm_forma_pagamento
+         ,nullif(trim(condicao), '')                                                    as ds_condicao_pagamento
+         ,cast(taxas__prazo as float64)                                                 as qt_dias_pagamento
+         ,cast(taxas__aliquota as float64)                                              as vl_taxa_aliquota
+         ,cast(taxas__valor as float64)                                                 as vl_taxa_fixa
+     from `igneous-sandbox-381622`.`datalake_bling`.`formas_pagamentos_detalhes`
+)
+
+select *
+  from cte_forma_pagamento;
+
+
+[0m17:00:10.407999 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_compra (execute): 17:00:09.173760 => 17:00:10.407999
+[0m17:00:10.409958 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023335420340>]}
+[0m17:00:10.410984 [info ] [Thread-1  ]: 4 of 27 OK created sql view model dbt_dw_stg.stg_compra ........................ [[32mCREATE VIEW (0 processed)[0m in 1.25s]
+[0m17:00:10.411912 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.stg_compra
+[0m17:00:10.412955 [debug] [Thread-1  ]: Began running node model.shibaribrasil.stg_imagem_produto
+[0m17:00:10.413956 [info ] [Thread-1  ]: 6 of 27 START sql view model dbt_dw_stg.stg_imagem_produto ..................... [RUN]
+[0m17:00:10.414956 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_compra, now model.shibaribrasil.stg_imagem_produto)
+[0m17:00:10.415959 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.stg_imagem_produto
+[0m17:00:10.422037 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.stg_imagem_produto"
+[0m17:00:10.424048 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_imagem_produto (compile): 17:00:10.416957 => 17:00:10.424048
+[0m17:00:10.424913 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.stg_imagem_produto
+[0m17:00:10.429041 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.stg_imagem_produto"
+[0m17:00:10.429946 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:10.431982 [debug] [Thread-1  ]: On model.shibaribrasil.stg_imagem_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_imagem_produto"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_imagem_produto`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_imagem as (
+    select trim(a.id)                                         as cd_produto_bling
+          ,nullif(trim(replace(a.codigo, '.', '')), '')       as cd_produto
+          ,a.midia__imagens__internas                         as js_imagens
+      from `igneous-sandbox-381622`.`datalake_bling`.`produtos_detalhes`  as a
+)
+
+, cte_imagem_expandido as (
+  select cd_produto_bling
+        ,cd_produto
+        ,json_element
+    from cte_imagem,
+  unnest(json_extract_array(js_imagens)) as json_element
+)
+
+, cte_imagem_expandido_base as (
+    select a.cd_produto_bling
+          ,a.cd_produto
+          ,cast(json_value(a.json_element, '$.link') as string)  as lk_imagem_produto
+      from cte_imagem_expandido as a
+)
+
+  select cd_produto_bling
+        ,cd_produto
+        ,lk_imagem_produto
+        ,row_number() over(partition by cd_produto_bling) as seq_imagem
+   from cte_imagem_expandido_base;
+
+
+[0m17:00:11.074166 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:ca54ae36-6a36-4fc5-9f69-9e42806cb94d&page=queryresults
+[0m17:00:11.144598 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:3d3d89af-29a7-4c3b-a996-9b8cae5a5f2b&page=queryresults
+[0m17:00:11.486049 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_imagem_produto (execute): 17:00:10.424913 => 17:00:11.486049
+[0m17:00:11.488046 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333552C100>]}
+[0m17:00:11.489053 [info ] [Thread-1  ]: 6 of 27 OK created sql view model dbt_dw_stg.stg_imagem_produto ................ [[32mCREATE VIEW (0 processed)[0m in 1.07s]
+[0m17:00:11.490933 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.stg_imagem_produto
+[0m17:00:11.492026 [debug] [Thread-1  ]: Began running node model.shibaribrasil.stg_item_compra
+[0m17:00:11.493047 [info ] [Thread-1  ]: 7 of 27 START sql view model dbt_dw_stg.stg_item_compra ........................ [RUN]
+[0m17:00:11.495020 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_imagem_produto, now model.shibaribrasil.stg_item_compra)
+[0m17:00:11.496016 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.stg_item_compra
+[0m17:00:11.503014 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.stg_item_compra"
+[0m17:00:11.505005 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_item_compra (compile): 17:00:11.497016 => 17:00:11.504008
+[0m17:00:11.505005 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.stg_item_compra
+[0m17:00:11.509003 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.stg_item_compra"
+[0m17:00:11.509919 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:11.512014 [debug] [Thread-1  ]: On model.shibaribrasil.stg_item_compra: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_item_compra"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_item_compra`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_item_base as (
+  select nullif(trim(id), '')                        as cd_codigo_interno
+        ,nullif(trim(numero), '')                    as cd_compra
+        ,nullif(trim(data), '')                      as dt_compra
+        ,nullif(trim(categoria__id), '')             as cd_categoria_financeira
+        ,nullif(trim(observacoes), '')               as ds_observacoes
+        ,itens
+   from `igneous-sandbox-381622`.`datalake_bling`.`pedidos_compras_detalhes`
+)
+
+, cte_itens_json as (
+  select cd_codigo_interno
+        ,cd_compra
+        ,dt_compra
+        ,cd_categoria_financeira
+        ,ds_observacoes
+        ,json_item
+    from cte_item_base,
+  unnest(json_extract_array(itens)) as json_item
+)
+
+, cte_item as (
+   select i.cd_codigo_interno
+         ,i.cd_compra
+         ,i.dt_compra
+         ,i.cd_categoria_financeira
+         ,i.ds_observacoes
+         ,trim(json_value(i.json_item, '$.produto.id'))                 as cd_produto_bling
+         ,replace(trim(json_value(i.json_item, '$.codigo')), '.', '')   as cd_produto
+         ,json_value(i.json_item, '$.descricao')                        as nm_produto_completo
+         ,json_value(i.json_item, '$.unidade')                          as ds_unidade
+         ,cast(json_value(i.json_item, '$.quantidade') as int64)        as qt_item
+         ,cast(json_value(i.json_item, '$.valor') as float64)           as vl_item
+     from cte_itens_json i
+)
+
+   select distinct
+          a.cd_codigo_interno
+         ,a.cd_compra
+         ,a.dt_compra
+         ,a.cd_categoria_financeira
+         ,a.ds_observacoes
+         ,a.cd_produto_bling
+         ,a.cd_produto
+         ,a.nm_produto_completo
+         ,a.ds_unidade
+         ,a.qt_item
+         ,a.vl_item
+     from cte_item               as a;
+
+
+[0m17:00:11.550205 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_forma_pagamento (execute): 17:00:10.360126 => 17:00:11.550205
+[0m17:00:11.551208 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333544B310>]}
+[0m17:00:11.551208 [info ] [Thread-2  ]: 5 of 27 OK created sql view model dbt_dw_stg.stg_forma_pagamento ............... [[32mCREATE VIEW (0 processed)[0m in 1.21s]
+[0m17:00:11.553253 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.stg_forma_pagamento
+[0m17:00:11.553253 [debug] [Thread-2  ]: Began running node model.shibaribrasil.stg_item_pedido
+[0m17:00:11.554271 [info ] [Thread-2  ]: 8 of 27 START sql view model dbt_dw_stg.stg_item_pedido ........................ [RUN]
+[0m17:00:11.555236 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_forma_pagamento, now model.shibaribrasil.stg_item_pedido)
+[0m17:00:11.555236 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.stg_item_pedido
+[0m17:00:11.559260 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.stg_item_pedido"
+[0m17:00:11.559835 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_item_pedido (compile): 17:00:11.555236 => 17:00:11.559835
+[0m17:00:11.559835 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.stg_item_pedido
+[0m17:00:11.562945 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.stg_item_pedido"
+[0m17:00:11.562945 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:11.564948 [debug] [Thread-2  ]: On model.shibaribrasil.stg_item_pedido: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_item_pedido"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_item_pedido`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_item_base as (
+  select nullif(trim(id), '')                                 as cd_codigo_interno
+        ,nullif(trim(data), '')                               as dt_pedido
+        ,nullif(trim(desconto__unidade), '')                  as ds_tipo_desconto
+        ,cast(nullif(trim(desconto__valor), '') as float64)   as vl_desconto
+        ,itens
+        ,parcelas
+   from `igneous-sandbox-381622`.`datalake_bling`.`pedidos_vendas_detalhes`
+)
+
+, cte_itens_json as (
+  select cd_codigo_interno
+        ,dt_pedido
+        ,ds_tipo_desconto
+        ,vl_desconto
+        ,json_item
+    from cte_item_base,
+  unnest(json_extract_array(itens)) as json_item
+)
+
+, cte_parcelas_json as (
+  select cd_codigo_interno
+        ,dt_pedido
+        ,ds_tipo_desconto
+        ,vl_desconto
+        ,json_parcela
+    from cte_item_base,
+  unnest(json_extract_array(parcelas)) as json_parcela
+)
+
+, cte_item as (
+   select i.cd_codigo_interno
+         ,i.dt_pedido
+         ,i.ds_tipo_desconto
+         ,i.vl_desconto
+         ,trim(json_value(i.json_item, '$.produto.id'))                 as cd_produto_bling
+         ,replace(trim(json_value(i.json_item, '$.codigo')), '.', '')   as cd_produto
+         ,json_value(i.json_item, '$.descricao')                        as nm_produto_completo
+         ,cast(json_value(i.json_item, '$.quantidade') as int64)        as qt_item
+         ,cast(json_value(i.json_item, '$.valor') as float64)           as vl_item
+         ,nullif(json_value(p.json_parcela, '$.observacoes'), '')       as ds_forma_pagamento
+     from cte_itens_json i
+left join cte_parcelas_json p
+       on i.cd_codigo_interno = p.cd_codigo_interno
+      and i.dt_pedido = p.dt_pedido
+)
+
+   select distinct
+          a.cd_codigo_interno
+         ,a.dt_pedido
+         ,a.cd_produto_bling                                                         as cd_produto_bling
+         ,a.cd_produto                                                               as cd_produto
+         ,a.nm_produto_completo                                                      as nm_produto_completo
+         ,a.qt_item                                                                  as qt_item
+         ,a.vl_item                                                                  as vl_item
+         ,a.ds_tipo_desconto                                                         as ds_tipo_desconto
+         ,a.vl_desconto                                                              as vl_desconto
+         ,trim(replace(a.ds_forma_pagamento, 'Método de pagamento:', ''))            as ds_forma_pagamento
+     from cte_item               as a;
+
+
+[0m17:00:12.265500 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:493c8a5e-34e5-44af-8434-0bd93707403f&page=queryresults
+[0m17:00:12.323013 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:217d10e2-af8c-48d9-9564-9dc2ffd8ec83&page=queryresults
+[0m17:00:12.656273 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_item_compra (execute): 17:00:11.505965 => 17:00:12.655275
+[0m17:00:12.657274 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333553C070>]}
+[0m17:00:12.658275 [info ] [Thread-1  ]: 7 of 27 OK created sql view model dbt_dw_stg.stg_item_compra ................... [[32mCREATE VIEW (0 processed)[0m in 1.16s]
+[0m17:00:12.660282 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.stg_item_compra
+[0m17:00:12.660282 [debug] [Thread-1  ]: Began running node model.shibaribrasil.stg_meta_margem_preco
+[0m17:00:12.661908 [info ] [Thread-1  ]: 9 of 27 START sql view model dbt_dw_stg.stg_meta_margem_preco .................. [RUN]
+[0m17:00:12.664025 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_item_compra, now model.shibaribrasil.stg_meta_margem_preco)
+[0m17:00:12.664025 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.stg_meta_margem_preco
+[0m17:00:12.669924 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.stg_meta_margem_preco"
+[0m17:00:12.671977 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_meta_margem_preco (compile): 17:00:12.665025 => 17:00:12.670929
+[0m17:00:12.673042 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.stg_meta_margem_preco
+[0m17:00:12.677920 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.stg_meta_margem_preco"
+[0m17:00:12.679923 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:12.682922 [debug] [Thread-1  ]: On model.shibaribrasil.stg_meta_margem_preco: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_meta_margem_preco"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_meta_margem_preco`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_meta as (
+   select trim(ds_classificacao_produto)      as ds_classificacao_produto
+         ,trim(ds_origem_produto)             as ds_origem_produto
+         ,pr_desconto_padrao                  as pr_desconto_padrao 
+         ,pr_meta_margem                      as pr_meta_margem 
+     from `igneous-sandbox-381622`.`datalake_drive`.`drive_meta_margem_preco`
+)
+
+select ds_classificacao_produto
+      ,ds_origem_produto
+      ,pr_desconto_padrao 
+      ,pr_meta_margem 
+  from cte_meta;
+
+
+[0m17:00:12.733292 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_item_pedido (execute): 17:00:11.560887 => 17:00:12.733292
+[0m17:00:12.734292 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023335508C10>]}
+[0m17:00:12.734292 [info ] [Thread-2  ]: 8 of 27 OK created sql view model dbt_dw_stg.stg_item_pedido ................... [[32mCREATE VIEW (0 processed)[0m in 1.18s]
+[0m17:00:12.735316 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.stg_item_pedido
+[0m17:00:12.736296 [debug] [Thread-2  ]: Began running node model.shibaribrasil.stg_pedido
+[0m17:00:12.736296 [info ] [Thread-2  ]: 10 of 27 START sql view model dbt_dw_stg.stg_pedido ............................ [RUN]
+[0m17:00:12.737243 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_item_pedido, now model.shibaribrasil.stg_pedido)
+[0m17:00:12.737243 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.stg_pedido
+[0m17:00:12.741322 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.stg_pedido"
+[0m17:00:12.742294 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_pedido (compile): 17:00:12.737243 => 17:00:12.742294
+[0m17:00:12.743257 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.stg_pedido
+[0m17:00:12.747392 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.stg_pedido"
+[0m17:00:12.748401 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:12.750352 [debug] [Thread-2  ]: On model.shibaribrasil.stg_pedido: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_pedido"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_pedido`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_pedido as (
+  select nullif(trim(id), '')                        as cd_codigo_interno
+        ,nullif(trim(numero), '')                    as cd_pedido
+        ,nullif(trim(data), '')                      as dt_pedido
+        ,nullif(trim(situacao__id), '')              as cd_status
+        ,nullif(trim(total_produtos), '')            as vl_total_item
+        ,nullif(trim(total), '')                     as vl_total_pedido
+        ,nullif(trim(contato__id), '')               as cd_contato
+        ,nullif(trim(contato__nome), '')             as nm_contato
+        ,nullif(trim(contato__numero_documento), '') as nr_doc_contato
+        ,nullif(trim(loja__id), '')                  as cd_loja
+    from `igneous-sandbox-381622`.`datalake_bling`.`pedidos_vendas`
+)
+
+, cte_tratamentos_pedido as (
+  select cd_codigo_interno                      as cd_codigo_interno
+        ,cd_pedido                              as cd_pedido
+        ,dt_pedido                              as dt_pedido
+        ,cd_status                              as cd_status_pedido
+        ,case
+          when cd_status = '6'  then 'EM ABERTO'
+          when cd_status = '12' then 'CANCELADO'
+          when cd_status = '9'  then 'ATENDIDO'
+          else null                            end ds_status_pedido
+        ,cast(vl_total_item as float64)         as vl_total_item
+        ,cast(vl_total_pedido as float64)       as vl_total_pedido
+        ,cd_contato                             as cd_contato
+        ,nm_contato                             as nm_contato
+        ,nr_doc_contato                         as nr_doc_contato
+        ,cd_loja                                as cd_loja
+        ,case
+          when cd_loja = '205060682' then 'Site'
+          else null                            end ds_loja
+    from cte_pedido 
+)
+
+select *
+  from cte_tratamentos_pedido;
+
+
+[0m17:00:13.636754 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:4337573f-56a6-4104-a6e1-cf949e1a4910&page=queryresults
+[0m17:00:13.739262 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:24a2e5a0-eebe-4cda-ac92-1f8e837ae99b&page=queryresults
+[0m17:00:14.051862 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_meta_margem_preco (execute): 17:00:12.673042 => 17:00:14.050841
+[0m17:00:14.052849 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023335420970>]}
+[0m17:00:14.054899 [info ] [Thread-1  ]: 9 of 27 OK created sql view model dbt_dw_stg.stg_meta_margem_preco ............. [[32mCREATE VIEW (0 processed)[0m in 1.39s]
+[0m17:00:14.056842 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.stg_meta_margem_preco
+[0m17:00:14.057898 [debug] [Thread-1  ]: Began running node model.shibaribrasil.stg_produto
+[0m17:00:14.058894 [info ] [Thread-1  ]: 11 of 27 START sql view model dbt_dw_stg.stg_produto ........................... [RUN]
+[0m17:00:14.060864 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_meta_margem_preco, now model.shibaribrasil.stg_produto)
+[0m17:00:14.061903 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.stg_produto
+[0m17:00:14.068573 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.stg_produto"
+[0m17:00:14.070485 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_produto (compile): 17:00:14.061903 => 17:00:14.069582
+[0m17:00:14.071487 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.stg_produto
+[0m17:00:14.075562 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.stg_produto"
+[0m17:00:14.076515 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:14.077527 [debug] [Thread-1  ]: On model.shibaribrasil.stg_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_produto"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_produto`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_produto as (
+   select trim(a.id)                                                               as cd_produto_bling
+         ,nullif(trim(replace(a.codigo, '.', '')), '')                             as cd_produto
+         ,nullif(trim(a.gtin), '')                                                 as cd_codigo_barras
+         ,nullif(trim(a.nome), '')                                                 as nm_produto_completo
+         ,coalesce(cast(nullif(a.dimensoes__altura,'') as float64), 0)             as dm_altura
+         ,coalesce(cast(nullif(a.dimensoes__largura,'') as float64), 0)            as dm_largura
+         ,coalesce(cast(nullif(a.dimensoes__profundidade,'') as float64), 0)       as dm_profundidade
+         ,coalesce(cast(nullif(a.peso_bruto,'') as float64), 0)                    as dm_peso_bruto
+         ,coalesce(cast(nullif(a.peso_liquido,'') as float64), 0)                  as dm_peso_liquido
+         ,coalesce(cast(nullif(a.estoque__minimo,'') as float64), 0)               as qt_estoque_minimo
+         ,coalesce(cast(nullif(a.estoque__saldo_virtual_total,'') as float64), 0)  as qt_estoque_atual
+         ,nullif(a.estrutura__tipo_estoque,'')                                     as ds_tipo_estoque
+         ,cast(nullif(a.fornecedor__preco_compra,'') as float64)                   as vl_custo_compra
+         ,cast(nullif(a.fornecedor__preco_custo,'') as float64)                    as vl_custo_total
+         ,cast(nullif(a.preco,'') as float64)                                      as vl_preco_venda
+         ,nullif(a.situacao,'')                                                    as ds_situacao
+         ,nullif(a.tipo,'')                                                        as ds_tipo
+         ,nullif(a.formato,'')                                                     as ds_formato
+         ,nullif(a.categoria__id,'')                                               as cd_categoria
+         ,nullif(a.descricao_curta,'')                                             as ds_descricao_produto
+         ,nullif(trim(left(b.id_produto_pai,11)), '')                              as cd_produto_bling_pai
+         ,datetime(timestamp(a._erathos_synced_at), "America/Sao_Paulo")           as dt_ultima_ingestao
+     from `igneous-sandbox-381622`.`datalake_bling`.`produtos_detalhes`  as a
+left join `igneous-sandbox-381622`.`datalake_bling`.`produtos`           as b 
+       on trim(a.id) = trim(b.id) 
+)
+
+select *
+  from cte_produto;
+
+
+[0m17:00:14.137640 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_pedido (execute): 17:00:12.743257 => 17:00:14.136641
+[0m17:00:14.138636 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023335453610>]}
+[0m17:00:14.139632 [info ] [Thread-2  ]: 10 of 27 OK created sql view model dbt_dw_stg.stg_pedido ....................... [[32mCREATE VIEW (0 processed)[0m in 1.40s]
+[0m17:00:14.141597 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.stg_pedido
+[0m17:00:14.142589 [debug] [Thread-2  ]: Began running node model.shibaribrasil.stg_produto_fabricado
+[0m17:00:14.142589 [info ] [Thread-2  ]: 12 of 27 START sql view model dbt_dw_stg.stg_produto_fabricado ................. [RUN]
+[0m17:00:14.144606 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_pedido, now model.shibaribrasil.stg_produto_fabricado)
+[0m17:00:14.144606 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.stg_produto_fabricado
+[0m17:00:14.150569 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.stg_produto_fabricado"
+[0m17:00:14.151626 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_produto_fabricado (compile): 17:00:14.145595 => 17:00:14.151626
+[0m17:00:14.152639 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.stg_produto_fabricado
+[0m17:00:14.155672 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.stg_produto_fabricado"
+[0m17:00:14.155672 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:14.157683 [debug] [Thread-2  ]: On model.shibaribrasil.stg_produto_fabricado: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_produto_fabricado"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_produto_fabricado`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_base as (
+   select replace(trim(cd_produto), '.', '')             as cd_produto
+         ,trim(nm_produto_completo)                      as nm_produto_completo
+         ,replace(trim(cd_produto_composicao), '.', '')  as cd_produto_composicao
+         ,trim(nm_produto_completo_composicao)           as nm_produto_completo_composicao
+         ,qt_produto_composicao                          as qt_produto_composicao 
+     from `igneous-sandbox-381622`.`datalake_drive`.`drive_produto_fabricacao_propria`
+    where trim(cd_produto) is not null
+)
+
+select cd_produto
+      ,nm_produto_completo
+      ,cd_produto_composicao 
+      ,nm_produto_completo_composicao 
+      ,qt_produto_composicao 
+  from cte_base;
+
+
+[0m17:00:14.798402 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:76e99d05-d319-4064-8a16-19247467c29b&page=queryresults
+[0m17:00:14.907089 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:7f8ecc81-8dde-4094-98ed-50acda7933a7&page=queryresults
+[0m17:00:15.217723 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_produto (execute): 17:00:14.071487 => 17:00:15.217723
+[0m17:00:15.218720 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233355C3F70>]}
+[0m17:00:15.222719 [info ] [Thread-1  ]: 11 of 27 OK created sql view model dbt_dw_stg.stg_produto ...................... [[32mCREATE VIEW (0 processed)[0m in 1.16s]
+[0m17:00:15.224723 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.stg_produto
+[0m17:00:15.225721 [debug] [Thread-1  ]: Began running node model.shibaribrasil.stg_tempo
+[0m17:00:15.226721 [info ] [Thread-1  ]: 13 of 27 START sql view model dbt_dw_stg.stg_tempo ............................. [RUN]
+[0m17:00:15.228888 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_produto, now model.shibaribrasil.stg_tempo)
+[0m17:00:15.229804 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.stg_tempo
+[0m17:00:15.236791 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.stg_tempo"
+[0m17:00:15.238795 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_tempo (compile): 17:00:15.230791 => 17:00:15.237794
+[0m17:00:15.238795 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.stg_tempo
+[0m17:00:15.244787 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.stg_tempo"
+[0m17:00:15.245789 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:15.247786 [debug] [Thread-1  ]: On model.shibaribrasil.stg_tempo: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.stg_tempo"} */
+
+
+  create or replace view `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_tempo`
+  OPTIONS(
+      description=""""""
+    )
+  as 
+
+with cte_drive as (
+   select cast(dt_data as date)         as dt_data 	
+         ,cast(nr_ano as int64)         as nr_ano	
+         ,cast(nr_mes as int64)         as nr_mes	
+         ,cast(nr_dia as int64)         as nr_dia	
+         ,cast(nr_semana as int64)      as nr_semana	
+         ,cast(dt_prim_dia_mes as date) as dt_prim_dia_mes	
+         ,cast(dt_ult_dia_mes as date)  as dt_ult_dia_mes	
+         ,ds_dia_semana                 as ds_dia_semana	
+         ,ds_dia_semana_abrev           as ds_dia_semana_abreviado	
+         ,ds_mes                        as ds_mes	
+         ,ds_mes_abrev                  as ds_mes_abreviado	
+         ,ds_trimestre                  as ds_trimestre	
+         ,ds_semestre                   as ds_semestre	
+         ,ds_ano_mes                    as ds_ano_mes	
+         ,cast(fg_dia_util as int64)    as fg_dia_util	
+         ,cast(fg_feriado as int64)     as fg_feriado	
+         ,ds_feriado                    as ds_feriado 
+     from `igneous-sandbox-381622`.`datalake_drive`.`drive_tempo` 
+)
+
+select *
+  from cte_drive;
+
+
+[0m17:00:15.303274 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.stg_produto_fabricado (execute): 17:00:14.152639 => 17:00:15.303274
+[0m17:00:15.304264 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233355BC2B0>]}
+[0m17:00:15.305253 [info ] [Thread-2  ]: 12 of 27 OK created sql view model dbt_dw_stg.stg_produto_fabricado ............ [[32mCREATE VIEW (0 processed)[0m in 1.16s]
+[0m17:00:15.307253 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.stg_produto_fabricado
+[0m17:00:15.307253 [debug] [Thread-2  ]: Began running node model.shibaribrasil.dm_produto
+[0m17:00:15.308257 [info ] [Thread-2  ]: 14 of 27 START sql table model dbt_dw_dw.dm_produto ............................ [RUN]
+[0m17:00:15.309248 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_produto_fabricado, now model.shibaribrasil.dm_produto)
+[0m17:00:15.310166 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.dm_produto
+[0m17:00:15.314264 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.dm_produto"
+[0m17:00:15.315252 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.dm_produto (compile): 17:00:15.310166 => 17:00:15.315252
+[0m17:00:15.315252 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.dm_produto
+[0m17:00:15.322261 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:15.962574 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:33d6ba96-9e01-441e-921d-31128eea4682&page=queryresults
+[0m17:00:15.995132 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.dm_produto"
+[0m17:00:15.996132 [debug] [Thread-2  ]: On model.shibaribrasil.dm_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.dm_produto"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_dw`.`dm_produto`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_produto as (
+   select *
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_produto`as a
+)
+
+-- cte para tratamentos gerais nos campos de tipo de produto e tipo de estoque
+, cte_tratamentos as (
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto_completo
+          ,case 
+            when ds_formato = 'S' and cd_produto_bling_pai is null then 'SIMPLES'
+            when ds_formato = 'V' and cd_produto_bling_pai is null then 'PAI'
+            when cd_produto_bling_pai is not null then 'FILHO'
+            else 'SIMPLES'                                   end ds_tipo_produto
+          ,cd_produto_bling_pai
+          ,case when ds_formato = 'E' then true else false   end fg_produto_composicao
+          ,if(ds_tipo_estoque = 'V' or ds_formato = 'E', 'VIRTUAL', 'FISICO') as ds_tipo_estoque
+          ,qt_estoque_minimo
+          ,qt_estoque_atual
+          ,vl_custo_compra
+          ,vl_custo_total
+          ,vl_preco_venda
+          ,if(ds_situacao = 'A', 'ATIVO', 'INATIVO')      as ds_situacao
+          ,dm_altura
+          ,dm_largura
+          ,dm_profundidade
+          ,dm_peso_bruto
+          ,dm_peso_liquido
+          ,cd_categoria
+          ,ds_descricao_produto
+          ,dt_ultima_ingestao
+      from cte_produto
+)
+
+--normalizando os produtos pai com o mesmo tipo de estoque dos filhos
+, cte_base as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto_completo
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,coalesce(b.fg_produto_composicao, a.fg_produto_composicao) fg_produto_composicao
+          ,coalesce(b.ds_tipo_estoque, a.ds_tipo_estoque) ds_tipo_estoque
+          ,a.qt_estoque_minimo
+          ,a.qt_estoque_atual
+          ,a.vl_custo_compra
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,a.ds_situacao
+          ,a.dm_altura
+          ,a.dm_largura
+          ,a.dm_profundidade
+          ,a.dm_peso_bruto
+          ,a.dm_peso_liquido
+          ,a.cd_categoria
+          ,a.ds_descricao_produto
+          ,a.dt_ultima_ingestao
+      from cte_tratamentos  as a
+ left join cte_tratamentos  as b
+        on a.cd_produto_bling = b.cd_produto_bling_pai
+)
+
+--pego o nome do produto pai pra criar uma coluna de nome de produto simples, sem as variações
+, cte_nome_simples_base as (
+   select distinct
+           a.cd_produto_bling_pai
+          ,b.nm_produto_completo as nm_produto
+      from cte_base  as a
+ left join cte_base   as b
+        on a.cd_produto_bling_pai = b.cd_produto_bling
+     where a.cd_produto_bling_pai is not null
+)
+
+--join pra trazer o nome do produto simplificado
+, cte_nome_simples as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,coalesce(b.nm_produto, a.nm_produto_completo) as nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,a.fg_produto_composicao
+          ,a.ds_tipo_estoque
+          ,a.qt_estoque_minimo
+          ,a.qt_estoque_atual
+          ,a.vl_custo_compra
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,a.ds_situacao
+          ,a.dm_altura
+          ,a.dm_largura
+          ,a.dm_profundidade
+          ,a.dm_peso_bruto
+          ,a.dm_peso_liquido
+          ,a.cd_categoria
+          ,a.ds_descricao_produto
+          ,a.dt_ultima_ingestao
+      from cte_base                as a
+ left join cte_nome_simples_base   as b
+        on a.cd_produto_bling_pai = b.cd_produto_bling_pai
+)
+
+--retiro o nome do produto pra deixar so a variação e criar uma coluna com esse dado
+, cte_base_final as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,coalesce(nullif(trim(replace(a.nm_produto_completo, a.nm_produto, '')), ''), 'Sem Variacao') ds_variacao
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,a.fg_produto_composicao
+          ,a.ds_tipo_estoque
+          ,a.qt_estoque_minimo
+          ,a.qt_estoque_atual
+          ,a.vl_custo_compra
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,a.ds_situacao
+          ,a.dm_altura
+          ,a.dm_largura
+          ,a.dm_profundidade
+          ,a.dm_peso_bruto
+          ,a.dm_peso_liquido
+          ,a.cd_categoria
+          ,a.ds_descricao_produto
+          ,a.dt_ultima_ingestao
+      from cte_nome_simples   as a
+)
+
+select *
+    from cte_base_final
+  order by nm_produto_completo
+    );
+  
+[0m17:00:16.389787 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.stg_tempo (execute): 17:00:15.239791 => 17:00:16.388893
+[0m17:00:16.390792 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233355BCA00>]}
+[0m17:00:16.391895 [info ] [Thread-1  ]: 13 of 27 OK created sql view model dbt_dw_stg.stg_tempo ........................ [[32mCREATE VIEW (0 processed)[0m in 1.16s]
+[0m17:00:16.393804 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.stg_tempo
+[0m17:00:16.675410 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:e63944ae-938e-4e8c-ad5b-547ccdb29f87&page=queryresults
+[0m17:00:19.498707 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.dm_produto (execute): 17:00:15.316265 => 17:00:19.498707
+[0m17:00:19.500618 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333557DC10>]}
+[0m17:00:19.501671 [info ] [Thread-2  ]: 14 of 27 OK created sql table model dbt_dw_dw.dm_produto ....................... [[32mCREATE TABLE (353.0 rows, 1.4 MiB processed)[0m in 4.19s]
+[0m17:00:19.503630 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.dm_produto
+[0m17:00:19.504930 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_produto
+[0m17:00:19.505961 [info ] [Thread-1  ]: 15 of 27 START sql table model dbt_dw_az.tb_produto ............................ [RUN]
+[0m17:00:19.507945 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.stg_tempo, now model.shibaribrasil.tb_produto)
+[0m17:00:19.509067 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_produto
+[0m17:00:19.516051 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_produto"
+[0m17:00:19.518054 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_produto (compile): 17:00:19.509067 => 17:00:19.518054
+[0m17:00:19.519057 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_produto
+[0m17:00:19.525045 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:20.178608 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_produto"
+[0m17:00:20.180620 [debug] [Thread-1  ]: On model.shibaribrasil.tb_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_produto"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_produto as (
+   select *
+     from `igneous-sandbox-381622`.`dbt_dw_dw`.`dm_produto`
+)
+
+, cte_categoria as (
+   select cd_categoria
+         ,nm_categoria
+         ,cd_categoria_pai
+         ,ds_tipo_categoria
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_categoria_produto`
+)
+
+-- join com a dimensao de categoria de produto
+, cte_tratamentos as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,ds_variacao
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,a.fg_produto_composicao
+          ,a.ds_tipo_estoque
+          ,a.qt_estoque_minimo
+          ,a.qt_estoque_atual
+          ,a.vl_custo_compra
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,b.nm_categoria                           as ds_subcategoria
+          ,coalesce(c.nm_categoria, b.nm_categoria) as ds_categoria
+          ,a.ds_situacao
+          ,a.dm_altura
+          ,a.dm_largura
+          ,a.dm_profundidade
+          ,a.dm_peso_bruto
+          ,a.dm_peso_liquido
+          ,a.ds_descricao_produto
+          ,a.dt_ultima_ingestao
+      from cte_produto   as a
+ left join cte_categoria    as b
+        on a.cd_categoria = b.cd_categoria
+ left join cte_categoria    as c
+        on b.cd_categoria_pai = c.cd_categoria     
+)
+
+, cte_campos_customizados as (
+    select cd_produto_bling
+          ,cd_produto
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,vl_alteracao_preco
+      from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_campo_customizado_produto`
+)
+
+, cte_imagem_produto as (
+    select cd_produto_bling
+          ,cd_produto
+          ,lk_imagem_produto
+      from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_imagem_produto`
+     where seq_imagem = 1
+)
+
+, cte_joins as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_variacao
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,a.fg_produto_composicao
+          ,a.ds_tipo_estoque
+          ,a.qt_estoque_minimo
+          ,a.qt_estoque_atual
+          ,a.vl_custo_compra
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,b.vl_alteracao_preco as vl_preco_venda_por
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,b.ds_classificacao_produto
+          ,b.ds_origem_produto
+          ,a.ds_situacao
+          ,a.dm_altura
+          ,a.dm_largura
+          ,a.dm_profundidade
+          ,a.dm_peso_bruto
+          ,a.dm_peso_liquido
+          ,a.ds_descricao_produto
+          ,c.lk_imagem_produto
+          ,a.dt_ultima_ingestao
+          ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
+      from cte_tratamentos            as a
+ left join cte_campos_customizados    as b
+        on a.cd_produto_bling = b.cd_produto_bling 
+ left join cte_imagem_produto         as c
+        on a.cd_produto_bling = c.cd_produto_bling      
+)
+
+  select *
+    from cte_joins
+order by nm_produto_completo
+    );
+  
+[0m17:00:20.879779 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:ae228e4c-00a2-4ed8-8672-0ad4476ecf89&page=queryresults
+[0m17:00:23.141334 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_produto (execute): 17:00:19.519057 => 17:00:23.140348
+[0m17:00:23.141334 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023333FF01C0>]}
+[0m17:00:23.142425 [info ] [Thread-1  ]: 15 of 27 OK created sql table model dbt_dw_az.tb_produto ....................... [[32mCREATE TABLE (353.0 rows, 1.9 MiB processed)[0m in 3.63s]
+[0m17:00:23.144423 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_produto
+[0m17:00:23.145334 [debug] [Thread-2  ]: Began running node model.shibaribrasil.tb_composicao_produto
+[0m17:00:23.146336 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_compra
+[0m17:00:23.146336 [info ] [Thread-2  ]: 16 of 27 START sql table model dbt_dw_az.tb_composicao_produto ................. [RUN]
+[0m17:00:23.148381 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.dm_produto, now model.shibaribrasil.tb_composicao_produto)
+[0m17:00:23.148381 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.tb_composicao_produto
+[0m17:00:23.152347 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.tb_composicao_produto"
+[0m17:00:23.147340 [info ] [Thread-1  ]: 17 of 27 START sql table model dbt_dw_az.tb_compra ............................. [RUN]
+[0m17:00:23.153330 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_composicao_produto (compile): 17:00:23.148381 => 17:00:23.153330
+[0m17:00:23.154330 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_produto, now model.shibaribrasil.tb_compra)
+[0m17:00:23.154330 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.tb_composicao_produto
+[0m17:00:23.154968 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_compra
+[0m17:00:23.156403 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:23.160751 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_compra"
+[0m17:00:23.188745 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_compra (compile): 17:00:23.157738 => 17:00:23.187744
+[0m17:00:23.188745 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_compra
+[0m17:00:23.190745 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:23.828071 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.tb_composicao_produto"
+[0m17:00:23.833091 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_compra"
+[0m17:00:23.834067 [debug] [Thread-2  ]: On model.shibaribrasil.tb_composicao_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_composicao_produto"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_composicao_produto`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_produto as (
+   select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_variacao
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,a.fg_produto_composicao
+          ,a.ds_tipo_estoque
+          ,a.qt_estoque_minimo
+          ,a.qt_estoque_atual
+          ,a.vl_custo_compra
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,a.ds_situacao
+          ,a.dm_altura
+          ,a.dm_largura
+          ,a.dm_profundidade
+          ,a.dm_peso_bruto
+          ,a.dm_peso_liquido
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto` as a
+)
+
+, cte_produto_composicao as (
+    select *
+      from cte_produto
+     where fg_produto_composicao is true
+)
+
+, cte_item_composicao_base as (
+   select a.cd_produto_bling
+         ,a.cd_produto
+         ,a.cd_produto_bling_componente
+         ,a.qt_componente
+    from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_composicao_produto` as a   
+)
+
+, cte_item_composicao as (
+    select a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_variacao
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,b.cd_produto_bling_componente
+          ,c.cd_produto as cd_produto_componente
+          ,c.cd_codigo_barras as cd_codigo_barras_componente
+          ,c.nm_produto as nm_produto_componente
+          ,c.nm_produto_completo as nm_produto_completo_componente
+          ,c.ds_variacao as ds_variacao_componente
+          ,b.qt_componente
+      from cte_produto_composicao   as a
+ left join cte_item_composicao_base as b
+        on a.cd_produto_bling = b.cd_produto_bling
+ left join cte_produto              as c
+        on b.cd_produto_bling_componente = c.cd_produto_bling
+)
+
+select *
+    from cte_item_composicao
+  order by nm_produto_completo
+    );
+  
+[0m17:00:23.839082 [debug] [Thread-1  ]: On model.shibaribrasil.tb_compra: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_compra"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_compra`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_compra as (
+  select cd_codigo_interno
+        ,cd_compra
+        ,dt_compra
+        ,dt_prevista_compra
+        ,cd_fornecedor
+        ,vl_total_item
+        ,vl_total_compra
+        ,ds_status_compra
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_compra`
+    where ds_status_compra not in ('CANCELADO')
+)
+
+, cte_item_compra as (
+   select cd_codigo_interno
+         ,cd_compra
+         ,dt_compra
+         ,cd_categoria_financeira
+         ,ds_observacoes
+         ,cd_produto_bling
+         ,cd_produto
+         ,nm_produto_completo
+         ,ds_unidade
+         ,qt_item
+         ,vl_item
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_item_compra`
+)
+
+, cte_compra_base as (
+   select distinct
+          a.cd_codigo_interno
+         ,a.cd_compra
+         ,a.dt_compra
+         ,a.dt_prevista_compra
+         ,a.cd_fornecedor
+         ,a.ds_status_compra
+         ,b.cd_categoria_financeira
+         ,b.ds_observacoes
+         ,b.cd_produto_bling
+         ,b.ds_unidade
+         ,b.qt_item
+         ,b.vl_item
+         ,b.qt_item * b.vl_item as vl_total_item
+         ,a.vl_total_compra
+     from cte_compra        as a
+left join cte_item_compra   as b
+       on a.cd_codigo_interno = b.cd_codigo_interno
+)
+
+, cte_produto as (
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
+          ,ds_tipo_produto
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,fg_produto_composicao
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`
+)
+
+, cte_base as (
+    select a.cd_codigo_interno
+          ,a.cd_compra
+          ,a.dt_compra
+          ,a.dt_prevista_compra
+          ,a.cd_fornecedor
+          ,a.ds_status_compra
+          ,a.cd_categoria_financeira
+          ,a.ds_observacoes
+          ,a.cd_produto_bling
+          ,b.cd_produto
+          ,b.cd_codigo_barras
+          ,b.nm_produto
+          ,b.nm_produto_completo
+          ,b.ds_variacao
+          ,a.ds_unidade
+          ,a.qt_item
+          ,a.vl_item
+          ,a.vl_total_item
+          ,b.ds_tipo_produto
+          ,b.ds_subcategoria
+          ,b.ds_categoria
+          ,b.ds_classificacao_produto
+          ,b.ds_origem_produto
+          ,b.fg_produto_composicao
+     from cte_compra_base        as a
+left join cte_produto            as b
+       on a.cd_produto_bling = b.cd_produto_bling
+)
+
+, cte_validacao_link as (
+  select *
+        ,regexp_contains(ds_observacoes, r'\b\d{3,}\s*:\s*https?://') as is_padrao_valido
+    from cte_compra_base
+)
+
+, cte_link_produto_base as (
+  select cd_codigo_interno
+        ,split(item, ': ') as partes
+    from cte_validacao_link,
+  unnest(
+        case 
+          when is_padrao_valido then split(ds_observacoes, ',') 
+          else array<string>[null] 
+          end
+  ) as item
+)
+
+, cte_link_produto as (
+    select distinct 
+           cd_codigo_interno
+          ,replace(trim(partes[offset(0)]), '.', '') as cd_produto
+          ,trim(partes[offset(1)])                   as lk_produto_compra
+      from cte_link_produto_base
+)
+
+, cte_base_link as (
+    select a.cd_codigo_interno
+          ,a.cd_compra
+          ,a.dt_compra
+          ,a.dt_prevista_compra
+          ,a.cd_fornecedor
+          ,a.ds_status_compra
+          ,a.cd_categoria_financeira
+          ,a.ds_observacoes
+          ,a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_variacao
+          ,a.ds_unidade
+          ,a.qt_item
+          ,a.vl_item
+          ,a.vl_total_item
+          ,a.ds_tipo_produto
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,a.ds_classificacao_produto
+          ,a.ds_origem_produto
+          ,a.fg_produto_composicao
+          ,b.lk_produto_compra
+     from cte_base         as a
+left join cte_link_produto as b
+       on a.cd_codigo_interno = b.cd_codigo_interno
+      and a.cd_produto = b.cd_produto
+)
+
+  select *
+    from cte_base_link
+    );
+  
+[0m17:00:24.471035 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:3ec5781a-6fea-41e7-9e9f-4d86bd112558&page=queryresults
+[0m17:00:24.479037 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:c3efa914-402f-4714-b2e5-b05c9f248c6d&page=queryresults
+[0m17:00:27.002803 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_compra (execute): 17:00:23.188745 => 17:00:27.001790
+[0m17:00:27.004800 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333542F550>]}
+[0m17:00:27.007798 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_composicao_produto (execute): 17:00:23.155390 => 17:00:27.007798
+[0m17:00:27.011872 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023335583160>]}
+[0m17:00:27.009861 [info ] [Thread-1  ]: 17 of 27 OK created sql table model dbt_dw_az.tb_compra ........................ [[32mCREATE TABLE (152.0 rows, 108.4 KiB processed)[0m in 3.85s]
+[0m17:00:27.014867 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_compra
+[0m17:00:27.015865 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_estoque_geral
+[0m17:00:27.012920 [info ] [Thread-2  ]: 16 of 27 OK created sql table model dbt_dw_az.tb_composicao_produto ............ [[32mCREATE TABLE (244.0 rows, 106.8 KiB processed)[0m in 3.86s]
+[0m17:00:27.018888 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.tb_composicao_produto
+[0m17:00:27.016865 [info ] [Thread-1  ]: 18 of 27 START sql table model dbt_dw_az.tb_estoque_geral ...................... [RUN]
+[0m17:00:27.020865 [debug] [Thread-2  ]: Began running node model.shibaribrasil.tb_pedido
+[0m17:00:27.022876 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_compra, now model.shibaribrasil.tb_estoque_geral)
+[0m17:00:27.025482 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_estoque_geral
+[0m17:00:27.032468 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_estoque_geral"
+[0m17:00:27.024447 [info ] [Thread-2  ]: 19 of 27 START sql table model dbt_dw_az.tb_pedido ............................. [RUN]
+[0m17:00:27.033468 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_composicao_produto, now model.shibaribrasil.tb_pedido)
+[0m17:00:27.034559 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.tb_pedido
+[0m17:00:27.044468 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_estoque_geral (compile): 17:00:27.025482 => 17:00:27.043465
+[0m17:00:27.045468 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_estoque_geral
+[0m17:00:27.048463 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:27.059463 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.tb_pedido"
+[0m17:00:27.084461 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_pedido (compile): 17:00:27.034559 => 17:00:27.084461
+[0m17:00:27.084461 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.tb_pedido
+[0m17:00:27.086554 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:27.720289 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_estoque_geral"
+[0m17:00:27.721289 [debug] [Thread-1  ]: On model.shibaribrasil.tb_estoque_geral: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_estoque_geral"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_estoque_geral`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+--visão atual dos produtos, não trabalho aqui com histórico do preço
+with cte_produto as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_variacao
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,a.fg_produto_composicao
+          ,a.ds_tipo_estoque
+          ,a.qt_estoque_minimo
+          ,a.qt_estoque_atual
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,a.ds_classificacao_produto
+          ,a.ds_origem_produto
+          ,a.dt_ultima_ingestao
+          ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`  as a   
+)
+
+  select *
+    from cte_produto
+order by nm_produto
+        ,ds_variacao
+    );
+  
+[0m17:00:27.728804 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.tb_pedido"
+[0m17:00:27.730808 [debug] [Thread-2  ]: On model.shibaribrasil.tb_pedido: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_pedido"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_pedido`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_pedido as (
+   select cd_codigo_interno
+         ,cd_pedido
+         ,dt_pedido
+         ,cd_status_pedido
+         ,ds_status_pedido
+         ,vl_total_pedido
+         ,vl_total_item
+         ,cd_contato
+         ,nm_contato
+         ,nr_doc_contato
+         ,cd_loja
+         ,ds_loja
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_pedido`
+)
+
+, cte_item_pedido as (
+   select cd_codigo_interno
+         ,dt_pedido
+         ,cd_produto_bling
+         ,cd_produto
+         ,nm_produto_completo
+         ,qt_item
+         ,vl_item
+         ,ds_tipo_desconto
+         ,vl_desconto
+         ,ds_forma_pagamento
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_item_pedido`
+)
+
+, cte_pedido_base as (
+   select distinct
+          a.cd_codigo_interno                                                        as cd_codigo_interno
+         ,a.cd_pedido                                                                as cd_pedido
+         ,a.dt_pedido                                                                as dt_pedido
+         ,a.cd_status_pedido                                                         as cd_status_pedido
+         ,a.ds_status_pedido                                                         as ds_status_pedido
+         ,b.cd_produto_bling                                                         as cd_produto_bling
+         ,b.cd_produto                                                               as cd_produto
+         ,b.nm_produto_completo                                                      as nm_produto_completo
+         ,b.qt_item                                                                  as qt_item
+         ,b.vl_item                                                                  as vl_item
+         ,round((b.qt_item * b.vl_item), 2)                                          as vl_total_item
+         ,b.ds_tipo_desconto                                                         as ds_tipo_desconto
+         ,b.vl_desconto                                                              as vl_desconto
+         ,a.vl_total_pedido                                                          as vl_total_pedido
+         ,a.vl_total_item                                                            as vl_total_item_pedido
+         ,b.ds_forma_pagamento                                                       as ds_forma_pagamento
+         ,a.cd_contato                                                               as cd_contato
+         ,a.nm_contato                                                               as nm_contato
+         ,a.nr_doc_contato                                                           as nr_doc_contato
+         ,a.ds_loja                                                                  as ds_loja
+         ,count(distinct b.cd_produto_bling) over (partition by a.cd_codigo_interno) as qt_linhas_pedido
+     from cte_pedido        as a
+left join cte_item_pedido   as b
+       on a.cd_codigo_interno = b.cd_codigo_interno
+)
+
+, cte_rateio_frete as (
+   select distinct
+          a.cd_codigo_interno
+         ,a.cd_pedido
+         ,a.dt_pedido
+         ,a.cd_status_pedido
+         ,a.ds_status_pedido
+         ,a.cd_produto_bling
+         ,a.cd_produto
+         ,a.nm_produto_completo
+         ,a.qt_item
+         ,a.vl_item
+         ,a.vl_total_item
+         ,round((a.vl_desconto / a.qt_linhas_pedido), 2)                                                as vl_desconto
+         ,round(((a.vl_total_pedido + a.vl_desconto) - a.vl_total_item_pedido) / a.qt_linhas_pedido, 2) as vl_frete_rateio
+         ,a.ds_forma_pagamento
+         ,a.cd_contato
+         ,a.nm_contato
+         ,a.nr_doc_contato
+         ,a.ds_loja
+         ,a.qt_linhas_pedido
+     from cte_pedido_base as a
+)
+
+, cte_pedido_total as (
+   select distinct
+          a.cd_codigo_interno
+         ,a.cd_pedido
+         ,a.dt_pedido
+         ,a.cd_status_pedido
+         ,a.ds_status_pedido
+         ,a.cd_produto_bling
+         ,a.cd_produto
+         ,a.nm_produto_completo
+         ,a.qt_item
+         ,a.vl_item
+         ,a.vl_total_item
+         ,a.vl_desconto as vl_desconto_rateio
+         ,a.vl_frete_rateio
+         ,round((a.vl_total_item + a.vl_frete_rateio) - a.vl_desconto, 2) as vl_total_pedido
+         ,a.ds_forma_pagamento
+         ,a.cd_contato
+         ,a.nm_contato
+         ,a.nr_doc_contato
+         ,a.ds_loja
+         ,a.qt_linhas_pedido
+     from cte_rateio_frete as a
+)
+
+, cte_categoria_produto as (
+    select cd_produto_bling
+          ,cd_produto
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`
+)
+
+, cte_final as (
+    select distinct
+          a.cd_codigo_interno
+         ,a.cd_pedido
+         ,a.dt_pedido
+         ,a.cd_status_pedido
+         ,a.ds_status_pedido
+         ,a.cd_produto_bling
+         ,a.cd_produto
+         ,a.nm_produto_completo
+         ,b.ds_subcategoria
+         ,b.ds_categoria
+         ,b.ds_classificacao_produto
+         ,b.ds_origem_produto
+         ,a.qt_item
+         ,a.vl_item
+         ,a.vl_total_item
+         ,a.vl_desconto_rateio
+         ,a.vl_frete_rateio
+         ,a.vl_total_pedido
+         ,a.ds_forma_pagamento
+         ,a.cd_contato
+         ,a.nm_contato
+         ,a.nr_doc_contato
+         ,a.ds_loja
+         ,a.qt_linhas_pedido
+     from cte_pedido_total      as a
+left join cte_categoria_produto as b
+       on a.cd_produto_bling = b.cd_produto_bling
+)
+select *
+    from cte_final
+    );
+  
+[0m17:00:28.068794 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:1952c94e-ab4b-4309-a48e-9861033dd4b2&page=queryresults
+[0m17:00:28.347267 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:c2d5e5a6-995a-4258-913e-c661a27d9cc6&page=queryresults
+[0m17:00:30.615514 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_estoque_geral (execute): 17:00:27.045468 => 17:00:30.614409
+[0m17:00:30.616507 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023333FF01C0>]}
+[0m17:00:30.617504 [info ] [Thread-1  ]: 18 of 27 OK created sql table model dbt_dw_az.tb_estoque_geral ................. [[32mCREATE TABLE (353.0 rows, 86.5 KiB processed)[0m in 3.59s]
+[0m17:00:30.619460 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_estoque_geral
+[0m17:00:30.620489 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_agg_compra_produto
+[0m17:00:30.621472 [info ] [Thread-1  ]: 20 of 27 START sql table model dbt_dw_az.tb_agg_compra_produto ................. [RUN]
+[0m17:00:30.622473 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_estoque_geral, now model.shibaribrasil.tb_agg_compra_produto)
+[0m17:00:30.623571 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_agg_compra_produto
+[0m17:00:30.628564 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_agg_compra_produto"
+[0m17:00:30.629566 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_agg_compra_produto (compile): 17:00:30.624567 => 17:00:30.629566
+[0m17:00:30.630489 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_agg_compra_produto
+[0m17:00:30.632569 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:30.897917 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_pedido (execute): 17:00:27.084461 => 17:00:30.897917
+[0m17:00:30.899916 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023334428B80>]}
+[0m17:00:30.900917 [info ] [Thread-2  ]: 19 of 27 OK created sql table model dbt_dw_az.tb_pedido ........................ [[32mCREATE TABLE (2.7k rows, 1.1 MiB processed)[0m in 3.87s]
+[0m17:00:30.901918 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.tb_pedido
+[0m17:00:30.903915 [debug] [Thread-2  ]: Began running node model.shibaribrasil.tb_venda_produto_final
+[0m17:00:30.904916 [info ] [Thread-2  ]: 21 of 27 START sql table model dbt_dw_az.tb_venda_produto_final ................ [RUN]
+[0m17:00:30.907327 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_pedido, now model.shibaribrasil.tb_venda_produto_final)
+[0m17:00:30.907327 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.tb_venda_produto_final
+[0m17:00:30.913308 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.tb_venda_produto_final"
+[0m17:00:30.915255 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_venda_produto_final (compile): 17:00:30.908345 => 17:00:30.914306
+[0m17:00:30.915255 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.tb_venda_produto_final
+[0m17:00:30.918298 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:31.552905 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_agg_compra_produto"
+[0m17:00:31.554903 [debug] [Thread-1  ]: On model.shibaribrasil.tb_agg_compra_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_agg_compra_produto"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_compra_produto`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_compra as (
+    select cd_codigo_interno
+          ,cd_compra
+          ,dt_compra
+          ,dt_prevista_compra
+          ,cd_fornecedor
+          ,ds_status_compra
+          ,cd_categoria_financeira
+          ,ds_observacoes
+          ,cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
+          ,ds_unidade
+          ,qt_item
+          ,vl_item
+          ,vl_total_item
+          ,ds_tipo_produto
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,fg_produto_composicao
+          ,lk_produto_compra
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_compra`
+)
+
+, cte_compra_produto as (
+    select distinct 
+           cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
+          ,qt_item
+          ,vl_item
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,cd_compra
+          ,dt_compra
+          ,ds_status_compra
+          ,fg_produto_composicao
+          ,lk_produto_compra
+          ,row_number() over (partition by cd_produto_bling order by dt_compra desc) as nr_seq
+      from cte_compra
+)
+
+  select *
+    from cte_compra_produto
+    );
+  
+[0m17:00:31.651651 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.tb_venda_produto_final"
+[0m17:00:31.653656 [debug] [Thread-2  ]: On model.shibaribrasil.tb_venda_produto_final: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_venda_produto_final"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_venda_produto_final`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_produto as (
+   select distinct
+          cd_produto_bling
+         ,cd_produto
+         ,cd_codigo_barras
+         ,nm_produto
+         ,nm_produto_completo
+         ,ds_variacao
+         ,ds_tipo_produto
+         ,cd_produto_bling_pai
+         ,fg_produto_composicao
+         ,ds_tipo_estoque
+         ,vl_custo_total
+         ,vl_preco_venda
+         ,ds_subcategoria
+         ,ds_categoria
+         ,ds_classificacao_produto
+         ,ds_origem_produto
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`
+    where ds_categoria not in ('Suprimentos')
+)
+
+, cte_pedido as (
+    select distinct
+          cd_codigo_interno
+         ,cd_pedido
+         ,dt_pedido
+         ,date_trunc(cast(dt_pedido as date), month) as dt_prim_dia_mes
+         ,cd_status_pedido
+         ,ds_status_pedido
+         ,cd_produto_bling
+         ,cd_produto
+         ,nm_produto_completo
+         ,qt_item
+         ,vl_item
+         ,vl_total_item
+    from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_pedido`
+   where ds_status_pedido <> 'CANCELADO'
+)
+
+, cte_produto_pedido_base as (
+   select a.cd_produto_bling
+         ,a.cd_produto
+         ,a.cd_codigo_barras
+         ,a.nm_produto
+         ,a.nm_produto_completo
+         ,a.ds_variacao
+         ,a.ds_tipo_produto
+         ,a.cd_produto_bling_pai
+         ,a.fg_produto_composicao
+         ,a.ds_tipo_estoque
+         ,a.ds_subcategoria
+         ,a.ds_categoria
+         ,a.ds_classificacao_produto
+         ,a.ds_origem_produto
+         ,b.dt_pedido
+         ,b.dt_prim_dia_mes
+         ,count(distinct b.cd_codigo_interno) as qt_pedidos
+         ,sum(b.qt_item)                      as qt_item
+         ,sum(b.vl_total_item)                as vl_total_item
+     from cte_produto as a
+left join cte_pedido  as b 
+       on a.cd_produto_bling = b.cd_produto_bling
+ group by a.cd_produto_bling
+         ,a.cd_produto
+         ,a.cd_codigo_barras
+         ,a.nm_produto
+         ,a.nm_produto_completo
+         ,a.ds_variacao
+         ,a.ds_tipo_produto
+         ,a.cd_produto_bling_pai
+         ,a.fg_produto_composicao
+         ,a.ds_tipo_estoque
+         ,a.vl_custo_total
+         ,a.vl_preco_venda
+         ,a.ds_subcategoria
+         ,a.ds_categoria
+         ,a.ds_classificacao_produto
+         ,a.ds_origem_produto
+         ,b.dt_pedido
+         ,b.dt_prim_dia_mes
+)
+
+select *
+  from cte_produto_pedido_base
+    );
+  
+[0m17:00:31.962897 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:924b5291-b15b-46ff-87c6-8177ad4c0d3c&page=queryresults
+[0m17:00:32.065339 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:ed68d834-18a8-400c-ad63-dcaca201601f&page=queryresults
+[0m17:00:34.760913 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_agg_compra_produto (execute): 17:00:30.630489 => 17:00:34.760913
+[0m17:00:34.761924 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023335583E80>]}
+[0m17:00:34.762923 [info ] [Thread-1  ]: 20 of 27 OK created sql table model dbt_dw_az.tb_agg_compra_produto ............ [[32mCREATE TABLE (152.0 rows, 32.6 KiB processed)[0m in 4.14s]
+[0m17:00:34.762923 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_agg_compra_produto
+[0m17:00:34.763923 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_produto_fabricado
+[0m17:00:34.764922 [info ] [Thread-1  ]: 22 of 27 START sql table model dbt_dw_az.tb_produto_fabricado .................. [RUN]
+[0m17:00:34.765922 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_agg_compra_produto, now model.shibaribrasil.tb_produto_fabricado)
+[0m17:00:34.765922 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_produto_fabricado
+[0m17:00:34.773925 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_produto_fabricado"
+[0m17:00:34.774924 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_produto_fabricado (compile): 17:00:34.765922 => 17:00:34.774924
+[0m17:00:34.775993 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_produto_fabricado
+[0m17:00:34.777009 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:34.888373 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_venda_produto_final (execute): 17:00:30.916309 => 17:00:34.888373
+[0m17:00:34.890383 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333559F9A0>]}
+[0m17:00:34.891374 [info ] [Thread-2  ]: 21 of 27 OK created sql table model dbt_dw_az.tb_venda_produto_final ........... [[32mCREATE TABLE (1.2k rows, 418.1 KiB processed)[0m in 3.98s]
+[0m17:00:34.893371 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.tb_venda_produto_final
+[0m17:00:34.894371 [debug] [Thread-2  ]: Began running node model.shibaribrasil.tb_agg_venda_produto_final
+[0m17:00:34.894371 [info ] [Thread-2  ]: 23 of 27 START sql table model dbt_dw_az.tb_agg_venda_produto_final ............ [RUN]
+[0m17:00:34.895371 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_venda_produto_final, now model.shibaribrasil.tb_agg_venda_produto_final)
+[0m17:00:34.895371 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.tb_agg_venda_produto_final
+[0m17:00:34.898371 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.tb_agg_venda_produto_final"
+[0m17:00:34.899370 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_agg_venda_produto_final (compile): 17:00:34.895371 => 17:00:34.899370
+[0m17:00:34.900374 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.tb_agg_venda_produto_final
+[0m17:00:34.902367 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:35.395258 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_produto_fabricado"
+[0m17:00:35.397163 [debug] [Thread-1  ]: On model.shibaribrasil.tb_produto_fabricado: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_produto_fabricado"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto_fabricado`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_produto as (
+   select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_variacao
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,a.fg_produto_composicao
+          ,a.ds_tipo_estoque
+          ,a.qt_estoque_minimo
+          ,a.qt_estoque_atual
+          ,a.vl_custo_compra
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto` as a
+)
+
+, cte_compra_produto as (
+    select cd_produto_bling
+          ,cd_produto
+          ,vl_item
+          ,dt_compra
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_compra_produto`
+     where nr_seq = 1
+)
+
+, cte_produto_fabricado as (
+    select cd_produto
+          ,nm_produto_completo
+          ,cd_produto_composicao 
+          ,nm_produto_completo_composicao 
+          ,qt_produto_composicao 
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_produto_fabricado`
+)
+
+, cte_base as (
+    select distinct 
+           b.cd_produto_bling
+          ,a.cd_produto
+          ,b.nm_produto
+          ,b.nm_produto_completo
+          ,b.ds_variacao
+          ,c.cd_produto_bling                          as cd_produto_bling_composicao
+          ,a.cd_produto_composicao                     as cd_produto_composicao
+          ,c.nm_produto                                as nm_produto_composicao
+          ,c.nm_produto_completo                       as nm_produto_completo_composicao
+          ,c.ds_variacao                               as ds_variacao_composicao
+          ,a.qt_produto_composicao                     as qt_produto_composicao
+          ,d.vl_item                                   as vl_custo_compra
+          ,a.qt_produto_composicao * d.vl_item         as vl_custo_compra_total
+      from cte_produto_fabricado as a 
+ left join cte_produto           as b 
+        on a.cd_produto = b.cd_produto
+ left join cte_produto           as c 
+        on a.cd_produto_composicao = c.cd_produto
+ left join cte_compra_produto    as d 
+        on c.cd_produto_bling = d.cd_produto_bling
+)
+
+select *
+    from cte_base
+  order by nm_produto_completo
+    );
+  
+[0m17:00:35.524830 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.tb_agg_venda_produto_final"
+[0m17:00:35.527846 [debug] [Thread-2  ]: On model.shibaribrasil.tb_agg_venda_produto_final: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_agg_venda_produto_final"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_venda_produto_final`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_venda_produto as (
+   select cd_produto_bling
+         ,cd_produto
+         ,cd_codigo_barras
+         ,nm_produto
+         ,nm_produto_completo
+         ,ds_variacao
+         ,ds_tipo_produto
+         ,cd_produto_bling_pai
+         ,fg_produto_composicao
+         ,ds_tipo_estoque
+         ,ds_subcategoria
+         ,ds_categoria
+         ,ds_classificacao_produto
+         ,ds_origem_produto
+         ,dt_pedido
+         ,dt_prim_dia_mes
+         ,qt_pedidos
+         ,qt_item
+         ,vl_total_item
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_venda_produto_final`
+)
+
+, cte_pedido_mes_atual as (
+   select cd_produto_bling
+         ,cd_produto
+         ,nm_produto_completo
+         ,sum(qt_pedidos)     as qt_pedidos
+         ,sum(qt_item)        as qt_item
+         ,sum(vl_total_item)  as vl_total_item
+    from cte_venda_produto
+   where dt_prim_dia_mes = date_trunc(cast(current_date as date), month)
+group by cd_produto_bling
+        ,cd_produto
+        ,nm_produto_completo
+)
+
+, cte_pedido_mes_anterior as (
+   select cd_produto_bling
+         ,cd_produto
+         ,nm_produto_completo
+         ,sum(qt_pedidos)     as qt_pedidos
+         ,sum(qt_item)        as qt_item
+         ,sum(vl_total_item)  as vl_total_item
+    from cte_venda_produto
+   where dt_prim_dia_mes = date_trunc(date_sub(current_date(), interval 1 month), month)
+group by cd_produto_bling
+        ,cd_produto
+        ,nm_produto_completo
+)
+
+, cte_pedido_tres_meses as (
+   select cd_produto_bling
+         ,cd_produto
+         ,nm_produto_completo
+         ,sum(qt_pedidos)     as qt_pedidos
+         ,sum(qt_item)        as qt_item
+         ,sum(vl_total_item)  as vl_total_item
+    from cte_venda_produto
+   where dt_prim_dia_mes >= date_trunc(date_sub(current_date(), interval 3 month), month)
+     and dt_prim_dia_mes <= date_trunc(date_sub(current_date(), interval 1 month), month)
+group by cd_produto_bling
+        ,cd_produto
+        ,nm_produto_completo
+)
+
+, cte_pedido_seis_meses as (
+   select cd_produto_bling
+         ,cd_produto
+         ,nm_produto_completo
+         ,sum(qt_pedidos)     as qt_pedidos
+         ,sum(qt_item)        as qt_item
+         ,sum(vl_total_item)  as vl_total_item
+    from cte_venda_produto
+   where dt_prim_dia_mes >= date_trunc(date_sub(current_date(), interval 6 month), month)
+     and dt_prim_dia_mes <= date_trunc(date_sub(current_date(), interval 1 month), month)
+group by cd_produto_bling
+        ,cd_produto
+        ,nm_produto_completo
+)
+
+, cte_pedido_60_dias as (
+   select cd_produto_bling
+         ,cd_produto
+         ,nm_produto_completo
+         ,sum(qt_pedidos)     as qt_pedidos
+         ,sum(qt_item)        as qt_item
+         ,sum(vl_total_item)  as vl_total_item
+    from cte_venda_produto
+   where cast(dt_pedido as date) >= date_trunc(date_sub(current_date(), interval 59 day), day)
+     and cast(dt_pedido as date) <= current_date
+group by cd_produto_bling
+        ,cd_produto
+        ,nm_produto_completo
+)
+
+, cte_final as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_variacao
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,a.fg_produto_composicao
+          ,a.ds_tipo_estoque
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,a.ds_classificacao_produto
+          ,a.ds_origem_produto
+          ,coalesce(b.qt_pedidos,0)    as qt_pedidos_mes_atual
+          ,coalesce(b.qt_item,0)       as qt_pecas_mes_atual
+          ,coalesce(b.vl_total_item,0) as vl_total_mes_atual
+          ,coalesce(c.qt_pedidos,0)    as qt_pedidos_mes_anterior
+          ,coalesce(c.qt_item,0)       as qt_pecas_mes_anterior
+          ,coalesce(c.vl_total_item,0) as vl_total_mes_anterior
+          ,coalesce(d.qt_pedidos,0)    as qt_pedidos_tres_meses
+          ,coalesce(d.qt_item,0)       as qt_pecas_tres_meses
+          ,coalesce(d.vl_total_item,0) as vl_total_tres_meses
+          ,coalesce(e.qt_pedidos,0)    as qt_pedidos_seis_meses
+          ,coalesce(e.qt_item,0)       as qt_pecas_seis_meses
+          ,coalesce(e.vl_total_item,0) as vl_total_seis_meses
+          ,coalesce(f.qt_pedidos,0)    as qt_pedidos_sessenta_dias
+          ,coalesce(f.qt_item,0)       as qt_pecas_sessenta_dias
+          ,coalesce(f.vl_total_item,0) as vl_total_sessenta_dias
+     from cte_venda_produto               as a
+left join cte_pedido_mes_atual            as b
+       on a.cd_produto_bling = b.cd_produto_bling
+left join cte_pedido_mes_anterior         as c
+       on a.cd_produto_bling = c.cd_produto_bling
+left join cte_pedido_tres_meses           as d
+       on a.cd_produto_bling = d.cd_produto_bling
+left join cte_pedido_seis_meses           as e
+       on a.cd_produto_bling = e.cd_produto_bling
+left join cte_pedido_60_dias              as f
+       on a.cd_produto_bling = f.cd_produto_bling
+)
+
+   select *
+     from cte_final
+ order by nm_produto_completo
+    );
+  
+[0m17:00:35.936473 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:d973c894-70e0-41b5-a4c5-8fbb8623dc05&page=queryresults
+[0m17:00:36.050681 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:ec545dfc-8759-4e64-b7eb-d9f2133b51eb&page=queryresults
+[0m17:00:39.181870 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_produto_fabricado (execute): 17:00:34.775993 => 17:00:39.181870
+[0m17:00:39.183432 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023336638190>]}
+[0m17:00:39.184436 [info ] [Thread-1  ]: 22 of 27 OK created sql table model dbt_dw_az.tb_produto_fabricado ............. [[32mCREATE TABLE (10.0 rows, 101.0 KiB processed)[0m in 4.42s]
+[0m17:00:39.186397 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_produto_fabricado
+[0m17:00:39.188376 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_preco_produto_base
+[0m17:00:39.189436 [info ] [Thread-1  ]: 24 of 27 START sql table model dbt_dw_az.tb_preco_produto_base ................. [RUN]
+[0m17:00:39.190380 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_produto_fabricado, now model.shibaribrasil.tb_preco_produto_base)
+[0m17:00:39.191442 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_preco_produto_base
+[0m17:00:39.199440 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_preco_produto_base"
+[0m17:00:39.200385 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_preco_produto_base (compile): 17:00:39.192437 => 17:00:39.200385
+[0m17:00:39.201342 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_preco_produto_base
+[0m17:00:39.204433 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:39.828922 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_preco_produto_base"
+[0m17:00:39.831925 [debug] [Thread-1  ]: On model.shibaribrasil.tb_preco_produto_base: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_preco_produto_base"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_preco_produto_base`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+--visão atual dos produtos, não trabalho aqui com histórico do preço
+with cte_produto as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_variacao
+          ,a.qt_estoque_atual
+          ,a.vl_custo_compra
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,a.vl_preco_venda_por
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,a.ds_classificacao_produto
+          ,a.ds_origem_produto
+          ,a.ds_tipo_produto
+          ,a.fg_produto_composicao
+          ,a.dt_ultima_ingestao
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`  as a   
+    --  where a.ds_categoria not in ('Suprimentos', 'Inativos')
+)
+
+, cte_meta_margem as (
+    select ds_classificacao_produto
+          ,ds_origem_produto
+          ,pr_desconto_padrao 
+          ,pr_meta_margem 
+      from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_meta_margem_preco`
+)
+
+, cte_forma_pagamento as (
+   select cd_forma_pagamento
+         ,nm_forma_pagamento
+         ,ds_condicao_pagamento
+         ,qt_dias_pagamento
+         ,vl_taxa_aliquota
+         ,vl_taxa_fixa
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_forma_pagamento`
+    where nm_forma_pagamento in ('[Nuvem] Cartão de Crédito', '[Nuvem] PIX')
+)
+
+, cte_compra_produto as (
+    select cd_produto_bling
+          ,cd_produto
+          ,vl_item
+          ,dt_compra
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_compra_produto`
+     where nr_seq = 1
+)
+
+, cte_produto_base_kit as (
+    select distinct cd_produto_bling_componente
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_composicao_produto`
+)
+
+, cte_produto_fabricado as (
+    select cd_produto_bling
+          ,cd_produto
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
+          ,sum(vl_custo_compra_total) vl_custo_compra_total
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto_fabricado`
+  group by cd_produto_bling
+          ,cd_produto
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
+)
+
+, cte_joins as (
+    select distinct
+           a.cd_produto_bling                                                                                                as cd_produto_bling
+          ,a.cd_produto                                                                                                      as cd_produto
+          ,a.cd_codigo_barras                                                                                                as cd_codigo_barras
+          ,a.nm_produto                                                                                                      as nm_produto
+          ,a.ds_variacao                                                                                                     as ds_variacao
+          ,a.qt_estoque_atual                                                                                                as qt_estoque_atual
+          ,coalesce(a.vl_custo_total, 0)                                                                                     as vl_custo_cadastro
+          ,coalesce(e.vl_custo_compra_total, c.vl_item, 0)                                                                   as vl_custo_ultima_compra
+          ,coalesce(a.vl_preco_venda, 0)                                                                                     as vl_preco_venda
+          ,coalesce(a.vl_preco_venda_por, 0)                                                                                 as vl_preco_venda_por
+          ,a.ds_subcategoria                                                                                                 as ds_subcategoria
+          ,a.ds_categoria                                                                                                    as ds_categoria
+          ,a.ds_classificacao_produto                                                                                        as ds_classificacao_produto
+          ,a.ds_origem_produto                                                                                               as ds_origem_produto
+          ,a.ds_tipo_produto                                                                                                 as ds_tipo_produto
+          ,a.fg_produto_composicao                                                                                           as fg_produto_composicao
+          ,if(d.cd_produto_bling_componente is null, false, true)                                                            as fg_produto_base_composicao
+          ,if(e.cd_produto_bling            is null, false, true)                                                            as fg_produto_fabricado
+          ,coalesce(b.pr_desconto_padrao, 0)                                                                                 as pr_desconto_padrao 
+          ,coalesce(b.pr_meta_margem, 0)                                                                                     as pr_meta_margem 
+          ,(select (vl_taxa_aliquota / 100) from cte_forma_pagamento where nm_forma_pagamento = '[Nuvem] Cartão de Crédito') as tx_aliquota_cartao
+          ,(select vl_taxa_fixa     from cte_forma_pagamento where nm_forma_pagamento = '[Nuvem] Cartão de Crédito')         as tx_fixa_cartao
+          ,(select (vl_taxa_aliquota / 100) from cte_forma_pagamento where nm_forma_pagamento = '[Nuvem] PIX')               as tx_aliquota_pix
+          --regra manual de desconto do pix
+          ,0.03                                                                                                              as vl_desconto_fixo_pix
+          --valor aproximado de materiais de envio por pedido
+          ,2.50                                                                                                              as vl_materiais_envio
+          ,c.dt_compra                                                                                                       as dt_ultima_compra
+          ,a.dt_ultima_ingestao
+          ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
+     from cte_produto           as a
+left join cte_meta_margem       as b
+       on a.ds_classificacao_produto = b.ds_classificacao_produto
+      and a.ds_origem_produto = b.ds_origem_produto
+left join cte_compra_produto    as c
+       on a.cd_produto_bling = c.cd_produto_bling
+left join cte_produto_base_kit  as d
+       on a.cd_produto_bling = d.cd_produto_bling_componente
+left join cte_produto_fabricado as e
+       on a.cd_produto_bling = e.cd_produto_bling
+)
+
+  select *
+    from cte_joins
+order by nm_produto
+        ,ds_variacao
+    );
+  
+[0m17:00:40.572596 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:95cdda0d-9a5f-4ae4-88e5-52ecf3a616c2&page=queryresults
+[0m17:00:45.315475 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_preco_produto_base (execute): 17:00:39.201342 => 17:00:45.315475
+[0m17:00:45.317475 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023334420DC0>]}
+[0m17:00:46.093397 [info ] [Thread-1  ]: 24 of 27 OK created sql table model dbt_dw_az.tb_preco_produto_base ............ [[32mCREATE TABLE (353.0 rows, 93.0 KiB processed)[0m in 6.13s]
+[0m17:00:46.095399 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_preco_produto_base
+[0m17:00:46.097398 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_preco_produto
+[0m17:00:46.098413 [info ] [Thread-1  ]: 25 of 27 START sql table model dbt_dw_az.tb_preco_produto ...................... [RUN]
+[0m17:00:46.100428 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_preco_produto_base, now model.shibaribrasil.tb_preco_produto)
+[0m17:00:46.101412 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_preco_produto
+[0m17:00:46.117105 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_preco_produto"
+[0m17:00:46.119155 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_preco_produto (compile): 17:00:46.101412 => 17:00:46.118206
+[0m17:00:46.119155 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_preco_produto
+[0m17:00:46.123202 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:46.765111 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_preco_produto"
+[0m17:00:46.767115 [debug] [Thread-1  ]: On model.shibaribrasil.tb_preco_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_preco_produto"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_preco_produto`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_preco as (
+    select distinct
+           cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,ds_variacao
+          ,qt_estoque_atual
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
+          ,vl_preco_venda
+          ,vl_preco_venda_por
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,ds_tipo_produto
+          ,fg_produto_composicao
+          ,fg_produto_base_composicao
+          ,fg_produto_fabricado
+          ,pr_desconto_padrao 
+          ,pr_meta_margem 
+          ,tx_aliquota_cartao
+          ,tx_fixa_cartao
+          ,tx_aliquota_pix
+          ,vl_desconto_fixo_pix
+          ,vl_materiais_envio
+          ,dt_ultima_compra
+          ,dt_ultima_ingestao
+          ,dt_ultima_atualizacao
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_preco_produto_base` 
+)
+
+, cte_hist as (
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,ds_variacao
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
+          ,vl_preco_venda
+          ,vl_preco_venda_por
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,fg_produto_base_composicao
+          ,fg_produto_composicao
+          ,dt_ultima_compra
+          ,dt_ini_vigencia
+          ,hr_ini_vigencia
+          ,dt_fim_vigencia
+          ,hr_fim_vigencia
+          ,dt_ultima_atualizacao
+          ,nr_linha
+          ,fg_alteracao
+          ,vl_custo_cadastro_anterior
+          ,vl_custo_ultima_compra_anterior
+          ,vl_preco_anterior
+          ,vl_preco_por_anterior
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_hist_preco_custo_produto` 
+    where nr_linha = 1
+)
+
+, cte_base as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.ds_variacao
+          ,a.qt_estoque_atual
+          ,a.vl_custo_cadastro
+          ,a.vl_custo_ultima_compra
+          ,a.vl_preco_venda
+          ,a.vl_preco_venda_por
+          ,b.vl_custo_cadastro_anterior
+          ,b.vl_custo_ultima_compra_anterior
+          ,b.vl_preco_anterior
+          ,b.vl_preco_por_anterior
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,a.ds_classificacao_produto
+          ,a.ds_origem_produto
+          ,a.ds_tipo_produto
+          ,a.fg_produto_composicao
+          ,a.fg_produto_base_composicao
+          ,a.fg_produto_fabricado
+          ,b.fg_alteracao
+          ,a.pr_desconto_padrao 
+          ,a.pr_meta_margem 
+          ,a.tx_aliquota_cartao
+          ,a.tx_fixa_cartao
+          ,a.tx_aliquota_pix
+          ,a.vl_desconto_fixo_pix
+          ,a.vl_materiais_envio
+          ,b.dt_ini_vigencia
+          ,a.dt_ultima_compra
+          ,a.dt_ultima_ingestao
+          ,a.dt_ultima_atualizacao
+      from cte_preco as a
+ left join cte_hist  as b 
+        on a.cd_produto_bling = b.cd_produto_bling
+)
+
+  select *
+    from cte_base
+order by nm_produto
+        ,ds_variacao
+    );
+  
+[0m17:00:47.163164 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:a05ad26c-22b7-44ca-9994-4edbfbd5f5fd&page=queryresults
+[0m17:00:50.016548 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_preco_produto (execute): 17:00:46.120121 => 17:00:50.016548
+[0m17:00:50.017543 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233365FCDC0>]}
+[0m17:00:50.018549 [info ] [Thread-1  ]: 25 of 27 OK created sql table model dbt_dw_az.tb_preco_produto ................. [[32mCREATE TABLE (353.0 rows, 104.3 KiB processed)[0m in 3.92s]
+[0m17:00:50.019452 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_preco_produto
+[0m17:00:53.715449 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_agg_venda_produto_final (execute): 17:00:34.900374 => 17:00:53.714433
+[0m17:00:53.716432 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233354249D0>]}
+[0m17:00:53.717430 [info ] [Thread-2  ]: 23 of 27 OK created sql table model dbt_dw_az.tb_agg_venda_produto_final ....... [[32mCREATE TABLE (312.0 rows, 295.3 KiB processed)[0m in 18.82s]
+[0m17:00:53.719432 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.tb_agg_venda_produto_final
+[0m17:00:53.720392 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_venda_produto_base
+[0m17:00:53.721432 [info ] [Thread-1  ]: 26 of 27 START sql table model dbt_dw_az.tb_venda_produto_base ................. [RUN]
+[0m17:00:53.724382 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_preco_produto, now model.shibaribrasil.tb_venda_produto_base)
+[0m17:00:53.725431 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_venda_produto_base
+[0m17:00:53.730409 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_venda_produto_base"
+[0m17:00:53.731436 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_venda_produto_base (compile): 17:00:53.725431 => 17:00:53.731436
+[0m17:00:53.731436 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_venda_produto_base
+[0m17:00:53.733455 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:00:54.537068 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_venda_produto_base"
+[0m17:00:54.540060 [debug] [Thread-1  ]: On model.shibaribrasil.tb_venda_produto_base: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_venda_produto_base"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_venda_produto_base`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_produto as (
+   select distinct
+          cd_produto_bling
+         ,cd_produto
+         ,cd_codigo_barras
+         ,nm_produto
+         ,nm_produto_completo
+         ,ds_variacao
+         ,ds_tipo_produto
+         ,cd_produto_bling_pai
+         ,fg_produto_composicao
+         ,ds_tipo_estoque
+         ,vl_custo_total
+         ,vl_preco_venda
+         ,ds_subcategoria
+         ,ds_categoria
+         ,ds_classificacao_produto
+         ,ds_origem_produto
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`
+    where ds_categoria not in ('Suprimentos', 'Produtos Digitais', 'Inativos')
+)
+
+, cte_composicao as (
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
+          ,ds_tipo_produto
+          ,cd_produto_bling_pai
+          ,cd_produto_bling_componente
+          ,cd_produto_componente
+          ,cd_codigo_barras_componente
+          ,nm_produto_componente
+          ,nm_produto_completo_componente
+          ,ds_variacao_componente
+          ,qt_componente
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_composicao_produto`
+)
+
+, cte_produto_composicao as (
+   select a.cd_produto_bling
+         ,a.cd_produto
+         ,a.cd_codigo_barras
+         ,a.nm_produto
+         ,a.nm_produto_completo
+         ,a.ds_variacao
+         ,a.ds_tipo_produto
+         ,a.cd_produto_bling_pai
+         ,a.fg_produto_composicao
+         ,b.cd_produto_bling_componente
+         ,b.cd_produto_componente
+         ,b.cd_codigo_barras_componente
+         ,b.nm_produto_componente
+         ,b.nm_produto_completo_componente
+         ,b.ds_variacao_componente
+         ,b.qt_componente
+         ,a.ds_tipo_estoque
+         ,a.vl_custo_total
+         ,a.vl_preco_venda
+         ,a.ds_subcategoria
+         ,a.ds_categoria
+         ,a.ds_classificacao_produto
+         ,a.ds_origem_produto
+     from cte_produto    as a 
+left join cte_composicao as b
+       on a.cd_produto_bling = b.cd_produto_bling
+)
+
+, cte_venda_produto as (
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,ds_variacao
+          ,coalesce(qt_pedidos_mes_atual, 0)     as qt_pedidos_mes_atual
+          ,coalesce(qt_pecas_mes_atual, 0)       as qt_pecas_mes_atual
+          ,coalesce(vl_total_mes_atual, 0)       as vl_total_mes_atual
+          ,coalesce(qt_pedidos_mes_anterior, 0)  as qt_pedidos_mes_anterior
+          ,coalesce(qt_pecas_mes_anterior, 0)    as qt_pecas_mes_anterior
+          ,coalesce(vl_total_mes_anterior, 0)    as vl_total_mes_anterior
+          ,coalesce(qt_pedidos_tres_meses, 0)    as qt_pedidos_tres_meses
+          ,coalesce(qt_pecas_tres_meses, 0)      as qt_pecas_tres_meses
+          ,coalesce(vl_total_tres_meses, 0)      as vl_total_tres_meses
+          ,coalesce(qt_pedidos_seis_meses, 0)    as qt_pedidos_seis_meses
+          ,coalesce(qt_pecas_seis_meses, 0)      as qt_pecas_seis_meses
+          ,coalesce(vl_total_seis_meses, 0)      as vl_total_seis_meses
+          ,coalesce(qt_pedidos_sessenta_dias, 0) as qt_pedidos_sessenta_dias
+          ,coalesce(qt_pecas_sessenta_dias, 0)   as qt_pecas_sessenta_dias
+          ,coalesce(vl_total_sessenta_dias, 0)   as vl_total_sessenta_dias
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_venda_produto_final`
+)
+
+, cte_base as (
+   select a.cd_produto_bling
+         ,a.cd_produto
+         ,a.cd_codigo_barras
+         ,a.nm_produto
+         ,a.nm_produto_completo
+         ,a.ds_variacao
+         ,a.ds_tipo_produto
+         ,a.cd_produto_bling_pai
+         ,a.fg_produto_composicao
+         ,coalesce(a.cd_produto_bling_componente, a.cd_produto_bling)              as cd_produto_bling_componente
+         ,coalesce(a.cd_produto_componente, a.cd_produto)                          as cd_produto_componente
+         ,coalesce(a.cd_codigo_barras_componente, a.cd_codigo_barras)              as cd_codigo_barras_componente
+         ,coalesce(a.nm_produto_componente, a.nm_produto)                          as nm_produto_componente
+         ,coalesce(a.nm_produto_completo_componente, a.nm_produto_completo)        as nm_produto_completo_componente
+         ,coalesce(a.ds_variacao_componente, a.ds_variacao)                        as ds_variacao_componente
+         ,coalesce(a.qt_componente, 1)                                             as qt_componente
+         ,coalesce((b.qt_pecas_mes_atual * coalesce(a.qt_componente, 1)), 0)       as qt_pecas_mes_atual 
+         ,coalesce((b.qt_pecas_mes_anterior * coalesce(a.qt_componente, 1)), 0)    as qt_pecas_mes_anterior 
+         ,coalesce((b.qt_pecas_tres_meses * coalesce(a.qt_componente, 1)), 0)      as qt_pecas_tres_meses 
+         ,coalesce((b.qt_pecas_seis_meses * coalesce(a.qt_componente, 1)), 0)      as qt_pecas_seis_meses 
+         ,coalesce((b.qt_pecas_sessenta_dias * coalesce(a.qt_componente, 1)), 0)   as qt_pecas_sessenta_dias 
+     from cte_produto_composicao    as a 
+left join cte_venda_produto         as b
+       on a.cd_produto_bling = b.cd_produto_bling
+)
+
+, cte_produto_base as (
+   select cd_produto_bling_componente      as cd_produto_bling
+         ,cd_produto_componente            as cd_produto
+         ,cd_codigo_barras_componente      as cd_codigo_barras
+         ,nm_produto_componente            as nm_produto
+         ,nm_produto_completo_componente   as nm_produto_completo
+         ,ds_variacao_componente           as ds_variacao
+         ,sum(qt_pecas_mes_atual)          as qt_pecas_mes_atual 
+         ,sum(qt_pecas_mes_anterior)       as qt_pecas_mes_anterior 
+         ,sum(qt_pecas_tres_meses)         as qt_pecas_tres_meses 
+         ,sum(qt_pecas_seis_meses)         as qt_pecas_seis_meses 
+         ,sum(qt_pecas_sessenta_dias)      as qt_pecas_sessenta_dias 
+     from cte_base
+ group by cd_produto_bling_componente
+         ,cd_produto_componente
+         ,cd_codigo_barras_componente
+         ,nm_produto_componente
+         ,nm_produto_completo_componente
+         ,ds_variacao_componente
+)
+
+, cte_base_final as (
+   select a.cd_produto_bling                 as cd_produto_bling
+         ,a.cd_produto                       as cd_produto
+         ,a.cd_codigo_barras                 as cd_codigo_barras
+         ,a.nm_produto                       as nm_produto
+         ,a.nm_produto_completo              as nm_produto_completo
+         ,a.ds_variacao                      as ds_variacao
+         ,b.ds_subcategoria                  as ds_subcategoria
+         ,b.ds_categoria                     as ds_categoria
+         ,b.ds_classificacao_produto         as ds_classificacao_produto
+         ,b.ds_origem_produto                as ds_origem_produto
+         ,a.qt_pecas_mes_atual               as qt_pecas_mes_atual 
+         ,a.qt_pecas_mes_anterior            as qt_pecas_mes_anterior 
+         ,a.qt_pecas_tres_meses              as qt_pecas_tres_meses 
+         ,a.qt_pecas_seis_meses              as qt_pecas_seis_meses 
+         ,a.qt_pecas_sessenta_dias           as qt_pecas_sessenta_dias 
+     from cte_produto_base as a
+left join cte_produto_composicao as b
+       on a.cd_produto_bling = b.cd_produto_bling
+    where b.fg_produto_composicao is false 
+      and b.ds_tipo_produto not in ('PAI')
+)
+
+, cte_ordenada AS (
+  select *
+         ,sum(qt_pecas_sessenta_dias) over () as qt_total_geral
+         ,sum(qt_pecas_sessenta_dias) over (order by qt_pecas_sessenta_dias desc rows between unbounded preceding and current row) as qt_acumulada
+    from cte_base_final
+)
+
+, cte_classificada AS (
+  select *
+         ,round(qt_acumulada / qt_total_geral, 4) as vl_percentual_acumulado
+         ,round(qt_pecas_sessenta_dias / qt_total_geral, 4) as vl_percentual_participacao
+         ,case
+           when qt_acumulada / qt_total_geral <= 0.80 then 'A'
+           when qt_acumulada / qt_total_geral <= 0.95 then 'B'
+           else 'C'
+         end as ds_classificacao_abc
+    from cte_ordenada
+)
+
+  select *
+    from cte_classificada
+order by nm_produto
+    );
+  
+[0m17:00:54.975708 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:6866c596-59ea-4581-820a-4033aa7a18a3&page=queryresults
+[0m17:00:58.110553 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_venda_produto_base (execute): 17:00:53.731436 => 17:00:58.110553
+[0m17:00:58.112644 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233355838B0>]}
+[0m17:00:58.113645 [info ] [Thread-1  ]: 26 of 27 OK created sql table model dbt_dw_az.tb_venda_produto_base ............ [[32mCREATE TABLE (155.0 rows, 125.9 KiB processed)[0m in 4.39s]
+[0m17:00:58.115803 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_venda_produto_base
+[0m17:00:58.116529 [debug] [Thread-2  ]: Began running node model.shibaribrasil.tb_estoque_produto_base
+[0m17:00:58.117644 [info ] [Thread-2  ]: 27 of 27 START sql table model dbt_dw_az.tb_estoque_produto_base ............... [RUN]
+[0m17:00:58.119636 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.shibaribrasil.tb_agg_venda_produto_final, now model.shibaribrasil.tb_estoque_produto_base)
+[0m17:00:58.120548 [debug] [Thread-2  ]: Began compiling node model.shibaribrasil.tb_estoque_produto_base
+[0m17:00:58.127637 [debug] [Thread-2  ]: Writing injected SQL for node "model.shibaribrasil.tb_estoque_produto_base"
+[0m17:00:58.128635 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_estoque_produto_base (compile): 17:00:58.120548 => 17:00:58.128635
+[0m17:00:58.129662 [debug] [Thread-2  ]: Began executing node model.shibaribrasil.tb_estoque_produto_base
+[0m17:00:58.132538 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m17:00:58.781787 [debug] [Thread-2  ]: Writing runtime sql for node "model.shibaribrasil.tb_estoque_produto_base"
+[0m17:00:58.784857 [debug] [Thread-2  ]: On model.shibaribrasil.tb_estoque_produto_base: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_estoque_produto_base"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_estoque_produto_base`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_produto as (
+    select distinct
+           a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.nm_produto_completo
+          ,a.ds_variacao
+          ,a.ds_tipo_produto
+          ,a.cd_produto_bling_pai
+          ,a.fg_produto_composicao
+          ,a.ds_tipo_estoque
+          ,a.qt_estoque_minimo
+          ,a.qt_estoque_atual
+          ,a.vl_custo_total
+          ,a.vl_preco_venda
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,a.ds_classificacao_produto
+          ,a.ds_origem_produto
+          ,a.dt_ultima_ingestao
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`  as a   
+)
+
+, cte_venda_produto as (
+   select a.cd_produto_bling                 as cd_produto_bling
+         ,a.cd_produto                       as cd_produto
+         ,a.cd_codigo_barras                 as cd_codigo_barras
+         ,a.nm_produto                       as nm_produto
+         ,a.nm_produto_completo              as nm_produto_completo
+         ,a.ds_variacao                      as ds_variacao
+         ,a.ds_subcategoria                  as ds_subcategoria
+         ,a.ds_categoria                     as ds_categoria
+         ,a.ds_classificacao_produto         as ds_classificacao_produto
+         ,a.ds_origem_produto                as ds_origem_produto
+         ,a.qt_pecas_mes_atual               as qt_pecas_mes_atual 
+         ,a.qt_pecas_mes_anterior            as qt_pecas_mes_anterior 
+         ,a.qt_pecas_tres_meses              as qt_pecas_tres_meses 
+         ,a.qt_pecas_seis_meses              as qt_pecas_seis_meses 
+         ,a.qt_pecas_sessenta_dias           as qt_pecas_sessenta_dias
+         ,a.ds_classificacao_abc             as ds_classificacao_abc
+         ,a.vl_percentual_participacao       as vl_percentual_participacao
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_venda_produto_base` as a
+)
+
+, cte_tempo as (
+    select dt_data
+          ,dt_prim_dia_mes
+      from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_tempo`
+     where dt_data >= date_trunc(date_sub(current_date(), interval 6 month), month)
+       and dt_data <= current_date
+)
+
+, cte_tempo_mes_atual as (
+    select count(distinct dt_data) qt_dias_mes_atual
+      from cte_tempo
+     where dt_data >= date_trunc(date_sub(current_date(), interval 0 month), month)
+       and dt_data <= current_date
+)
+
+, cte_tempo_mes_anterior as (
+    select count(distinct dt_data) qt_dias_mes_anterior
+      from cte_tempo
+     where dt_data >= date_trunc(date_sub(current_date(), interval 1 month), month)
+       and dt_data <  date_trunc(date_sub(current_date(), interval 0 month), month)
+)
+
+, cte_tempo_tres_meses as (
+    select count(distinct dt_data) qt_dias_tres_meses
+      from cte_tempo
+     where dt_data >= date_trunc(date_sub(current_date(), interval 3 month), month)
+       and dt_data <  date_trunc(date_sub(current_date(), interval 0 month), month)
+)
+
+, cte_base as (
+   select a.cd_produto_bling                 as cd_produto_bling
+         ,a.cd_produto                       as cd_produto
+         ,a.cd_codigo_barras                 as cd_codigo_barras
+         ,a.nm_produto                       as nm_produto
+         ,a.nm_produto_completo              as nm_produto_completo
+         ,a.ds_variacao                      as ds_variacao
+         ,a.ds_subcategoria                  as ds_subcategoria
+         ,a.ds_categoria                     as ds_categoria
+         ,a.ds_classificacao_produto         as ds_classificacao_produto
+         ,a.ds_origem_produto                as ds_origem_produto
+         ,a.ds_classificacao_abc             as ds_classificacao_abc
+         ,a.vl_percentual_participacao       as vl_percentual_participacao
+         ,b.qt_estoque_minimo                as qt_estoque_minimo
+         ,b.qt_estoque_atual                 as qt_estoque_atual
+         ,b.vl_custo_total                   as vl_custo_total
+         ,b.vl_preco_venda                   as vl_preco_venda
+         ,a.qt_pecas_mes_atual               as qt_pecas_mes_atual 
+         ,a.qt_pecas_mes_anterior            as qt_pecas_mes_anterior 
+         ,a.qt_pecas_tres_meses              as qt_pecas_tres_meses 
+         ,a.qt_pecas_sessenta_dias           as qt_pecas_sessenta_dias
+         ,c.qt_dias_mes_atual                as qt_dias_mes_atual
+         ,d.qt_dias_mes_anterior             as qt_dias_mes_anterior
+         ,e.qt_dias_tres_meses               as qt_dias_tres_meses
+     from cte_venda_produto  as a
+        ,cte_tempo_mes_atual      as c
+        ,cte_tempo_mes_anterior   as d
+        ,cte_tempo_tres_meses     as e
+left join cte_produto        as b 
+       on a.cd_produto_bling = b.cd_produto_bling
+)
+
+  select *
+    from cte_base
+order by nm_produto
+        ,ds_variacao
+    );
+  
+[0m17:00:59.482501 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:06b86353-4b4b-410c-a9e2-53ca2e3c78b8&page=queryresults
+[0m17:01:02.574809 [debug] [Thread-2  ]: Timing info for model.shibaribrasil.tb_estoque_produto_base (execute): 17:00:58.129662 => 17:01:02.574809
+[0m17:01:02.574809 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9c9222bc-92c0-471d-bd50-46a2621f7028', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233366CC940>]}
+[0m17:01:02.575809 [info ] [Thread-2  ]: 27 of 27 OK created sql table model dbt_dw_az.tb_estoque_produto_base .......... [[32mCREATE TABLE (155.0 rows, 2.2 MiB processed)[0m in 4.46s]
+[0m17:01:02.576808 [debug] [Thread-2  ]: Finished running node model.shibaribrasil.tb_estoque_produto_base
+[0m17:01:02.577806 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:01:02.578838 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622' was properly closed.
+[0m17:01:02.578838 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622' was properly closed.
+[0m17:01:02.579810 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622_dbt_dw_stg' was properly closed.
+[0m17:01:02.579810 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622_dbt_dw_az' was properly closed.
+[0m17:01:02.579810 [debug] [MainThread]: Connection 'model.shibaribrasil.tb_venda_produto_base' was properly closed.
+[0m17:01:02.579810 [debug] [MainThread]: Connection 'model.shibaribrasil.tb_estoque_produto_base' was properly closed.
+[0m17:01:02.580812 [info ] [MainThread]: 
+[0m17:01:02.580812 [info ] [MainThread]: Finished running 13 view models, 14 table models in 0 hours 0 minutes and 57.75 seconds (57.75s).
+[0m17:01:02.583808 [debug] [MainThread]: Command end result
+[0m17:01:02.666681 [info ] [MainThread]: 
+[0m17:01:02.667681 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:01:02.668681 [info ] [MainThread]: 
+[0m17:01:02.668681 [info ] [MainThread]: Done. PASS=27 WARN=0 ERROR=0 SKIP=0 TOTAL=27
+[0m17:01:02.669681 [debug] [MainThread]: Command `dbt run` succeeded at 17:01:02.669681 after 58.69 seconds
+[0m17:01:02.670684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023330A33430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002333411A250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000233344240A0>]}
+[0m17:01:02.670684 [debug] [MainThread]: Flushing usage events
+[0m17:01:05.781739 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017776C2B460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017775BB7670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017775BB7D90>]}
+
+
+============================== 17:01:05.785767 | 64c89a67-bee0-4271-a980-17672561ddd2 ==============================
+[0m17:01:05.785767 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:01:05.785767 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'C:\\Git\\sb_loja_virtual\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Git\\sb_loja_virtual', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt snapshot', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:01:06.296408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '64c89a67-bee0-4271-a980-17672561ddd2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017775BB77C0>]}
+[0m17:01:06.353546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '64c89a67-bee0-4271-a980-17672561ddd2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001777A1D4130>]}
+[0m17:01:06.354608 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m17:01:06.360744 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:01:06.410327 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:01:06.410327 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:01:06.415476 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '64c89a67-bee0-4271-a980-17672561ddd2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001777A594DF0>]}
+[0m17:01:06.426481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '64c89a67-bee0-4271-a980-17672561ddd2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001777A4AF910>]}
+[0m17:01:06.427355 [info ] [MainThread]: Found 28 models, 1 snapshot, 14 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m17:01:06.427355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '64c89a67-bee0-4271-a980-17672561ddd2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001777A4AFA00>]}
+[0m17:01:06.428470 [info ] [MainThread]: 
+[0m17:01:06.429423 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m17:01:06.430454 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622'
+[0m17:01:06.431420 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:01:07.178345 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622_snapshots'
+[0m17:01:07.180366 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:01:07.182342 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622_dbt_dw_dw'
+[0m17:01:07.183319 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:01:07.804050 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_igneous-sandbox-381622_snapshots, now list_igneous-sandbox-381622_dbt_dw_stg)
+[0m17:01:07.806037 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:01:07.847206 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_igneous-sandbox-381622_dbt_dw_dw, now list_igneous-sandbox-381622_dbt_dw_az)
+[0m17:01:07.847206 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:01:08.500558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '64c89a67-bee0-4271-a980-17672561ddd2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001777A313130>]}
+[0m17:01:08.502108 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m17:01:08.504264 [info ] [MainThread]: 
+[0m17:01:08.513962 [debug] [Thread-1  ]: Began running node snapshot.shibaribrasil.snapshot_preco_custo_produto
+[0m17:01:08.514965 [info ] [Thread-1  ]: 1 of 1 START snapshot snapshots.snapshot_preco_custo_produto ................... [RUN]
+[0m17:01:08.517341 [debug] [Thread-1  ]: Acquiring new bigquery connection 'snapshot.shibaribrasil.snapshot_preco_custo_produto'
+[0m17:01:08.517341 [debug] [Thread-1  ]: Began compiling node snapshot.shibaribrasil.snapshot_preco_custo_produto
+[0m17:01:08.534057 [debug] [Thread-1  ]: Timing info for snapshot.shibaribrasil.snapshot_preco_custo_produto (compile): 17:01:08.517341 => 17:01:08.533040
+[0m17:01:08.534057 [debug] [Thread-1  ]: Began executing node snapshot.shibaribrasil.snapshot_preco_custo_produto
+[0m17:01:08.582044 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m17:01:08.584009 [debug] [Thread-1  ]: On snapshot.shibaribrasil.snapshot_preco_custo_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "snapshot.shibaribrasil.snapshot_preco_custo_produto"} */
+select * from (
+        select vl_preco_venda, vl_custo_cadastro, vl_custo_ultima_compra, vl_preco_venda_por from (
+                
+
+
+
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,ds_variacao
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
+          ,vl_preco_venda
+          ,vl_preco_venda_por
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,fg_produto_base_composicao
+          ,fg_produto_composicao
+          ,dt_ultima_compra 
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_preco_produto_base`
+
+            ) subq
+    ) as __dbt_sbq
+    where false and current_timestamp() = current_timestamp()
+    limit 0
+
+    
+[0m17:01:09.340231 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:56cc36f2-9d40-4243-826c-e28ab3cac046&page=queryresults
+[0m17:01:10.531616 [debug] [Thread-1  ]: On snapshot.shibaribrasil.snapshot_preco_custo_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "snapshot.shibaribrasil.snapshot_preco_custo_produto"} */
+
+        
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`snapshots`.`snapshot_preco_custo_produto__dbt_tmp`
+      
+    
+    
+
+    OPTIONS(
+      expiration_timestamp=TIMESTAMP_ADD(CURRENT_TIMESTAMP(), INTERVAL 12 hour)
+    )
+    as (
+      with snapshot_query as (
+
+        
+
+
+
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,ds_variacao
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
+          ,vl_preco_venda
+          ,vl_preco_venda_por
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,fg_produto_base_composicao
+          ,fg_produto_composicao
+          ,dt_ultima_compra 
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_preco_produto_base`
+
+
+    ),
+
+    snapshotted_data as (
+
+        select *,
+            cd_produto_bling as dbt_unique_key
+
+        from `igneous-sandbox-381622`.`snapshots`.`snapshot_preco_custo_produto`
+        where dbt_valid_to is null
+
+    ),
+
+    insertions_source_data as (
+
+        select
+            *,
+            cd_produto_bling as dbt_unique_key,
+            
+    current_timestamp()
+ as dbt_updated_at,
+            
+    current_timestamp()
+ as dbt_valid_from,
+            nullif(
+    current_timestamp()
+, 
+    current_timestamp()
+) as dbt_valid_to,
+            to_hex(md5(concat(coalesce(cast(cd_produto_bling as string), ''), '|',coalesce(cast(
+    current_timestamp()
+ as string), '')))) as dbt_scd_id
+
+        from snapshot_query
+    ),
+
+    updates_source_data as (
+
+        select
+            *,
+            cd_produto_bling as dbt_unique_key,
+            
+    current_timestamp()
+ as dbt_updated_at,
+            
+    current_timestamp()
+ as dbt_valid_from,
+            
+    current_timestamp()
+ as dbt_valid_to
+
+        from snapshot_query
+    ),
+
+    deletes_source_data as (
+
+        select
+            *,
+            cd_produto_bling as dbt_unique_key
+        from snapshot_query
+    ),
+    
+
+    insertions as (
+
+        select
+            'insert' as dbt_change_type,
+            source_data.*
+
+        from insertions_source_data as source_data
+        left outer join snapshotted_data on snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+        where snapshotted_data.dbt_unique_key is null
+           or (
+                snapshotted_data.dbt_unique_key is not null
+            and (
+                (snapshotted_data.`vl_preco_venda` != source_data.`vl_preco_venda`
+        or
+        (
+            ((snapshotted_data.`vl_preco_venda` is null) and not (source_data.`vl_preco_venda` is null))
+            or
+            ((not snapshotted_data.`vl_preco_venda` is null) and (source_data.`vl_preco_venda` is null))
+        ) or snapshotted_data.`vl_custo_cadastro` != source_data.`vl_custo_cadastro`
+        or
+        (
+            ((snapshotted_data.`vl_custo_cadastro` is null) and not (source_data.`vl_custo_cadastro` is null))
+            or
+            ((not snapshotted_data.`vl_custo_cadastro` is null) and (source_data.`vl_custo_cadastro` is null))
+        ) or snapshotted_data.`vl_custo_ultima_compra` != source_data.`vl_custo_ultima_compra`
+        or
+        (
+            ((snapshotted_data.`vl_custo_ultima_compra` is null) and not (source_data.`vl_custo_ultima_compra` is null))
+            or
+            ((not snapshotted_data.`vl_custo_ultima_compra` is null) and (source_data.`vl_custo_ultima_compra` is null))
+        ) or snapshotted_data.`vl_preco_venda_por` != source_data.`vl_preco_venda_por`
+        or
+        (
+            ((snapshotted_data.`vl_preco_venda_por` is null) and not (source_data.`vl_preco_venda_por` is null))
+            or
+            ((not snapshotted_data.`vl_preco_venda_por` is null) and (source_data.`vl_preco_venda_por` is null))
+        ))
+            )
+        )
+
+    ),
+
+    updates as (
+
+        select
+            'update' as dbt_change_type,
+            source_data.*,
+            snapshotted_data.dbt_scd_id
+
+        from updates_source_data as source_data
+        join snapshotted_data on snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+        where (
+            (snapshotted_data.`vl_preco_venda` != source_data.`vl_preco_venda`
+        or
+        (
+            ((snapshotted_data.`vl_preco_venda` is null) and not (source_data.`vl_preco_venda` is null))
+            or
+            ((not snapshotted_data.`vl_preco_venda` is null) and (source_data.`vl_preco_venda` is null))
+        ) or snapshotted_data.`vl_custo_cadastro` != source_data.`vl_custo_cadastro`
+        or
+        (
+            ((snapshotted_data.`vl_custo_cadastro` is null) and not (source_data.`vl_custo_cadastro` is null))
+            or
+            ((not snapshotted_data.`vl_custo_cadastro` is null) and (source_data.`vl_custo_cadastro` is null))
+        ) or snapshotted_data.`vl_custo_ultima_compra` != source_data.`vl_custo_ultima_compra`
+        or
+        (
+            ((snapshotted_data.`vl_custo_ultima_compra` is null) and not (source_data.`vl_custo_ultima_compra` is null))
+            or
+            ((not snapshotted_data.`vl_custo_ultima_compra` is null) and (source_data.`vl_custo_ultima_compra` is null))
+        ) or snapshotted_data.`vl_preco_venda_por` != source_data.`vl_preco_venda_por`
+        or
+        (
+            ((snapshotted_data.`vl_preco_venda_por` is null) and not (source_data.`vl_preco_venda_por` is null))
+            or
+            ((not snapshotted_data.`vl_preco_venda_por` is null) and (source_data.`vl_preco_venda_por` is null))
+        ))
+        )
+    ),
+
+    deletes as (
+
+        select
+            'delete' as dbt_change_type,
+            source_data.*,
+            
+    current_timestamp()
+ as dbt_valid_from,
+            
+    current_timestamp()
+ as dbt_updated_at,
+            
+    current_timestamp()
+ as dbt_valid_to,
+            snapshotted_data.dbt_scd_id
+
+        from snapshotted_data
+        left join deletes_source_data as source_data on snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+        where source_data.dbt_unique_key is null
+    )
+
+    select * from insertions
+    union all
+    select * from updates
+    union all
+    select * from deletes
+
+    );
+  
+    
+[0m17:01:10.942273 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:bcf091ed-1e53-4e6e-b425-53f8b1106337&page=queryresults
+[0m17:01:13.347183 [debug] [Thread-1  ]: BigQuery adapter: Adding columns ([]) to table `igneous-sandbox-381622`.`snapshots`.`snapshot_preco_custo_produto`".
+[0m17:01:14.211179 [debug] [Thread-1  ]: Writing runtime sql for node "snapshot.shibaribrasil.snapshot_preco_custo_produto"
+[0m17:01:14.213183 [debug] [Thread-1  ]: On snapshot.shibaribrasil.snapshot_preco_custo_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "snapshot.shibaribrasil.snapshot_preco_custo_produto"} */
+
+      merge into `igneous-sandbox-381622`.`snapshots`.`snapshot_preco_custo_produto` as DBT_INTERNAL_DEST
+    using `igneous-sandbox-381622`.`snapshots`.`snapshot_preco_custo_produto__dbt_tmp` as DBT_INTERNAL_SOURCE
+    on DBT_INTERNAL_SOURCE.dbt_scd_id = DBT_INTERNAL_DEST.dbt_scd_id
+
+    when matched
+     and DBT_INTERNAL_DEST.dbt_valid_to is null
+     and DBT_INTERNAL_SOURCE.dbt_change_type in ('update', 'delete')
+        then update
+        set dbt_valid_to = DBT_INTERNAL_SOURCE.dbt_valid_to
+
+    when not matched
+     and DBT_INTERNAL_SOURCE.dbt_change_type = 'insert'
+        then insert (`cd_produto_bling`, `cd_produto`, `cd_codigo_barras`, `nm_produto`, `ds_variacao`, `vl_custo_cadastro`, `vl_custo_ultima_compra`, `vl_preco_venda`, `vl_preco_venda_por`, `ds_subcategoria`, `ds_categoria`, `ds_classificacao_produto`, `ds_origem_produto`, `fg_produto_base_composicao`, `fg_produto_composicao`, `dt_ultima_compra`, `dbt_updated_at`, `dbt_valid_from`, `dbt_valid_to`, `dbt_scd_id`)
+        values (`cd_produto_bling`, `cd_produto`, `cd_codigo_barras`, `nm_produto`, `ds_variacao`, `vl_custo_cadastro`, `vl_custo_ultima_compra`, `vl_preco_venda`, `vl_preco_venda_por`, `ds_subcategoria`, `ds_categoria`, `ds_classificacao_produto`, `ds_origem_produto`, `fg_produto_base_composicao`, `fg_produto_composicao`, `dt_ultima_compra`, `dbt_updated_at`, `dbt_valid_from`, `dbt_valid_to`, `dbt_scd_id`)
+
+
+  
+[0m17:01:14.633260 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:31fe8646-42c7-4443-8b28-519112d58afd&page=queryresults
+[0m17:01:17.207119 [debug] [Thread-1  ]: Timing info for snapshot.shibaribrasil.snapshot_preco_custo_produto (execute): 17:01:08.534985 => 17:01:17.207119
+[0m17:01:17.210103 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '64c89a67-bee0-4271-a980-17672561ddd2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000177748B76D0>]}
+[0m17:01:17.212104 [info ] [Thread-1  ]: 1 of 1 OK snapshotted snapshots.snapshot_preco_custo_produto ................... [[32mMERGE (16.0 rows, 86.9 KiB processed)[0m in 8.69s]
+[0m17:01:17.214139 [debug] [Thread-1  ]: Finished running node snapshot.shibaribrasil.snapshot_preco_custo_produto
+[0m17:01:17.218143 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:01:17.219143 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622' was properly closed.
+[0m17:01:17.220140 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622_dbt_dw_stg' was properly closed.
+[0m17:01:17.221147 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622_dbt_dw_az' was properly closed.
+[0m17:01:17.222154 [debug] [MainThread]: Connection 'snapshot.shibaribrasil.snapshot_preco_custo_produto' was properly closed.
+[0m17:01:17.223149 [info ] [MainThread]: 
+[0m17:01:17.225105 [info ] [MainThread]: Finished running 1 snapshot in 0 hours 0 minutes and 10.79 seconds (10.79s).
+[0m17:01:17.228098 [debug] [MainThread]: Command end result
+[0m17:01:17.266395 [info ] [MainThread]: 
+[0m17:01:17.268348 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:01:17.270534 [info ] [MainThread]: 
+[0m17:01:17.272127 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:01:17.274233 [debug] [MainThread]: Command `dbt snapshot` succeeded at 17:01:17.274233 after 11.55 seconds
+[0m17:01:17.275235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017776C2B460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001777A2FAD00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000177748B76D0>]}
+[0m17:01:17.276231 [debug] [MainThread]: Flushing usage events
+[0m17:01:20.642295 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D2359430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D12E09D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D12E0B80>]}
+
+
+============================== 17:01:20.645883 | 8f27be02-1f7f-4ef9-9ecd-74b8c62211d3 ==============================
+[0m17:01:20.645883 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:01:20.646799 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Git\\sb_loja_virtual\\logs', 'profiles_dir': 'C:\\Git\\sb_loja_virtual', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --select tag:snaps', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:01:21.170604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8f27be02-1f7f-4ef9-9ecd-74b8c62211d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D12CA3D0>]}
+[0m17:01:21.228181 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8f27be02-1f7f-4ef9-9ecd-74b8c62211d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D129F370>]}
+[0m17:01:21.230141 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m17:01:21.235189 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:01:21.287527 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:01:21.287527 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:01:21.291538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8f27be02-1f7f-4ef9-9ecd-74b8c62211d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D5CC6430>]}
+[0m17:01:21.302889 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8f27be02-1f7f-4ef9-9ecd-74b8c62211d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D5AE9370>]}
+[0m17:01:21.302889 [info ] [MainThread]: Found 28 models, 1 snapshot, 14 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m17:01:21.303894 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8f27be02-1f7f-4ef9-9ecd-74b8c62211d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D5A3DC40>]}
+[0m17:01:21.304938 [info ] [MainThread]: 
+[0m17:01:21.305528 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m17:01:21.306557 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622'
+[0m17:01:21.306557 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:01:21.988459 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622_dbt_dw_az'
+[0m17:01:21.990485 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:01:21.991429 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_igneous-sandbox-381622_dbt_dw_dw'
+[0m17:01:21.992747 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:01:22.631659 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_igneous-sandbox-381622_dbt_dw_az, now list_igneous-sandbox-381622_snapshots)
+[0m17:01:22.632161 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:01:22.642207 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_igneous-sandbox-381622_dbt_dw_dw, now list_igneous-sandbox-381622_dbt_dw_stg)
+[0m17:01:22.643204 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:01:23.282920 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8f27be02-1f7f-4ef9-9ecd-74b8c62211d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D5A2CDC0>]}
+[0m17:01:23.284923 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m17:01:23.285915 [info ] [MainThread]: 
+[0m17:01:23.293338 [debug] [Thread-1  ]: Began running node model.shibaribrasil.tb_hist_preco_custo_produto
+[0m17:01:23.294339 [info ] [Thread-1  ]: 1 of 1 START sql table model dbt_dw_az.tb_hist_preco_custo_produto ............. [RUN]
+[0m17:01:23.295949 [debug] [Thread-1  ]: Acquiring new bigquery connection 'model.shibaribrasil.tb_hist_preco_custo_produto'
+[0m17:01:23.295949 [debug] [Thread-1  ]: Began compiling node model.shibaribrasil.tb_hist_preco_custo_produto
+[0m17:01:23.306957 [debug] [Thread-1  ]: Writing injected SQL for node "model.shibaribrasil.tb_hist_preco_custo_produto"
+[0m17:01:23.308083 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_hist_preco_custo_produto (compile): 17:01:23.295949 => 17:01:23.308083
+[0m17:01:23.308083 [debug] [Thread-1  ]: Began executing node model.shibaribrasil.tb_hist_preco_custo_produto
+[0m17:01:23.318059 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m17:01:24.203154 [debug] [Thread-1  ]: Writing runtime sql for node "model.shibaribrasil.tb_hist_preco_custo_produto"
+[0m17:01:24.205153 [debug] [Thread-1  ]: On model.shibaribrasil.tb_hist_preco_custo_produto: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "shibaribrasil", "target_name": "dev", "node_id": "model.shibaribrasil.tb_hist_preco_custo_produto"} */
+
+  
+    
+
+    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_hist_preco_custo_produto`
+      
+    
+    
+
+    OPTIONS(
+      description=""""""
+    )
+    as (
+      
+
+with cte_base as (
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,ds_variacao
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
+          ,vl_preco_venda
+          ,vl_preco_venda_por
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,fg_produto_base_composicao
+          ,fg_produto_composicao
+          ,dt_ultima_compra
+          ,date(dbt_valid_from, "America/Sao_Paulo")                                                        as dt_ini_vigencia
+          ,time(dbt_valid_from, "America/Sao_Paulo")                                                        as hr_ini_vigencia
+          ,coalesce(date(dbt_valid_to, "America/Sao_Paulo"), date(dbt_updated_at, "America/Sao_Paulo"))     as dt_fim_vigencia
+          ,coalesce(time(dbt_valid_to, "America/Sao_Paulo"), time(dbt_updated_at, "America/Sao_Paulo"))     as hr_fim_vigencia
+          ,datetime(dbt_updated_at, "America/Sao_Paulo")                                                    as dt_ultima_atualizacao
+     from `igneous-sandbox-381622`.`snapshots`.`snapshot_preco_custo_produto`
+    -- where concat(date(dbt_valid_from, "America/Sao_Paulo"), ' ', time(dbt_valid_from, "America/Sao_Paulo")) not in ('2025-07-16 16:57:12.010830') --reprocessamento para incremento de coluna
+)
+
+, cte_snapshot as (
+    select cd_produto_bling
+          ,cd_produto
+          ,cd_codigo_barras
+          ,nm_produto
+          ,ds_variacao
+          ,vl_custo_cadastro
+          ,vl_custo_ultima_compra
+          ,vl_preco_venda
+          ,vl_preco_venda_por
+          ,ds_subcategoria
+          ,ds_categoria
+          ,ds_classificacao_produto
+          ,ds_origem_produto
+          ,fg_produto_base_composicao
+          ,fg_produto_composicao
+          ,dt_ultima_compra
+          ,dt_ini_vigencia
+          ,hr_ini_vigencia
+          ,dt_fim_vigencia
+          ,hr_fim_vigencia
+          ,dt_ultima_atualizacao
+          ,row_number() over (partition by cd_produto_bling order by dt_ini_vigencia desc, hr_ini_vigencia desc) as nr_linha
+     from cte_base
+)
+
+, cte_produtos_mudanca as (
+  select * 
+    from cte_snapshot
+   where nr_linha > 1
+)
+
+    select a.cd_produto_bling
+          ,a.cd_produto
+          ,a.cd_codigo_barras
+          ,a.nm_produto
+          ,a.ds_variacao
+          ,coalesce(a.vl_custo_cadastro, 0)      as vl_custo_cadastro
+          ,coalesce(a.vl_custo_ultima_compra, 0) as vl_custo_ultima_compra
+          ,coalesce(a.vl_preco_venda, 0)         as vl_preco_venda
+          ,coalesce(a.vl_preco_venda_por, 0)     as vl_preco_venda_por
+          ,a.ds_subcategoria
+          ,a.ds_categoria
+          ,a.ds_classificacao_produto
+          ,a.ds_origem_produto
+          ,a.fg_produto_base_composicao
+          ,a.fg_produto_composicao
+          ,a.dt_ultima_compra
+          ,a.dt_ini_vigencia
+          ,a.hr_ini_vigencia
+          ,a.dt_fim_vigencia
+          ,a.hr_fim_vigencia
+          ,a.dt_ultima_atualizacao
+          ,a.nr_linha
+          ,if(b.cd_produto_bling is not null, true, false)                                               as fg_alteracao
+          ,lead(a.vl_custo_cadastro)      over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_custo_cadastro_anterior
+          ,lead(a.vl_custo_ultima_compra) over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_custo_ultima_compra_anterior
+          ,lead(a.vl_preco_venda)         over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_preco_anterior
+          ,lead(a.vl_preco_venda_por)     over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_preco_por_anterior
+          
+     from cte_snapshot         as a
+left join cte_produtos_mudanca as b
+       on a.cd_produto_bling = b.cd_produto_bling
+ order by nm_produto
+         ,ds_variacao
+    );
+  
+[0m17:01:24.558805 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=igneous-sandbox-381622&j=bq:us-east4:1254a783-54fc-4953-b64f-b617025720da&page=queryresults
+[0m17:01:27.080571 [debug] [Thread-1  ]: Timing info for model.shibaribrasil.tb_hist_preco_custo_produto (execute): 17:01:23.308083 => 17:01:27.079560
+[0m17:01:27.081571 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8f27be02-1f7f-4ef9-9ecd-74b8c62211d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D6D63FD0>]}
+[0m17:01:27.082564 [info ] [Thread-1  ]: 1 of 1 OK created sql table model dbt_dw_az.tb_hist_preco_custo_produto ........ [[32mCREATE TABLE (388.0 rows, 72.0 KiB processed)[0m in 3.79s]
+[0m17:01:27.083564 [debug] [Thread-1  ]: Finished running node model.shibaribrasil.tb_hist_preco_custo_produto
+[0m17:01:27.085561 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:01:27.086567 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622' was properly closed.
+[0m17:01:27.086567 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622_snapshots' was properly closed.
+[0m17:01:27.086567 [debug] [MainThread]: Connection 'list_igneous-sandbox-381622_dbt_dw_stg' was properly closed.
+[0m17:01:27.087564 [debug] [MainThread]: Connection 'model.shibaribrasil.tb_hist_preco_custo_produto' was properly closed.
+[0m17:01:27.087564 [info ] [MainThread]: 
+[0m17:01:27.088572 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.78 seconds (5.78s).
+[0m17:01:27.089566 [debug] [MainThread]: Command end result
+[0m17:01:27.102619 [info ] [MainThread]: 
+[0m17:01:27.103606 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:01:27.103606 [info ] [MainThread]: 
+[0m17:01:27.103606 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:01:27.106183 [debug] [MainThread]: Command `dbt run` succeeded at 17:01:27.105144 after 6.51 seconds
+[0m17:01:27.106183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D2359430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D5CD2700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000168D5A3D8E0>]}
+[0m17:01:27.107191 [debug] [MainThread]: Flushing usage events

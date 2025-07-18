@@ -1,5 +1,5 @@
 {{ config(
-    tags = ['az', 'produto'],
+    tags = ['az', 'produto', 'snaps'],
     enabled = true
 )}}
 
@@ -110,6 +110,6 @@ with cte_preco as (
 )
 
   select *
-    from cte_preco
+    from cte_base
 order by nm_produto
         ,ds_variacao
