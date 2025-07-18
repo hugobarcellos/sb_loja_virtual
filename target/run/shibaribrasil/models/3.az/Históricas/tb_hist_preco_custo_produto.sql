@@ -93,13 +93,12 @@ with cte_base as (
           ,a.hr_fim_vigencia
           ,a.dt_ultima_atualizacao
           ,a.nr_linha
-          ,if(b.cd_produto_bling is not null, true, false)                                                                              as fg_alteracao
-
-          ,lag(a.vl_preco_venda)         over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_preco_anterior
-          ,lag(a.vl_preco_venda_por)     over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_preco_por_anterior
-          ,lag(a.vl_custo_cadastro)      over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_custo_cadastro_anterior
-          ,lag(a.vl_custo_ultima_compra) over (partition by a.cd_produto_bling order by a.dt_ini_vigencia desc, a.hr_ini_vigencia desc) as vl_custo_ultima_compra_anterior
-
+          ,if(b.cd_produto_bling is not null, true, false)                                               as fg_alteracao
+          ,lead(a.vl_custo_cadastro)      over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_custo_cadastro_anterior
+          ,lead(a.vl_custo_ultima_compra) over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_custo_ultima_compra_anterior
+          ,lead(a.vl_preco_venda)         over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_preco_anterior
+          ,lead(a.vl_preco_venda_por)     over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_preco_por_anterior
+          
      from cte_snapshot         as a
 left join cte_produtos_mudanca as b
        on a.cd_produto_bling = b.cd_produto_bling
