@@ -54,6 +54,7 @@ with cte_produto as (
           ,dt_compra
       from {{ ref('tb_agg_compra_produto') }}
      where nr_seq = 1
+       and ds_status_compra = 'ATENDIDO'
 )
 
 , cte_produto_base_kit as (
