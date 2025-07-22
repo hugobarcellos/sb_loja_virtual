@@ -51,6 +51,8 @@ with cte_produto as (
           ,dt_compra
       from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_compra_produto`
      where nr_seq = 1
+       and ds_status_compra = 'ATENDIDO'
+       and dt_compra >= '2025-07-01'
 )
 
 , cte_produto_base_kit as (
