@@ -22,7 +22,7 @@ with cte_produto as (
          ,ds_classificacao_produto
          ,ds_origem_produto
      from {{ ref('tb_produto') }}
-    where ds_categoria not in ('Suprimentos', 'Produtos Digitais', 'Inativos')
+    where ds_categoria not in ('Suprimentos', 'Produtos Digitais')
 )
 
 , cte_composicao as (

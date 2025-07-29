@@ -27,12 +27,14 @@ with cte_produto as (
           ,a.ds_tipo_estoque
           ,a.qt_estoque_minimo
           ,a.qt_estoque_atual
-          ,a.vl_custo_total
-          ,a.vl_preco_venda
+          ,coalesce(a.vl_custo_compra, a.vl_custo_total) vl_custo_total
+          ,coalesce(nullif(a.vl_preco_venda_por,0), a.vl_preco_venda) vl_preco_venda
           ,a.ds_subcategoria
           ,a.ds_categoria
           ,a.ds_classificacao_produto
           ,a.ds_origem_produto
+          ,a.qt_lead_time
+          ,a.qt_cobertura_desejada
           ,a.dt_ultima_ingestao
       from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`  as a   
 )
@@ -111,11 +113,14 @@ with cte_produto as (
          ,c.qt_dias_mes_atual                as qt_dias_mes_atual
          ,d.qt_dias_mes_anterior             as qt_dias_mes_anterior
          ,e.qt_dias_tres_meses               as qt_dias_tres_meses
-     from cte_venda_produto  as a
-        ,cte_tempo_mes_atual      as c
-        ,cte_tempo_mes_anterior   as d
-        ,cte_tempo_tres_meses     as e
-left join cte_produto        as b 
+         ,b.qt_lead_time                     as qt_lead_time
+         ,b.qt_cobertura_desejada            as qt_cobertura_desejada
+         ,b.dt_ultima_ingestao               as dt_ultima_ingestao
+     from cte_venda_produto        as a
+         ,cte_tempo_mes_atual      as c
+         ,cte_tempo_mes_anterior   as d
+         ,cte_tempo_tres_meses     as e
+left join cte_produto              as b 
        on a.cd_produto_bling = b.cd_produto_bling
 )
 
@@ -123,38 +128,70 @@ left join cte_produto        as b
     select cd_compra
           ,cd_produto_bling
           ,qt_item
+          ,vl_item
+          ,lk_produto_compra
+          ,ds_status_compra
+          ,nr_seq
      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_compra_produto`
-    where ds_status_compra in ('EM ABERTO')
+    -- where ds_status_compra in ('EM ABERTO')
+)
+
+, cte_produto_fabricado as (
+    select cd_produto_bling
+          ,cd_produto
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
+          ,sum(vl_custo_compra_total) vl_custo_compra_total
+      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto_fabricado`
+  group by cd_produto_bling
+          ,cd_produto
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
 )
 
 , cte_joins as (
-   select a.cd_produto_bling                 as cd_produto_bling
-         ,a.cd_produto                       as cd_produto
-         ,a.cd_codigo_barras                 as cd_codigo_barras
-         ,a.nm_produto                       as nm_produto
-         ,a.nm_produto_completo              as nm_produto_completo
-         ,a.ds_variacao                      as ds_variacao
-         ,a.ds_subcategoria                  as ds_subcategoria
-         ,a.ds_categoria                     as ds_categoria
-         ,a.ds_classificacao_produto         as ds_classificacao_produto
-         ,a.ds_origem_produto                as ds_origem_produto
-         ,a.ds_classificacao_abc             as ds_classificacao_abc
-         ,a.vl_percentual_participacao       as vl_percentual_participacao
-         ,a.qt_estoque_minimo                as qt_estoque_minimo
-         ,a.qt_estoque_atual                 as qt_estoque_atual
-         ,a.vl_custo_total                   as vl_custo_total
-         ,a.vl_preco_venda                   as vl_preco_venda
-         ,sum(b.qt_item)                     as qt_item_compra_pendente
-         ,a.qt_pecas_mes_atual               as qt_pecas_mes_atual 
-         ,a.qt_pecas_mes_anterior            as qt_pecas_mes_anterior 
-         ,a.qt_pecas_tres_meses              as qt_pecas_tres_meses 
-         ,a.qt_pecas_sessenta_dias           as qt_pecas_sessenta_dias
-         ,a.qt_dias_mes_atual                as qt_dias_mes_atual
-         ,a.qt_dias_mes_anterior             as qt_dias_mes_anterior
-         ,a.qt_dias_tres_meses               as qt_dias_tres_meses
+   select a.cd_produto_bling                                 as cd_produto_bling
+         ,a.cd_produto                                       as cd_produto
+         ,a.cd_codigo_barras                                 as cd_codigo_barras
+         ,a.nm_produto                                       as nm_produto
+         ,a.nm_produto_completo                              as nm_produto_completo
+         ,a.ds_variacao                                      as ds_variacao
+         ,a.ds_subcategoria                                  as ds_subcategoria
+         ,a.ds_categoria                                     as ds_categoria
+         ,a.ds_classificacao_produto                         as ds_classificacao_produto
+         ,a.ds_origem_produto                                as ds_origem_produto
+         ,a.qt_lead_time                                     as qt_lead_time
+         ,a.qt_cobertura_desejada                            as qt_cobertura_desejada
+         ,a.ds_classificacao_abc                             as ds_classificacao_abc
+         ,a.vl_percentual_participacao                       as vl_percentual_participacao
+         ,if(c.cd_produto_bling  is null, false, true)       as fg_produto_fabricado
+         ,a.qt_estoque_minimo                                as qt_estoque_minimo
+         ,a.qt_estoque_atual                                 as qt_estoque_atual
+         ,a.vl_custo_total                                   as vl_custo_total
+         ,a.vl_preco_venda                                   as vl_preco_venda
+         ,sum(b.qt_item)                                     as qt_item_compra_pendente
+         ,max(b.vl_item)                                     as vl_item_compra_pendente
+         ,a.qt_pecas_mes_atual                               as qt_pecas_mes_atual 
+         ,a.qt_pecas_mes_anterior                            as qt_pecas_mes_anterior 
+         ,a.qt_pecas_tres_meses                              as qt_pecas_tres_meses 
+         ,a.qt_pecas_sessenta_dias                           as qt_pecas_sessenta_dias
+         ,a.qt_dias_mes_atual                                as qt_dias_mes_atual
+         ,a.qt_dias_mes_anterior                             as qt_dias_mes_anterior
+         ,a.qt_dias_tres_meses                               as qt_dias_tres_meses
+         ,a.dt_ultima_ingestao                               as dt_ultima_ingestao
+         ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
+         ,d.lk_produto_compra                                as lk_produto_compra
      from cte_base               as a
 left join cte_compra_produto     as b
        on a.cd_produto_bling = b.cd_produto_bling
+      and b.ds_status_compra in ('EM ABERTO')
+left join cte_compra_produto     as d
+       on a.cd_produto_bling = d.cd_produto_bling
+      and d.nr_seq = 1
+left join cte_produto_fabricado  as c
+       on a.cd_produto_bling = c.cd_produto_bling
  group by a.cd_produto_bling
          ,a.cd_produto
          ,a.cd_codigo_barras
@@ -165,8 +202,11 @@ left join cte_compra_produto     as b
          ,a.ds_categoria
          ,a.ds_classificacao_produto
          ,a.ds_origem_produto
+         ,a.qt_lead_time   
+         ,a.qt_cobertura_desejada 
          ,a.ds_classificacao_abc
          ,a.vl_percentual_participacao
+         ,c.cd_produto_bling
          ,a.qt_estoque_minimo
          ,a.qt_estoque_atual
          ,a.vl_custo_total
@@ -178,6 +218,8 @@ left join cte_compra_produto     as b
          ,a.qt_dias_mes_atual
          ,a.qt_dias_mes_anterior
          ,a.qt_dias_tres_meses
+         ,a.dt_ultima_ingestao
+         ,d.lk_produto_compra
 )
   select *
     from cte_joins

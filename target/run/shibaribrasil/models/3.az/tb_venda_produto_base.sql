@@ -32,7 +32,7 @@ with cte_produto as (
          ,ds_classificacao_produto
          ,ds_origem_produto
      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`
-    where ds_categoria not in ('Suprimentos', 'Produtos Digitais', 'Inativos')
+    where ds_categoria not in ('Suprimentos', 'Produtos Digitais')
 )
 
 , cte_composicao as (

@@ -78,6 +78,14 @@ with cte_produto as (
      where seq_imagem = 1
 )
 
+, cte_lead_time as (
+    select distinct
+           ds_origem_produto
+          ,qt_lead_time
+          ,qt_cobertura_desejada
+      from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_lead_time`
+)
+
 , cte_joins as (
     select distinct
            a.cd_produto_bling
@@ -106,6 +114,8 @@ with cte_produto as (
           ,a.dm_profundidade
           ,a.dm_peso_bruto
           ,a.dm_peso_liquido
+          ,d.qt_lead_time
+          ,d.qt_cobertura_desejada
           ,a.ds_descricao_produto
           ,c.lk_imagem_produto
           ,a.dt_ultima_ingestao
@@ -114,7 +124,9 @@ with cte_produto as (
  left join cte_campos_customizados    as b
         on a.cd_produto_bling = b.cd_produto_bling 
  left join cte_imagem_produto         as c
-        on a.cd_produto_bling = c.cd_produto_bling      
+        on a.cd_produto_bling = c.cd_produto_bling     
+ left join cte_lead_time              as d
+        on b.ds_origem_produto = d.ds_origem_produto     
 )
 
   select *
