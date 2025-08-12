@@ -98,30 +98,14 @@ left join cte_produto            as b
        on a.cd_produto_bling = b.cd_produto_bling
 )
 
-, cte_validacao_link as (
-  select *
-        ,regexp_contains(ds_observacoes, r'\b\d{3,}\s*:\s*https?://') as is_padrao_valido
-    from cte_compra_base
-)
-
-, cte_link_produto_base as (
-  select cd_codigo_interno
-        ,split(item, ': ') as partes
-    from cte_validacao_link,
-  unnest(
-        case 
-          when is_padrao_valido then split(ds_observacoes, ',') 
-          else array<string>[null] 
-          end
-  ) as item
-)
-
 , cte_link_produto as (
     select distinct 
            cd_codigo_interno
-          ,replace(trim(partes[offset(0)]), '.', '') as cd_produto
-          ,trim(partes[offset(1)])                   as lk_produto_compra
-      from cte_link_produto_base
+          ,cd_compra
+          ,dt_compra
+          ,cd_produto
+          ,lk_produto_compra
+      from {{ ref('tb_link_compra_produto') }}
 )
 
 , cte_base_link as (
