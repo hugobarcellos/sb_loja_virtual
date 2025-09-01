@@ -107,14 +107,24 @@ left join cte_item_pedido   as b
      from cte_rateio_frete as a
 )
 
-, cte_categoria_produto as (
+, cte_produto as (
     select cd_produto_bling
           ,cd_produto
+          ,nm_produto
           ,ds_subcategoria
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`
+)
+
+, cte_custo as (
+    select dt_prim_dia_mes
+          ,cd_produto_bling
+          ,cd_produto
+          ,nm_produto
+          ,vl_custo_final
+     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_hist_preco_custo_simples`
 )
 
 , cte_final as (
@@ -126,6 +136,7 @@ left join cte_item_pedido   as b
          ,a.ds_status_pedido
          ,a.cd_produto_bling
          ,a.cd_produto
+         ,b.nm_produto
          ,a.nm_produto_completo
          ,b.ds_subcategoria
          ,b.ds_categoria
@@ -137,6 +148,8 @@ left join cte_item_pedido   as b
          ,a.vl_desconto_rateio
          ,a.vl_frete_rateio
          ,a.vl_total_pedido
+         ,c.vl_custo_final as vl_custo_item
+         ,(c.vl_custo_final * a.qt_item) as vl_custo_pedido
          ,a.ds_forma_pagamento
          ,a.cd_contato
          ,a.nm_contato
@@ -144,8 +157,11 @@ left join cte_item_pedido   as b
          ,a.ds_loja
          ,a.qt_linhas_pedido
      from cte_pedido_total      as a
-left join cte_categoria_produto as b
+left join cte_produto           as b
        on a.cd_produto_bling = b.cd_produto_bling
+left join cte_custo             as c
+       on a.cd_produto_bling = c.cd_produto_bling
+      and date_trunc(cast(a.dt_pedido as date), month) = cast(c.dt_prim_dia_mes as date)
 )
 select *
     from cte_final
