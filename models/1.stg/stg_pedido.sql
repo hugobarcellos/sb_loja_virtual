@@ -26,6 +26,7 @@ with cte_pedido as (
           when cd_status = '6'  then 'EM ABERTO'
           when cd_status = '12' then 'CANCELADO'
           when cd_status = '9'  then 'ATENDIDO'
+          when cd_status = '15' then 'AGUARDANDO PGTO'
           else null                            end ds_status_pedido
         ,cast(vl_total_item as float64)         as vl_total_item
         ,cast(vl_total_pedido as float64)       as vl_total_pedido
