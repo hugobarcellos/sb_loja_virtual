@@ -1,0 +1,14 @@
+version: "1"
+context:
+  active-host: "in269.us1.dbt.com"
+  active-project: "70471823504734"
+projects:
+  - project-name: "Shibari Brasil"
+    project-id: "70471823504734"
+    account-name: "Shibari Brasil"
+    account-id: "70471823492029"
+    account-host: "in269.us1.dbt.com"
+    token-name: "cloud-cli-93ed"
+    token-value: "dbtu_o4je888yvWhyniFsb3RjQEwtnmQ_4H3TzILatEJ4wzhpFUqRRg"
+
+
