@@ -86,6 +86,15 @@ with cte_produto as (
       from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_lead_time`
 )
 
+, cte_produto_fabricado as (
+    select cd_produto
+          ,nm_produto_completo
+          ,cd_produto_composicao 
+          ,nm_produto_completo_composicao 
+          ,qt_produto_composicao 
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_produto_fabricado`
+)
+
 , cte_joins as (
     select distinct
            a.cd_produto_bling
@@ -108,6 +117,7 @@ with cte_produto as (
           ,a.ds_categoria
           ,b.ds_classificacao_produto
           ,b.ds_origem_produto
+          ,if(e.cd_produto is not null, true, false) fg_produto_fabricado
           ,a.ds_situacao
           ,a.dm_altura
           ,a.dm_largura
@@ -127,6 +137,8 @@ with cte_produto as (
         on a.cd_produto_bling = c.cd_produto_bling     
  left join cte_lead_time              as d
         on b.ds_origem_produto = d.ds_origem_produto     
+ left join cte_produto_fabricado      as e
+        on a.cd_produto = e.cd_produto
 )
 
   select *

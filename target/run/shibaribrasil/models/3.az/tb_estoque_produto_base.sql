@@ -133,7 +133,6 @@ left join cte_produto              as b
           ,ds_status_compra
           ,nr_seq
      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_compra_produto`
-    -- where ds_status_compra in ('EM ABERTO')
 )
 
 , cte_produto_fabricado as (
@@ -221,8 +220,139 @@ left join cte_produto_fabricado  as c
          ,a.dt_ultima_ingestao
          ,d.lk_produto_compra
 )
+
+, cte_cobertura_atual as (
+   select cd_produto_bling
+         ,cd_produto
+         ,cd_codigo_barras
+         ,nm_produto
+         ,nm_produto_completo
+         ,ds_variacao
+         ,ds_subcategoria
+         ,ds_categoria
+         ,ds_classificacao_produto
+         ,ds_origem_produto
+         ,qt_lead_time
+         ,qt_cobertura_desejada
+         ,ds_classificacao_abc
+         ,vl_percentual_participacao
+         ,fg_produto_fabricado
+         ,qt_estoque_minimo
+         ,qt_estoque_atual
+         ,coalesce(safe_divide(qt_estoque_atual, safe_divide(qt_pecas_sessenta_dias , 60)),0) qt_cobertura_atual
+         ,vl_custo_total
+         ,vl_preco_venda
+         ,qt_item_compra_pendente
+         ,vl_item_compra_pendente
+         ,coalesce(safe_divide(qt_item_compra_pendente, safe_divide(qt_pecas_sessenta_dias , 60)),0) qt_compra_pendente_dia
+         ,qt_pecas_mes_atual 
+         ,qt_pecas_mes_anterior 
+         ,qt_pecas_tres_meses 
+         ,qt_pecas_sessenta_dias
+         ,qt_dias_mes_atual
+         ,qt_dias_mes_anterior
+         ,qt_dias_tres_meses
+         ,dt_ultima_ingestao
+         ,dt_ultima_atualizacao
+         ,lk_produto_compra
+     from cte_joins
+)
+
+, ds_cobertura_total as (
+  select cd_produto_bling
+         ,cd_produto
+         ,cd_codigo_barras
+         ,nm_produto
+         ,nm_produto_completo
+         ,ds_variacao
+         ,ds_subcategoria
+         ,ds_categoria
+         ,ds_classificacao_produto
+         ,ds_origem_produto
+         ,qt_lead_time
+         ,qt_cobertura_desejada
+         ,ds_classificacao_abc
+         ,vl_percentual_participacao
+         ,fg_produto_fabricado
+         ,qt_estoque_minimo
+         ,qt_estoque_atual
+         ,qt_cobertura_atual
+         ,coalesce(((qt_cobertura_atual + qt_compra_pendente_dia) - qt_lead_time),0) qt_cobertura_total
+         ,vl_custo_total
+         ,vl_preco_venda
+         ,qt_item_compra_pendente
+         ,vl_item_compra_pendente
+         ,qt_compra_pendente_dia
+         ,qt_pecas_mes_atual 
+         ,qt_pecas_mes_anterior 
+         ,qt_pecas_tres_meses 
+         ,qt_pecas_sessenta_dias
+         ,qt_dias_mes_atual
+         ,qt_dias_mes_anterior
+         ,qt_dias_tres_meses
+         ,dt_ultima_ingestao
+         ,dt_ultima_atualizacao
+         ,lk_produto_compra
+     from cte_cobertura_atual
+)
+
+, cte_classificacao_risco as (
+   select cd_produto_bling
+         ,cd_produto
+         ,cd_codigo_barras
+         ,nm_produto
+         ,nm_produto_completo
+         ,ds_variacao
+         ,ds_subcategoria
+         ,ds_categoria
+         ,ds_classificacao_produto
+         ,ds_origem_produto
+         ,qt_lead_time
+         ,qt_cobertura_desejada
+         ,ds_classificacao_abc
+         ,vl_percentual_participacao
+         ,fg_produto_fabricado
+         ,qt_estoque_minimo
+         ,qt_estoque_atual
+         ,qt_cobertura_atual
+         ,qt_cobertura_total
+         ,case
+            when qt_pecas_sessenta_dias = 0 and qt_estoque_atual = 0
+                then 'g. ⚫ Sem Histórico'
+            when qt_pecas_sessenta_dias = 0 and qt_estoque_atual > 0
+                then 'f. 💤 Encalhado'
+            when qt_pecas_sessenta_dias > 0 and qt_estoque_atual = 0
+                then 'a. 🆘 Estoque Rompido'
+             when qt_estoque_atual > 0 and qt_cobertura_total < 30
+                then 'b. 🛑 Urgente'
+            when qt_estoque_atual > 0 and qt_estoque_atual <= qt_estoque_minimo and qt_cobertura_total < 45
+                then 'c. ⚠️ Atenção'
+            when qt_estoque_atual > 0 and qt_cobertura_total >= 45 and qt_cobertura_total <= 60
+                then 'd. ✅ Estável'
+            when qt_estoque_atual > 0 and qt_cobertura_total > 60
+                then 'e. 💠 Sobreestoque'
+           
+            else 'h. Sem Classificação'
+            end ds_classificacao_risco
+         ,vl_custo_total
+         ,vl_preco_venda
+         ,qt_item_compra_pendente
+         ,vl_item_compra_pendente
+         ,qt_compra_pendente_dia
+         ,qt_pecas_mes_atual 
+         ,qt_pecas_mes_anterior 
+         ,qt_pecas_tres_meses 
+         ,qt_pecas_sessenta_dias
+         ,qt_dias_mes_atual
+         ,qt_dias_mes_anterior
+         ,qt_dias_tres_meses
+         ,dt_ultima_ingestao
+         ,dt_ultima_atualizacao
+         ,lk_produto_compra
+     from ds_cobertura_total
+)
   select *
-    from cte_joins
+    from cte_classificacao_risco
 order by nm_produto
         ,ds_variacao
     );

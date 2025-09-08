@@ -50,3 +50,6 @@ models:
 
 snapshots:
   +target_schema: snapshots
+
+dbt-cloud:
+    project-id: 70471823504734
