@@ -331,7 +331,6 @@ left join cte_produto_fabricado  as c
                 then 'd. ✅ Estável'
             when qt_estoque_atual > 0 and qt_cobertura_total > 60
                 then 'e. 💠 Sobreestoque'
-           
             else 'h. Sem Classificação'
             end ds_classificacao_risco
          ,vl_custo_total
