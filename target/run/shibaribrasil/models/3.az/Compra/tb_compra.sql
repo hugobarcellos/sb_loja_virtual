@@ -118,12 +118,20 @@ left join cte_produto            as b
       from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_link_compra_produto`
 )
 
+, cte_fornecedor as (
+    select distinct 
+          cd_contato
+         ,nm_contato
+     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_contatos`
+)
+
 , cte_base_link as (
     select a.cd_codigo_interno
           ,a.cd_compra
           ,a.dt_compra
           ,a.dt_prevista_compra
           ,a.cd_fornecedor
+          ,c.nm_contato as nm_fornecedor
           ,a.ds_status_compra
           ,a.cd_categoria_financeira
           ,a.ds_observacoes
@@ -148,6 +156,8 @@ left join cte_produto            as b
 left join cte_link_produto as b
        on a.cd_codigo_interno = b.cd_codigo_interno
       and a.cd_produto = b.cd_produto
+left join cte_fornecedor   as c
+       on a.cd_fornecedor = c.cd_contato
 )
 
   select *

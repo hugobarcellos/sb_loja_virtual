@@ -35,6 +35,7 @@ with cte_produto as (
           ,a.ds_origem_produto
           ,a.qt_lead_time
           ,a.qt_cobertura_desejada
+          ,a.nm_fornecedor
           ,a.lk_ultima_compra
           ,a.dt_ultima_ingestao
       from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`  as a   
@@ -116,6 +117,7 @@ with cte_produto as (
          ,e.qt_dias_tres_meses               as qt_dias_tres_meses
          ,b.qt_lead_time                     as qt_lead_time
          ,b.qt_cobertura_desejada            as qt_cobertura_desejada
+         ,b.nm_fornecedor                    as nm_fornecedor
          ,b.dt_ultima_ingestao               as dt_ultima_ingestao
      from cte_venda_produto        as a
          ,cte_tempo_mes_atual      as c
@@ -180,9 +182,10 @@ left join cte_produto              as b
          ,a.qt_dias_mes_atual                                as qt_dias_mes_atual
          ,a.qt_dias_mes_anterior                             as qt_dias_mes_anterior
          ,a.qt_dias_tres_meses                               as qt_dias_tres_meses
+         ,a.nm_fornecedor                                    as nm_fornecedor
+         ,d.lk_produto_compra                                as lk_produto_compra
          ,a.dt_ultima_ingestao                               as dt_ultima_ingestao
          ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
-         ,d.lk_produto_compra                                as lk_produto_compra
      from cte_base               as a
 left join cte_compra_produto     as b
        on a.cd_produto_bling = b.cd_produto_bling
@@ -218,8 +221,10 @@ left join cte_produto_fabricado  as c
          ,a.qt_dias_mes_atual
          ,a.qt_dias_mes_anterior
          ,a.qt_dias_tres_meses
-         ,a.dt_ultima_ingestao
+         ,a.nm_fornecedor
          ,d.lk_produto_compra
+         ,a.dt_ultima_ingestao
+         
 )
 
 , cte_cobertura_atual as (
@@ -253,9 +258,10 @@ left join cte_produto_fabricado  as c
          ,qt_dias_mes_atual
          ,qt_dias_mes_anterior
          ,qt_dias_tres_meses
+         ,nm_fornecedor
+         ,lk_produto_compra
          ,dt_ultima_ingestao
          ,dt_ultima_atualizacao
-         ,lk_produto_compra
      from cte_joins
 )
 
@@ -291,9 +297,10 @@ left join cte_produto_fabricado  as c
          ,qt_dias_mes_atual
          ,qt_dias_mes_anterior
          ,qt_dias_tres_meses
+         ,nm_fornecedor
+         ,lk_produto_compra
          ,dt_ultima_ingestao
          ,dt_ultima_atualizacao
-         ,lk_produto_compra
      from cte_cobertura_atual
 )
 
@@ -346,9 +353,10 @@ left join cte_produto_fabricado  as c
          ,qt_dias_mes_atual
          ,qt_dias_mes_anterior
          ,qt_dias_tres_meses
+         ,nm_fornecedor
+         ,lk_produto_compra
          ,dt_ultima_ingestao
          ,dt_ultima_atualizacao
-         ,lk_produto_compra
      from ds_cobertura_total
 )
   select *

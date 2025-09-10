@@ -87,6 +87,7 @@ with cte_produto as (
 
 , cte_link_compra_produto as (
     select cd_produto
+          ,nm_fornecedor
           ,lk_produto_compra
      from {{ ref('tb_link_compra_produto') }}
     where seq = 1
@@ -123,6 +124,7 @@ with cte_produto as (
           ,d.qt_lead_time
           ,d.qt_cobertura_desejada
           ,a.ds_descricao_produto
+          ,f.nm_fornecedor                           as nm_fornecedor
           ,f.lk_produto_compra                       as lk_ultima_compra
           ,c.lk_imagem_produto
           ,a.dt_ultima_ingestao

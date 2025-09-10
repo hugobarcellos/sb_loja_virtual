@@ -7,6 +7,7 @@ with cte_compra as (
   select cd_codigo_interno
         ,cd_compra
         ,dt_compra
+        ,cd_fornecedor
     from {{ ref('stg_compra') }}
    where ds_status_compra not in ('CANCELADO')
 )
@@ -20,17 +21,28 @@ with cte_compra as (
     from {{ ref('stg_item_compra') }}
 )
 
+, cte_fornecedor as (
+    select distinct 
+          cd_contato
+         ,nm_contato
+     from {{ ref('stg_contatos') }}
+)
+
 , cte_compra_base as (
    select distinct
           a.cd_codigo_interno
          ,a.cd_compra
          ,a.dt_compra
+         ,a.cd_fornecedor
+         ,c.nm_contato as nm_fornecedor
          ,b.ds_observacoes
          ,b.cd_produto_bling
      from cte_compra        as a
 left join cte_item_compra   as b
        on a.cd_codigo_interno = b.cd_codigo_interno
       and a.cd_compra         = b.cd_compra
+left join cte_fornecedor    as c
+       on a.cd_fornecedor = c.cd_contato
 )
 
 , cte_validacao_link as (
@@ -43,6 +55,8 @@ left join cte_item_compra   as b
   select cd_codigo_interno
         ,cd_compra
         ,dt_compra
+        ,cd_fornecedor
+        ,nm_fornecedor
         ,split(item, ': ') as partes
     from cte_validacao_link,
   unnest(
@@ -58,6 +72,8 @@ left join cte_item_compra   as b
          cd_codigo_interno
         ,cd_compra
         ,dt_compra
+        ,cd_fornecedor
+        ,nm_fornecedor
         ,replace(trim(partes[safe_offset(0)]), '.', '') as cd_produto
         ,trim(partes[safe_offset(1)])                   as lk_produto_compra
     from cte_link_produto_base
@@ -69,6 +85,8 @@ left join cte_item_compra   as b
   select cd_codigo_interno
         ,cd_compra
         ,dt_compra
+        ,cd_fornecedor
+        ,coalesce(nm_fornecedor, 'Não Informado') nm_fornecedor
         ,cd_produto
         ,lk_produto_compra
         ,row_number() over (
