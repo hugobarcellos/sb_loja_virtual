@@ -96,7 +96,7 @@ left join cte_fornecedor    as c
         ,cd_compra
         ,dt_compra
         ,cd_fornecedor
-        ,nm_fornecedor
+        ,coalesce(nm_fornecedor, 'Não Informado') nm_fornecedor
         ,cd_produto
         ,lk_produto_compra
         ,row_number() over (
