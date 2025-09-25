@@ -93,37 +93,37 @@ with cte_produto as (
 
 , cte_joins as (
     select distinct
-           a.cd_produto_bling                                 as cd_produto_bling
-          ,a.cd_produto                                       as cd_produto
-          ,a.cd_codigo_barras                                 as cd_codigo_barras
-          ,a.nm_produto                                       as nm_produto
-          ,a.nm_produto_completo                              as nm_produto_completo
-          ,a.ds_variacao                                      as ds_variacao
-          ,a.ds_tipo_produto                                  as ds_tipo_produto
-          ,a.cd_produto_bling_pai                             as cd_produto_bling_pai
-          ,a.fg_produto_composicao                            as fg_produto_composicao
-          ,if(e.cd_produto is not null, true, false)          as fg_produto_fabricado
-          ,a.ds_tipo_estoque                                  as ds_tipo_estoque
-          ,coalesce(a.vl_custo_compra, a.vl_custo_total)      as vl_custo_cadastro
-          ,a.vl_preco_venda                                   as vl_preco_venda
-          ,b.vl_alteracao_preco                               as vl_preco_venda_por
-          ,a.ds_subcategoria                                  as ds_subcategoria
-          ,a.ds_categoria                                     as ds_categoria
-          ,b.ds_classificacao_produto                         as ds_classificacao_produto
-          ,b.ds_origem_produto                                as ds_origem_produto
-          ,a.dm_altura                                        as dm_altura
-          ,a.dm_largura                                       as dm_largura
-          ,a.dm_profundidade                                  as dm_profundidade
-          ,a.dm_peso_bruto                                    as dm_peso_bruto
-          ,a.dm_peso_liquido                                  as dm_peso_liquido
-          ,d.qt_lead_time                                     as qt_lead_time
-          ,d.qt_cobertura_desejada                            as qt_cobertura_desejada
-          ,a.ds_descricao_produto                             as ds_descricao_produto
-          ,f.nm_fornecedor                                    as nm_fornecedor
-          ,f.lk_produto_compra                                as lk_ultima_compra
-          ,c.lk_imagem_produto                                as lk_imagem_produto
-          ,a.dt_ultima_ingestao                               as dt_ultima_ingestao
-          ,datetime(current_timestamp(), "America/Sao_Paulo") as dt_ultima_atualizacao
+           a.cd_produto_bling                                      as cd_produto_bling
+          ,a.cd_produto                                            as cd_produto
+          ,a.cd_codigo_barras                                      as cd_codigo_barras
+          ,a.nm_produto                                            as nm_produto
+          ,a.nm_produto_completo                                   as nm_produto_completo
+          ,a.ds_variacao                                           as ds_variacao
+          ,a.ds_tipo_produto                                       as ds_tipo_produto
+          ,a.cd_produto_bling_pai                                  as cd_produto_bling_pai
+          ,a.fg_produto_composicao                                 as fg_produto_composicao
+          ,if(e.cd_produto is not null, true, false)               as fg_produto_fabricado
+          ,a.ds_tipo_estoque                                       as ds_tipo_estoque
+          ,coalesce(nullif(a.vl_custo_compra,0), a.vl_custo_total) as vl_custo_cadastro
+          ,a.vl_preco_venda                                        as vl_preco_venda
+          ,b.vl_alteracao_preco                                    as vl_preco_venda_por
+          ,a.ds_subcategoria                                       as ds_subcategoria
+          ,a.ds_categoria                                          as ds_categoria
+          ,b.ds_classificacao_produto                              as ds_classificacao_produto
+          ,b.ds_origem_produto                                     as ds_origem_produto
+          ,a.dm_altura                                             as dm_altura
+          ,a.dm_largura                                            as dm_largura
+          ,a.dm_profundidade                                       as dm_profundidade
+          ,a.dm_peso_bruto                                         as dm_peso_bruto
+          ,a.dm_peso_liquido                                       as dm_peso_liquido
+          ,d.qt_lead_time                                          as qt_lead_time
+          ,d.qt_cobertura_desejada                                 as qt_cobertura_desejada
+          ,a.ds_descricao_produto                                  as ds_descricao_produto
+          ,f.nm_fornecedor                                         as nm_fornecedor
+          ,f.lk_produto_compra                                     as lk_ultima_compra
+          ,c.lk_imagem_produto                                     as lk_imagem_produto
+          ,a.dt_ultima_ingestao                                    as dt_ultima_ingestao
+          ,datetime(current_timestamp(), "America/Sao_Paulo")      as dt_ultima_atualizacao
       from cte_tratamentos            as a
  left join cte_campos_customizados    as b
         on a.cd_produto_bling = b.cd_produto_bling 

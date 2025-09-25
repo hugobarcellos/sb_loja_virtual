@@ -118,6 +118,7 @@ left join cte_item_pedido   as b
           ,ds_categoria
           ,ds_classificacao_produto
           ,ds_origem_produto
+          ,vl_custo_cadastro
      from {{ ref('tb_produto') }}
 )
 
@@ -152,8 +153,8 @@ left join cte_item_pedido   as b
          ,a.vl_desconto_rateio
          ,a.vl_frete_rateio
          ,a.vl_total_pedido
-         ,c.vl_custo_final as vl_custo_item
-         ,(c.vl_custo_final * a.qt_item) as vl_custo_pedido
+         ,coalesce(nullif(c.vl_custo_final,0), vl_custo_cadastro)               as vl_custo_item
+         ,(coalesce(nullif(c.vl_custo_final,0), vl_custo_cadastro) * a.qt_item) as vl_custo_pedido
          ,a.ds_forma_pagamento
          ,a.cd_contato
          ,a.nm_contato

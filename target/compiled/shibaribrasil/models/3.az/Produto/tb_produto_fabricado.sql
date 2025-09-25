@@ -45,14 +45,14 @@ with cte_produto as (
           ,b.nm_produto
           ,b.nm_produto_completo
           ,b.ds_variacao
-          ,c.cd_produto_bling                          as cd_produto_bling_composicao
-          ,a.cd_produto_composicao                     as cd_produto_composicao
-          ,c.nm_produto                                as nm_produto_composicao
-          ,c.nm_produto_completo                       as nm_produto_completo_composicao
-          ,c.ds_variacao                               as ds_variacao_composicao
-          ,a.qt_produto_composicao                     as qt_produto_composicao
-          ,d.vl_item                                   as vl_custo_compra
-          ,a.qt_produto_composicao * d.vl_item         as vl_custo_compra_total
+          ,c.cd_produto_bling                                                  as cd_produto_bling_composicao
+          ,a.cd_produto_composicao                                             as cd_produto_composicao
+          ,c.nm_produto                                                        as nm_produto_composicao
+          ,c.nm_produto_completo                                               as nm_produto_completo_composicao
+          ,c.ds_variacao                                                       as ds_variacao_composicao
+          ,a.qt_produto_composicao                                             as qt_produto_composicao
+          ,coalesce(d.vl_item, b.vl_custo_cadastro)                            as vl_custo_compra
+          ,a.qt_produto_composicao * coalesce(d.vl_item, b.vl_custo_cadastro)  as vl_custo_compra_total
       from cte_produto_fabricado as a 
  left join cte_produto           as b 
         on a.cd_produto = b.cd_produto
@@ -62,6 +62,6 @@ with cte_produto as (
         on c.cd_produto_bling = d.cd_produto_bling
 )
 
-select *
-    from cte_base
+    select *
+      from cte_base
   order by nm_produto_completo

@@ -32,6 +32,7 @@ with cte_estoque as (
           ,a.vl_preco_venda
           ,a.vl_preco_venda_por
       from {{ ref('tb_estoque') }}  as a  
+     where a.fg_produto_composicao is not true
 )
 
 , cte_venda_produto as (

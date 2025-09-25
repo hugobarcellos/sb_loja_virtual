@@ -32,7 +32,7 @@ with cte_produto as (
          ,ds_classificacao_produto
          ,ds_origem_produto
      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_produto`
-    where ds_categoria not in ('Suprimentos', 'Produtos Digitais')
+    where ds_categoria not in ('[Interno] Suprimentos', 'Livros e Presentes')
 )
 
 , cte_composicao as (
@@ -42,7 +42,6 @@ with cte_produto as (
           ,nm_produto
           ,nm_produto_completo
           ,ds_variacao
-          ,ds_tipo_produto
           ,cd_produto_bling_pai
           ,cd_produto_bling_componente
           ,cd_produto_componente
@@ -61,7 +60,6 @@ with cte_produto as (
          ,a.nm_produto
          ,a.nm_produto_completo
          ,a.ds_variacao
-         ,a.ds_tipo_produto
          ,a.cd_produto_bling_pai
          ,a.fg_produto_composicao
          ,b.cd_produto_bling_componente
@@ -114,7 +112,6 @@ left join cte_composicao as b
          ,a.nm_produto
          ,a.nm_produto_completo
          ,a.ds_variacao
-         ,a.ds_tipo_produto
          ,a.cd_produto_bling_pai
          ,a.fg_produto_composicao
          ,coalesce(a.cd_produto_bling_componente, a.cd_produto_bling)              as cd_produto_bling_componente
@@ -175,7 +172,6 @@ left join cte_venda_produto         as b
 left join cte_produto_composicao as b
        on a.cd_produto_bling = b.cd_produto_bling
     where b.fg_produto_composicao is false 
-      and b.ds_tipo_produto not in ('PAI')
 )
 
 , cte_ordenada AS (

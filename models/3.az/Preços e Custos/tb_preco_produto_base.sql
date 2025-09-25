@@ -22,6 +22,7 @@ with cte_produto as (
           ,a.fg_produto_composicao
           ,a.dt_ultima_ingestao
       from {{ ref('tb_produto') }}  as a   
+     where a.ds_tipo_produto not in ('PAI')
     --  where a.ds_categoria not in ('Suprimentos', 'Inativos')
 )
 
@@ -60,6 +61,21 @@ with cte_produto as (
       from {{ ref('tb_composicao_produto') }}
 )
 
+, cte_produto_kit as (
+    select cd_produto_bling
+          ,cd_produto
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
+          ,sum(vl_custo_componente_total) vl_custo_componente_total
+      from {{ ref('tb_composicao_produto') }}
+  group by cd_produto_bling
+          ,cd_produto
+          ,nm_produto
+          ,nm_produto_completo
+          ,ds_variacao
+)
+
 , cte_produto_fabricado as (
     select cd_produto_bling
           ,cd_produto
@@ -83,7 +99,7 @@ with cte_produto as (
           ,a.nm_produto                                                                                                      as nm_produto
           ,a.ds_variacao                                                                                                     as ds_variacao
           ,coalesce(a.vl_custo_cadastro, 0)                                                                                  as vl_custo_cadastro
-          ,coalesce(e.vl_custo_compra_total, c.vl_item, 0)                                                                   as vl_custo_ultima_compra
+          ,coalesce(nullif(f.vl_custo_componente_total,0), nullif(e.vl_custo_compra_total,0), c.vl_item, 0)                  as vl_custo_ultima_compra
           ,coalesce(a.vl_preco_venda, 0)                                                                                     as vl_preco_venda
           ,coalesce(a.vl_preco_venda_por, 0)                                                                                 as vl_preco_venda_por
           ,a.ds_subcategoria                                                                                                 as ds_subcategoria
@@ -116,6 +132,8 @@ left join cte_produto_base_kit  as d
        on a.cd_produto_bling = d.cd_produto_bling_componente
 left join cte_produto_fabricado as e
        on a.cd_produto_bling = e.cd_produto_bling
+left join cte_produto_kit       as f
+       on a.cd_produto_bling = f.cd_produto_bling
 )
 
   select *
