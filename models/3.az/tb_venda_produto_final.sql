@@ -15,7 +15,7 @@ with cte_produto as (
          ,cd_produto_bling_pai
          ,fg_produto_composicao
          ,ds_tipo_estoque
-         ,vl_custo_total
+         ,vl_custo_cadastro
          ,vl_preco_venda
          ,ds_subcategoria
          ,ds_categoria
@@ -76,7 +76,6 @@ left join cte_pedido  as b
          ,a.cd_produto_bling_pai
          ,a.fg_produto_composicao
          ,a.ds_tipo_estoque
-         ,a.vl_custo_total
          ,a.vl_preco_venda
          ,a.ds_subcategoria
          ,a.ds_categoria

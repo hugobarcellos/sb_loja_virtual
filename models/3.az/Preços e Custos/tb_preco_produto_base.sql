@@ -3,7 +3,6 @@
     enabled = true
 )}}
 
---visão atual dos produtos, não trabalho aqui com histórico do preço
 with cte_produto as (
     select distinct
            a.cd_produto_bling
@@ -12,9 +11,7 @@ with cte_produto as (
           ,a.nm_produto
           ,a.nm_produto_completo
           ,a.ds_variacao
-          ,a.qt_estoque_atual
-          ,a.vl_custo_compra
-          ,a.vl_custo_total
+          ,a.vl_custo_cadastro
           ,a.vl_preco_venda
           ,a.vl_preco_venda_por
           ,a.ds_subcategoria
@@ -85,8 +82,7 @@ with cte_produto as (
           ,a.cd_codigo_barras                                                                                                as cd_codigo_barras
           ,a.nm_produto                                                                                                      as nm_produto
           ,a.ds_variacao                                                                                                     as ds_variacao
-          ,a.qt_estoque_atual                                                                                                as qt_estoque_atual
-          ,coalesce(a.vl_custo_total, 0)                                                                                     as vl_custo_cadastro
+          ,coalesce(a.vl_custo_cadastro, 0)                                                                                  as vl_custo_cadastro
           ,coalesce(e.vl_custo_compra_total, c.vl_item, 0)                                                                   as vl_custo_ultima_compra
           ,coalesce(a.vl_preco_venda, 0)                                                                                     as vl_preco_venda
           ,coalesce(a.vl_preco_venda_por, 0)                                                                                 as vl_preco_venda_por

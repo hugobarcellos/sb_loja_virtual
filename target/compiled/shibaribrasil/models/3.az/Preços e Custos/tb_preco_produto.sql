@@ -7,7 +7,6 @@ with cte_preco as (
           ,cd_codigo_barras
           ,nm_produto
           ,ds_variacao
-          ,qt_estoque_atual
           ,vl_custo_cadastro
           ,vl_custo_ultima_compra
           ,vl_preco_venda
@@ -39,28 +38,17 @@ with cte_preco as (
           ,cd_codigo_barras
           ,nm_produto
           ,ds_variacao
-          ,vl_custo_cadastro
-          ,vl_custo_ultima_compra
-          ,vl_preco_venda
-          ,vl_preco_venda_por
-          ,ds_subcategoria
-          ,ds_categoria
-          ,ds_classificacao_produto
-          ,ds_origem_produto
-          ,fg_produto_base_composicao
-          ,fg_produto_composicao
-          ,dt_ultima_compra
+          ,vl_custo_final
+          ,vl_preco_final
+          ,fg_alteracao
+          ,vl_custo_final_anterior
+          ,vl_preco_final_anterior
           ,dt_ini_vigencia
           ,hr_ini_vigencia
           ,dt_fim_vigencia
           ,hr_fim_vigencia
           ,dt_ultima_atualizacao
           ,nr_linha
-          ,fg_alteracao
-          ,vl_custo_cadastro_anterior
-          ,vl_custo_ultima_compra_anterior
-          ,vl_preco_anterior
-          ,vl_preco_por_anterior
      from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_hist_preco_custo_produto` 
     where nr_linha = 1
 )
@@ -72,15 +60,12 @@ with cte_preco as (
           ,a.cd_codigo_barras
           ,a.nm_produto
           ,a.ds_variacao
-          ,a.qt_estoque_atual
           ,a.vl_custo_cadastro
           ,a.vl_custo_ultima_compra
           ,a.vl_preco_venda
           ,a.vl_preco_venda_por
-          ,b.vl_custo_cadastro_anterior
-          ,b.vl_custo_ultima_compra_anterior
-          ,b.vl_preco_anterior
-          ,b.vl_preco_por_anterior
+          ,b.vl_custo_final_anterior
+          ,b.vl_preco_final_anterior
           ,a.ds_subcategoria
           ,a.ds_categoria
           ,a.ds_classificacao_produto
@@ -104,6 +89,7 @@ with cte_preco as (
       from cte_preco                as a
  left join cte_hist                 as b 
         on a.cd_produto_bling = b.cd_produto_bling
+     where a.ds_tipo_produto not in ('PAI')
 )
 
   select *

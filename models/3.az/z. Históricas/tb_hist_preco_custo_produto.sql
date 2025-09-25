@@ -35,10 +35,8 @@ with cte_base as (
           ,cd_codigo_barras
           ,nm_produto
           ,ds_variacao
-          ,vl_custo_cadastro
-          ,vl_custo_ultima_compra
-          ,vl_preco_venda
-          ,vl_preco_venda_por
+          ,coalesce(nullif(vl_custo_ultima_compra,0), vl_custo_cadastro) vl_custo_final
+          ,coalesce(nullif(vl_preco_venda_por,0), vl_preco_venda)        vl_preco_final
           ,ds_subcategoria
           ,ds_categoria
           ,ds_classificacao_produto
@@ -56,9 +54,10 @@ with cte_base as (
 )
 
 , cte_produtos_mudanca as (
-  select * 
+  select cd_produto_bling, count(distinct nr_linha) 
     from cte_snapshot
-   where nr_linha > 1
+  group by cd_produto_bling
+  having count(distinct nr_linha) > 1
 )
 
     select a.cd_produto_bling
@@ -66,10 +65,8 @@ with cte_base as (
           ,a.cd_codigo_barras
           ,a.nm_produto
           ,a.ds_variacao
-          ,coalesce(a.vl_custo_cadastro, 0)      as vl_custo_cadastro
-          ,coalesce(a.vl_custo_ultima_compra, 0) as vl_custo_ultima_compra
-          ,coalesce(a.vl_preco_venda, 0)         as vl_preco_venda
-          ,coalesce(a.vl_preco_venda_por, 0)     as vl_preco_venda_por
+          ,coalesce(a.vl_custo_final, 0)         as vl_custo_final
+          ,coalesce(a.vl_preco_final, 0)         as vl_preco_final
           ,a.ds_subcategoria
           ,a.ds_categoria
           ,a.ds_classificacao_produto
@@ -84,11 +81,8 @@ with cte_base as (
           ,a.dt_ultima_atualizacao
           ,a.nr_linha
           ,if(b.cd_produto_bling is not null, true, false)                                               as fg_alteracao
-          ,lead(a.vl_custo_cadastro)      over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_custo_cadastro_anterior
-          ,lead(a.vl_custo_ultima_compra) over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_custo_ultima_compra_anterior
-          ,lead(a.vl_preco_venda)         over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_preco_anterior
-          ,lead(a.vl_preco_venda_por)     over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_preco_por_anterior
-          
+          ,lead(a.vl_custo_final)         over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_custo_final_anterior
+          ,lead(a.vl_preco_final)         over (partition by a.cd_produto_bling order by a.nr_linha asc) as vl_preco_final_anterior
      from cte_snapshot         as a
 left join cte_produtos_mudanca as b
        on a.cd_produto_bling = b.cd_produto_bling

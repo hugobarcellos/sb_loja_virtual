@@ -12,10 +12,7 @@ with cte_produto as (
           ,a.cd_produto_bling_pai
           ,a.fg_produto_composicao
           ,a.ds_tipo_estoque
-          ,a.qt_estoque_minimo
-          ,a.qt_estoque_atual
-          ,a.vl_custo_compra
-          ,a.vl_custo_total
+          ,a.vl_custo_cadastro
           ,a.vl_preco_venda
           ,a.ds_subcategoria
           ,a.ds_categoria
