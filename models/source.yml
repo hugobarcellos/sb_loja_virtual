@@ -16,6 +16,9 @@ sources:
       - name: "formas_pagamentos"
       - name: "pedidos_compras"
       - name: "pedidos_compras_detalhes"
+      - name: "contas_pagar"
+      - name: "contas_pagar_detalhes"
+      - name: "categorias_financeiras"
 
   - name: drive
     database: igneous-sandbox-381622
