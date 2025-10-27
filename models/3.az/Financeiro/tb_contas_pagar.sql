@@ -73,8 +73,8 @@ with cte_header as (
           when b.situacao = '1' and cast(b.vencimento as date) > current_date then 'Em Aberto'
           when b.situacao = '1' and cast(b.vencimento as date) < current_date then 'Atrasado'
           else null end ds_situacao
-        ,b.valor
-        ,b.vencimento
+        ,cast(b.valor as float64)           as vl_valor
+        ,b.vencimento                       as dt_vencimento
      from cte_header               as a   
 left join cte_item                 as b 
        on a.id = b.id
