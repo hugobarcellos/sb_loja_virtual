@@ -42,7 +42,8 @@ with cte_contato as (
         ,cd_contato
         ,nm_contato
         ,nr_doc_contato
-        ,ds_loja
+        ,nm_loja
+        ,ds_tipo_loja
     from {{ ref('tb_pedido') }}
 )
 

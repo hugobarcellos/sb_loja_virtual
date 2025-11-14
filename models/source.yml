@@ -19,6 +19,7 @@ sources:
       - name: "contas_pagar"
       - name: "contas_pagar_detalhes"
       - name: "categorias_financeiras"
+      - name: "canais_venda"
 
   - name: drive
     database: igneous-sandbox-381622

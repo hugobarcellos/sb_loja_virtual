@@ -15,8 +15,14 @@ with cte_pedido as (
          ,nm_contato
          ,nr_doc_contato
          ,cd_loja
-         ,ds_loja
      from {{ ref('stg_pedido') }}
+)
+
+, cte_loja as (
+    select cd_loja
+          ,nm_loja
+          ,ds_tipo_loja
+      from {{ ref('stg_canal_venda') }}
 )
 
 , cte_item_pedido as (
@@ -54,11 +60,14 @@ with cte_pedido as (
          ,a.cd_contato                                                               as cd_contato
          ,a.nm_contato                                                               as nm_contato
          ,a.nr_doc_contato                                                           as nr_doc_contato
-         ,a.ds_loja                                                                  as ds_loja
+         ,c.nm_loja                                                                  as nm_loja
+         ,c.ds_tipo_loja                                                             as ds_tipo_loja
          ,count(distinct b.cd_produto_bling) over (partition by a.cd_codigo_interno) as qt_linhas_pedido
      from cte_pedido        as a
 left join cte_item_pedido   as b
        on a.cd_codigo_interno = b.cd_codigo_interno
+left join cte_loja          as c
+       on a.cd_loja = c.cd_loja
 )
 
 , cte_rateio_frete as (
@@ -80,7 +89,8 @@ left join cte_item_pedido   as b
          ,a.cd_contato
          ,a.nm_contato
          ,a.nr_doc_contato
-         ,a.ds_loja
+         ,a.nm_loja
+         ,a.ds_tipo_loja
          ,a.qt_linhas_pedido
      from cte_pedido_base as a
 )
@@ -105,7 +115,8 @@ left join cte_item_pedido   as b
          ,a.cd_contato
          ,a.nm_contato
          ,a.nr_doc_contato
-         ,a.ds_loja
+         ,a.nm_loja
+         ,a.ds_tipo_loja
          ,a.qt_linhas_pedido
      from cte_rateio_frete as a
 )
@@ -159,7 +170,8 @@ left join cte_item_pedido   as b
          ,a.cd_contato
          ,a.nm_contato
          ,a.nr_doc_contato
-         ,a.ds_loja
+         ,a.nm_loja
+         ,a.ds_tipo_loja
          ,a.qt_linhas_pedido
      from cte_pedido_total      as a
 left join cte_produto           as b

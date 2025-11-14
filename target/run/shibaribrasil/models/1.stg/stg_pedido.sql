@@ -37,9 +37,6 @@ with cte_pedido as (
         ,nm_contato                             as nm_contato
         ,nr_doc_contato                         as nr_doc_contato
         ,cd_loja                                as cd_loja
-        ,case
-          when cd_loja = '205060682' then 'Site'
-          else null                            end ds_loja
     from cte_pedido 
 )
 
