@@ -1,5 +1,5 @@
 {{ config(
-    tags = ['az', 'produto', 'snaps'],
+    tags = ['snaps'],
     enabled = true
 )}}
 

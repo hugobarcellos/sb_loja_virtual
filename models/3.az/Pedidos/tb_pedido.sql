@@ -1,5 +1,5 @@
 {{ config(
-    tags = ['az', 'pedido'],
+    tags = ['az', 'pedido', 'snaps'],
     enabled = true
 )}}
 

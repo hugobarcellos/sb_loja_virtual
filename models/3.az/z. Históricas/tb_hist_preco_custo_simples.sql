@@ -6,7 +6,7 @@
         "data_type": "date",
         "granularity": "month"
          },
-    tags = ['az', 'produto'],
+    tags = ['snaps'],
     enabled = true
 )}}
 

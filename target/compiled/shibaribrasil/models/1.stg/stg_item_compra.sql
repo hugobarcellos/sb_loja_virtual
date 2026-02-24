@@ -11,16 +11,16 @@ with cte_item_base as (
 )
 
 --estou trazendo dados da planilha pois a tabela nativa da bling está com problema no valor do item comprado
-, cte_item_planilha as (
-  select nullif(trim(id), '')                        as cd_codigo_interno
-        ,nullif(trim(numero_pedido), '')             as cd_compra
-        ,data                                        as dt_compra
-        ,nullif(trim(id_produto), '')                as cd_produto_bling
-        ,quantidade                                  as qt_item
-        ,valor_unitario                              as vl_item
-   from `igneous-sandbox-381622`.`datalake_drive`.`drive_pedidos_compra_bling`
-  where nullif(trim(id), '') is not null
-)
+-- , cte_item_planilha as (
+--   select nullif(trim(id), '')                        as cd_codigo_interno
+--         ,nullif(trim(numero_pedido), '')             as cd_compra
+--         ,data                                        as dt_compra
+--         ,nullif(trim(id_produto), '')                as cd_produto_bling
+--         ,quantidade                                  as qt_item
+--         ,valor_unitario                              as vl_item
+--    from `igneous-sandbox-381622`.`datalake_drive`.`drive_pedidos_compra_bling`
+--   where nullif(trim(id), '') is not null
+-- )
 
 , cte_itens_json as (
   select cd_codigo_interno
@@ -58,11 +58,11 @@ with cte_item_base as (
          ,a.cd_produto
          ,a.nm_produto_completo
          ,a.ds_unidade
-        --  ,a.qt_item
-        --  ,a.vl_item
-         ,b.qt_item
-         ,b.vl_item
+         ,a.qt_item
+         ,a.vl_item
+        --  ,b.qt_item
+        --  ,b.vl_item
      from cte_item          as a
-left join cte_item_planilha as b
-       on a.cd_codigo_interno = b.cd_codigo_interno
-      and a.cd_produto_bling = b.cd_produto_bling
+-- left join cte_item_planilha as b
+--        on a.cd_codigo_interno = b.cd_codigo_interno
+--       and a.cd_produto_bling = b.cd_produto_bling
