@@ -60,9 +60,9 @@ with cte_produto as (
           ,cd_produto
           ,vl_item
           ,dt_compra
+          ,row_number() over (partition by cd_produto_bling order by dt_compra desc) as nr_seq_aux
       from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_agg_compra_produto`
-     where nr_seq = 1
-       and ds_status_compra = 'ATENDIDO'
+     where ds_status_compra = 'ATENDIDO'
        and dt_compra >= '2025-07-01'
 )
 
@@ -138,6 +138,7 @@ left join cte_meta_margem       as b
       and a.ds_origem_produto = b.ds_origem_produto
 left join cte_compra_produto    as c
        on a.cd_produto_bling = c.cd_produto_bling
+      and c.nr_seq_aux = 1
 left join cte_produto_base_kit  as d
        on a.cd_produto_bling = d.cd_produto_bling_componente
 left join cte_produto_fabricado as e
