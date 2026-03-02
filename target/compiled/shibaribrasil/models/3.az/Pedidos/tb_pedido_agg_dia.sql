@@ -32,6 +32,7 @@ with cte_pedido as (
          ,ds_tipo_loja
          ,qt_linhas_pedido
     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_pedido`
+   where ds_status_pedido not in ('CANCELADO')
 )
 
 , cte_pedido_agg as (
@@ -47,7 +48,6 @@ with cte_pedido as (
         ,min(dt_pedido) over ()                               as dt_pedido_min
         ,max(dt_pedido) over ()                               as dt_pedido_max
     from cte_pedido
-   where ds_status_pedido not in ('CANCELADO')
 group by dt_pedido
         ,cd_contato
         ,cd_pedido
@@ -72,6 +72,12 @@ group by dt_pedido
     from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_tempo`
 )
 
+, cte_objetivo as (
+  select dt_data
+        ,vl_meta_dia
+    from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_objetivo_faturamento`
+)
+
 , cte_join as (
     select a.dt_data
           ,a.nr_ano
@@ -90,15 +96,19 @@ group by dt_pedido
           ,a.ds_feriado
           ,b.cd_contato
           ,b.cd_pedido
-          ,sum(coalesce(b.qt_item, 0))            as qt_item
-          ,sum(coalesce(b.vl_total_item, 0))      as vl_total_item
-          ,sum(coalesce(b.vl_desconto_rateio, 0)) as vl_desconto_rateio
-          ,sum(coalesce(b.vl_frete_rateio, 0))    as vl_frete_rateio
-          ,sum(coalesce(b.vl_total_pedido, 0))    as vl_total_pedido
-          ,sum(coalesce(b.vl_custo_pedido, 0))    as vl_custo_pedido
+          ,sum(coalesce(b.qt_item, 0))                                  as qt_item
+          ,sum(coalesce(b.vl_total_item, 0))                            as vl_total_item
+          ,sum(coalesce(b.vl_desconto_rateio, 0))                       as vl_desconto_rateio
+          ,sum(coalesce(b.vl_frete_rateio, 0))                          as vl_frete_rateio
+          ,sum(coalesce(b.vl_total_pedido, 0))                          as vl_total_pedido
+          ,sum(coalesce(b.vl_custo_pedido, 0))                          as vl_custo_pedido
+          ,count(distinct a.dt_data) over(partition by dt_prim_dia_mes) as qt_dias_mes
+          ,c.vl_meta_dia                                                as vl_meta_dia
      from cte_tempo      as a
 left join cte_pedido_agg as b
        on cast(a.dt_data as date) = cast(b.dt_pedido as date)
+left join cte_objetivo   as c   
+       on cast(a.dt_data as date) = cast(c.dt_data as date)
  group by a.dt_data
          ,a.nr_ano
          ,a.nr_mes
@@ -116,10 +126,11 @@ left join cte_pedido_agg as b
          ,a.ds_feriado
          ,b.cd_contato
          ,b.cd_pedido
+         ,c.vl_meta_dia
 )
 
   select *
     from cte_join
    where dt_data >= '2023-11-01'
-     and dt_data <= current_date
+     and dt_data < date_add(date_trunc(current_date(), month), interval 1 month)
 order by dt_data desc
