@@ -75,6 +75,7 @@ group by dt_pedido
 , cte_objetivo as (
   select dt_data
         ,vl_meta_dia
+        ,vl_objetivo_total
     from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_objetivo_faturamento`
 )
 
@@ -104,6 +105,7 @@ group by dt_pedido
           ,sum(coalesce(b.vl_custo_pedido, 0))                          as vl_custo_pedido
           ,count(distinct a.dt_data) over(partition by dt_prim_dia_mes) as qt_dias_mes
           ,c.vl_meta_dia                                                as vl_meta_dia
+          ,c.vl_objetivo_total                                          as vl_objetivo_total
      from cte_tempo      as a
 left join cte_pedido_agg as b
        on cast(a.dt_data as date) = cast(b.dt_pedido as date)
@@ -127,6 +129,7 @@ left join cte_objetivo   as c
          ,b.cd_contato
          ,b.cd_pedido
          ,c.vl_meta_dia
+         ,c.vl_objetivo_total
 )
 
   select *
