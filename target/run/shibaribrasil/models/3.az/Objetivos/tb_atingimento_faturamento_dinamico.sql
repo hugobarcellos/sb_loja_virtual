@@ -1,17 +1,16 @@
-
+-- back compat for old kwarg name
   
+  
+        
+            
+            
+        
     
 
-    create or replace table `igneous-sandbox-381622`.`dbt_dw_az`.`tb_atingimento_faturamento_dinamico`
-      
-    
     
 
-    OPTIONS(
-      description=""""""
-    )
-    as (
-      
+    merge into `igneous-sandbox-381622`.`dbt_dw_az`.`tb_atingimento_faturamento_dinamico` as DBT_INTERNAL_DEST
+        using (
 
 with cte_pedido_base as (
   select *
@@ -53,16 +52,19 @@ with cte_pedido_base as (
         ,last_day(dt_data, month) as dt_fim_mes
    from cte_pedido
   
+    -- em incremental, só recalcula o mês atual (inclui passado do mês, hoje e futuro do mês)
+    where dt_data >= date_trunc(current_date(), month)
+      and dt_data <= last_day(current_date(), month)
+  
 )
 
 -- traz valor já calculado anteriormente (para "congelar" o passado)
 , existing as (
   
   select
-    cast(null as date) as dt_data,
-    cast(null as numeric) as meta_diaria_ajustada
-  from (select 1)
-  where 1 = 0
+    dt_data,
+    meta_diaria_ajustada
+  from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_atingimento_faturamento_dinamico`
   
 )
 
@@ -86,7 +88,10 @@ group by 1
 -- meta ajustada de ontem (somente se ontem for do mesmo mês)
 , ontem as (
   
-  select cast(null as numeric) as meta_ajustada_ontem
+  select meta_diaria_ajustada as meta_ajustada_ontem
+  from `igneous-sandbox-381622`.`dbt_dw_az`.`tb_atingimento_faturamento_dinamico`
+  where dt_data = date_sub(current_date(), interval 1 day)
+    and date_trunc(dt_data, month) = date_trunc(current_date(), month)
   
 ),
 
@@ -105,11 +110,10 @@ calc as (
     on e.dt_data = b.dt_data
 
   
-    -- no full-refresh, ainda não existe `igneous-sandbox-381622`.`dbt_dw_az`.`tb_atingimento_faturamento_dinamico`: cria um "stub" nulo
-    left join (
-      select cast(null as numeric) as meta_diaria_ajustada
-    ) y
-      on false
+    -- pega a meta ajustada de ontem (só existe depois da 1ª carga)
+    left join `igneous-sandbox-381622`.`dbt_dw_az`.`tb_atingimento_faturamento_dinamico` y
+      on y.dt_data = date_sub(current_date(), interval 1 day)
+     and date_trunc(y.dt_data, month) = date_trunc(current_date(), month)
   
 )
 
@@ -131,5 +135,20 @@ calc as (
              end as meta_diaria_ajustada
     from calc
 order by dt_data
-    );
-  
+        ) as DBT_INTERNAL_SOURCE
+        on (
+                DBT_INTERNAL_SOURCE.dt_data = DBT_INTERNAL_DEST.dt_data
+            )
+
+    
+    when matched then update set
+        `dt_data` = DBT_INTERNAL_SOURCE.`dt_data`,`vl_objetivo_total` = DBT_INTERNAL_SOURCE.`vl_objetivo_total`,`vl_objetivo_dia` = DBT_INTERNAL_SOURCE.`vl_objetivo_dia`,`vl_faturamento_bruto` = DBT_INTERNAL_SOURCE.`vl_faturamento_bruto`,`deficit` = DBT_INTERNAL_SOURCE.`deficit`,`dias_restantes` = DBT_INTERNAL_SOURCE.`dias_restantes`,`meta_diaria_ajustada` = DBT_INTERNAL_SOURCE.`meta_diaria_ajustada`
+    
+
+    when not matched then insert
+        (`dt_data`, `vl_objetivo_total`, `vl_objetivo_dia`, `vl_faturamento_bruto`, `deficit`, `dias_restantes`, `meta_diaria_ajustada`)
+    values
+        (`dt_data`, `vl_objetivo_total`, `vl_objetivo_dia`, `vl_faturamento_bruto`, `deficit`, `dias_restantes`, `meta_diaria_ajustada`)
+
+
+    
