@@ -23,15 +23,20 @@ with cte_header as (
         ,situacao
         ,valor
         ,vencimento
+        ,date(_erathos_inserted_at) dt_atualizacao_erathos
     from `igneous-sandbox-381622`.`datalake_bling`.`contas_pagar_detalhes`
 )
 
 , cte_categoria_financeira as (
-  select distinct
-         id
-        ,descricao
-        ,id_categoria_pai
-    from `igneous-sandbox-381622`.`datalake_bling`.`categorias_financeiras`
+  select coalesce(pai.id, filho.id)                                as id_categoria
+        ,coalesce(pai.descricao, filho.descricao)                  as categoria
+        ,coalesce(case when pai.id is null then null
+                       else filho.id end,   filho.id)              as id_subcategoria
+        ,coalesce(case when pai.id is null then null
+                       else filho.descricao end, filho.descricao)  as subcategoria
+     from `igneous-sandbox-381622`.`datalake_bling`.`categorias_financeiras` filho
+left join `igneous-sandbox-381622`.`datalake_bling`.`categorias_financeiras` pai
+       on filho.id_categoria_pai = pai.id
 )
 
 , cte_forma_pagamento as (
@@ -57,8 +62,8 @@ with cte_header as (
         ,b.data_emissao                     as dt_emissao
         ,b.competencia                      as dt_competencia
         ,b.historico                        as ds_descricao
-        ,c.descricao                        as ds_subcategoria
-        ,coalesce(d.descricao, c.descricao) as ds_categoria
+        ,c.subcategoria                     as ds_subcategoria
+        ,c.categoria                        as ds_categoria
         ,f.nm_contato                       as nm_fornecedor
         ,e.nm_forma_pagamento               as nm_forma_pagamento
         ,case
@@ -72,13 +77,14 @@ with cte_header as (
           else null end ds_situacao
         ,cast(b.valor as float64)           as vl_valor
         ,b.vencimento                       as dt_vencimento
+        ,b.dt_atualizacao_erathos           as dt_atualizacao_erathos
      from cte_header               as a   
 left join cte_item                 as b 
        on a.id = b.id
 left join cte_categoria_financeira as c
-       on b.categoria__id = c.id
-left join cte_categoria_financeira as d
-       on c.id = c.id_categoria_pai
+       on b.categoria__id = c.id_subcategoria
+-- left join cte_categoria_financeira as d
+--        on b.categoria__id = c.id_categoria_pai
 left join cte_forma_pagamento      as e   
        on b.forma_pagamento__id = e.cd_forma_pagamento
 left join cte_contato              as f  
