@@ -16,7 +16,7 @@ with cte_base as (
              concat('0', cast(nr_mes as string), ' - ', ds_mes_abreviado), 
              concat(cast(nr_mes as string), ' - ', ds_mes_abreviado))                                             as ds_mes_completo
          ,qt_dias_mes                                                                                             as qt_dias_mes
-         ,coalesce(vl_objetivo_total,0)                                                                           as vl_objetivo_total
+         ,coalesce(a.vl_objetivo_total,0)                                                                           as vl_objetivo_total
          ,count(distinct cd_contato)                                                                              as cd_contato
          ,count(distinct cd_pedido)                                                                               as cd_pedido
          ,sum(qt_item)                                                                                            as qt_item
@@ -34,6 +34,6 @@ group by nr_ano
         ,nr_mes
         ,ds_mes_abreviado
         ,qt_dias_mes
-        ,vl_objetivo_total
+        ,a.vl_objetivo_total
 order by nr_ano desc
         ,nr_mes desc

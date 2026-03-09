@@ -1,7 +1,8 @@
 {{ config(
     materialized = 'incremental',
     unique_key = 'dt_data',
-    incremental_strategy = 'merge'
+    incremental_strategy = 'merge',
+    tags = ['az', 'pedido', 'snaps']
 ) }}
 
 with cte_pedido_base as (
