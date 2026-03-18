@@ -9,6 +9,7 @@
 with cte_pedido as (
   select nullif(trim(id), '')                        as cd_codigo_interno
         ,nullif(trim(numero), '')                    as cd_pedido
+        ,nullif(trim(numero_loja), '')               as cd_pedido_loja
         ,nullif(trim(data), '')                      as dt_pedido
         ,nullif(trim(situacao__id), '')              as cd_status
         ,nullif(trim(total_produtos), '')            as vl_total_item
@@ -23,6 +24,7 @@ with cte_pedido as (
 , cte_tratamentos_pedido as (
   select cd_codigo_interno                      as cd_codigo_interno
         ,cd_pedido                              as cd_pedido
+        ,cd_pedido_loja                         as cd_pedido_loja
         ,dt_pedido                              as dt_pedido
         ,cd_status                              as cd_status_pedido
         ,case

@@ -6,7 +6,6 @@ with cte_pedido as (
          ,cd_pedido
          ,dt_prim_dia_mes
          ,cast(dt_pedido as date) dt_pedido
-         ,cd_status_pedido
          ,ds_status_pedido
          ,cd_produto_bling
          ,cd_produto
@@ -24,7 +23,8 @@ with cte_pedido as (
          ,vl_total_pedido
          ,vl_custo_item
          ,vl_custo_pedido
-         ,ds_forma_pagamento
+         ,vl_taxa_pedido_rateio
+         ,nm_forma_pagamento
          ,cd_contato
          ,nm_contato
          ,nr_doc_contato
@@ -45,6 +45,7 @@ with cte_pedido as (
         ,sum(vl_frete_rateio)                                 as vl_frete_rateio
         ,sum(vl_total_pedido)                                 as vl_total_pedido
         ,sum(vl_custo_pedido)                                 as vl_custo_pedido
+        ,sum(vl_taxa_pedido_rateio)                           as vl_taxa_pedido_rateio
         ,min(dt_pedido) over ()                               as dt_pedido_min
         ,max(dt_pedido) over ()                               as dt_pedido_max
     from cte_pedido
@@ -103,6 +104,7 @@ group by dt_pedido
           ,sum(coalesce(b.vl_frete_rateio, 0))                          as vl_frete_rateio
           ,sum(coalesce(b.vl_total_pedido, 0))                          as vl_total_pedido
           ,sum(coalesce(b.vl_custo_pedido, 0))                          as vl_custo_pedido
+          ,sum(coalesce(b.vl_taxa_pedido_rateio, 0))                    as vl_taxa_pedido_rateio
           ,count(distinct a.dt_data) over(partition by dt_prim_dia_mes) as qt_dias_mes
           ,c.vl_meta_dia                                                as vl_meta_dia
           ,c.vl_objetivo_total                                          as vl_objetivo_total

@@ -30,7 +30,6 @@ with cte_contato as (
         ,cd_pedido
         ,dt_prim_dia_mes	
         ,dt_pedido
-        ,cd_status_pedido
         ,ds_status_pedido
         ,cd_produto_bling
         ,cd_produto
@@ -48,7 +47,7 @@ with cte_contato as (
         ,vl_total_pedido	
         ,vl_custo_item
         ,vl_custo_pedido
-        ,ds_forma_pagamento
+        ,nm_forma_pagamento
         ,cd_contato
         ,nm_contato
         ,nr_doc_contato

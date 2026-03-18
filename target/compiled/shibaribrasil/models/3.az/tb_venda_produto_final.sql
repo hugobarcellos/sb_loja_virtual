@@ -28,7 +28,6 @@ with cte_produto as (
          ,cd_pedido
          ,dt_pedido
          ,date_trunc(cast(dt_pedido as date), month) as dt_prim_dia_mes
-         ,cd_status_pedido
          ,ds_status_pedido
          ,cd_produto_bling
          ,cd_produto
