@@ -43,7 +43,7 @@ group by cd_codigo_interno
           ,a.dt_pedido
           ,a.ds_status_pedido
           ,date(dbt_updated_at) dt_status
-          ,row_number() over(partition by a.cd_codigo_interno order by dbt_updated_at ) seq
+          ,row_number() over(partition by a.cd_codigo_interno order by dbt_updated_at desc) seq
           ,b.vl_total_item
           ,b.vl_total_pedido
           ,c.vl_desconto

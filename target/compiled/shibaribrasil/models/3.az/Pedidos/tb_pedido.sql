@@ -33,6 +33,7 @@ with cte_pedido as (
          ,vl_item
          ,ds_tipo_desconto
          ,vl_desconto
+         ,vl_frete_gratis
          ,cd_forma_pagamento
      from `igneous-sandbox-381622`.`dbt_dw_stg`.`stg_item_pedido`
 )
@@ -62,6 +63,7 @@ with cte_pedido as (
          ,round((b.qt_item * b.vl_item), 2)                                                        as vl_total_item
          ,b.ds_tipo_desconto                                                                       as ds_tipo_desconto
          ,b.vl_desconto                                                                            as vl_desconto
+         ,b.vl_frete_gratis                                                                        as vl_frete_gratis
          ,a.vl_total_pedido                                                                        as vl_total_pedido
          ,a.vl_total_item                                                                          as vl_total_item_pedido
          ,b.cd_forma_pagamento                                                                     as cd_forma_pagamento
@@ -110,7 +112,7 @@ left join cte_forma_pagamento as d
          ,a.vl_total_pedido
          ,round((a.vl_desconto / a.qt_linhas_pedido), 2)   as vl_desconto_rateio
          ,case when dt_pedido >= '2026-02-26'
-                then round((b.vl_frete / a.qt_linhas_pedido) , 2)
+                then round((coalesce(nullif(a.vl_frete_gratis, 0), b.vl_frete) / a.qt_linhas_pedido) , 2)
                else round(((a.vl_total_pedido + a.vl_desconto) - a.vl_total_item_pedido) / a.qt_linhas_pedido, 2) end as vl_frete_rateio
          ,a.nm_forma_pagamento
          ,a.qt_dias_pagamento
