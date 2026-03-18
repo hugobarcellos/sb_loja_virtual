@@ -161,7 +161,6 @@ left join cte_frete       as b
          ,a.vl_total_item
          ,a.vl_desconto_rateio
          ,a.vl_frete_rateio
-         ,a.vl_total_pedido as vl_total_pedido1
          ,case when a.fg_frete_gratis is true 
                     then round((a.vl_total_item - a.vl_desconto_rateio), 2)
                 else round((a.vl_total_item + a.vl_frete_rateio) - a.vl_desconto_rateio, 2) end as vl_total_pedido
@@ -223,7 +222,6 @@ left join cte_frete       as b
          ,a.vl_total_item
          ,a.vl_desconto_rateio
          ,a.vl_frete_rateio
-         ,a.vl_total_pedido1
          ,a.vl_total_pedido
          ,round(coalesce(nullif(c.vl_custo_final,0), vl_custo_cadastro) ,2)                                   as vl_custo_item
          ,round((coalesce(nullif(c.vl_custo_final,0), vl_custo_cadastro) * a.qt_item) ,2)                     as vl_custo_pedido
